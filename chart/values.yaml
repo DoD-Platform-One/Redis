@@ -32,7 +32,7 @@ global:
 ##
 image:
   registry: registry1.dso.mil
-  repository: ironbank/opensource/bitnami/redis
+  repository: ironbank/bitnami/redis
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
