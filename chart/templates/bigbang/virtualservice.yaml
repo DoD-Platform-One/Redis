@@ -20,11 +20,11 @@ metadata:
   {{- end }}
 spec:
   gateways:
-  {{- range .Values.istio.jaeger.gateways }}
+  {{- range .Values.istio.redis.gateways }}
     - {{ . }}
   {{- end }}
   hosts:
-  {{- range .Values.istio.jaeger.hosts }}
+  {{- range .Values.istio.redis.hosts }}
     - {{ tpl . $}}
   {{- end }}
   http:
