@@ -1,0 +1,7 @@
+istio:
+  enabled: true
+
+global:
+  imagePullSecrets:
+  - private-registry-mil
+

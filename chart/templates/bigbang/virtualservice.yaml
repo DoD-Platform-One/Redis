@@ -1,0 +1,36 @@
+{{- if and .Values.istio.enabled .Values.istio.redis.enabled -}}
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: redis
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ template "redis.name" . }}
+    helm.sh/chart: {{ template "redis.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/part-of: redis
+    app.kubernetes.io/component: networking
+  {{- if .Values.istio.redis.labels }}
+{{ toYaml .Values.istio.redis.labels | indent 4 }}
+  {{- end }}
+  {{- if .Values.istio.redis.annotations }}
+  annotations:
+{{ toYaml .Values.istio.redis.annotations | indent 4 }}
+  {{- end }}
+spec:
+  gateways:
+  {{- range .Values.istio.jaeger.gateways }}
+    - {{ . }}
+  {{- end }}
+  hosts:
+  {{- range .Values.istio.jaeger.hosts }}
+    - {{ tpl . $}}
+  {{- end }}
+  http:
+    - route:
+        - destination:
+            port:
+              number: {{ .Values.master.service.port }}
+            host: {{ template "redis.fullname" . }}-master
+{{- end }}

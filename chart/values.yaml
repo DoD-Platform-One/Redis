@@ -1,11 +1,29 @@
+# BigBang
+
+hostname: bigbang.dev
+istio:
+  enabled: false
+  redis:
+    enabled: true
+    labels: {}
+    annotations: {}
+    gateways:
+    - "istio-system/main"
+    hosts:
+    - redis.{{ .Values.hostname }}
+
+
+
+
+
 ## Global Docker image parameters
 ## Please, note that this will override the image parameters, including dependencies, configured to use the global value
 ## Current available global Docker image parameters: imageRegistry and imagePullSecrets
 ##
 global:
   # imageRegistry: myRegistryName
-  # imagePullSecrets:
-  #   - myRegistryKeySecretName
+  imagePullSecrets:
+    - private-registry
   # storageClass: myStorageClass
   redis: {}
 
@@ -13,23 +31,23 @@ global:
 ## ref: https://hub.docker.com/r/bitnami/redis/tags/
 ##
 image:
-  registry: docker.io
-  repository: bitnami/redis
+  registry: registry1.dso.mil
+  repository: ironbank/opensource/bitnami/redis
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: 6.0.12-debian-10-r3
+  tag: 6.0.10
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
   ##
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   ## Optionally specify an array of imagePullSecrets.
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
   # pullSecrets:
-  #   - myRegistryKeySecretName
+  #   - private-registry
 
 ## String to partially override redis.fullname template (will maintain the release name)
 ##
@@ -348,10 +366,13 @@ master:
 
   ## Redis(TM) Master resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-  # resources:
-  #   requests:
-  #     memory: 256Mi
-  #     cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
   ## Use an alternate scheduler, e.g. "stork".
   ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
   ##
@@ -634,10 +655,13 @@ slave:
   customReadinessProbe: {}
 
   ## Redis(TM) slave Resource
-  # resources:
-  #   requests:
-  #     memory: 256Mi
-  #     cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
 
   ## Redis(TM) slave selectors and tolerations for pod assignment
   # nodeSelector: {"beta.kubernetes.io/arch": "amd64"}
@@ -726,16 +750,16 @@ metrics:
   enabled: false
 
   image:
-    registry: docker.io
-    repository: bitnami/redis-exporter
-    tag: 1.17.1-debian-10-r12
-    pullPolicy: IfNotPresent
+    registry: registry1.dso.mil
+    repository: ironbank/bitnami/analytics/redis-exporter
+    tag: 1.6.1
+    pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
     # pullSecrets:
-    #   - myRegistryKeySecretName
+    #   - private-registry
 
   ## Metrics exporter resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -758,7 +782,7 @@ metrics:
   serviceMonitor:
     enabled: false
     ## Specify a namespace if needed
-    # namespace: monitoring
+    namespace: monitoring
     # fallback to the prometheus default unless specified
     # interval: 10s
     ## Defaults to what's used if you follow CoreOS [Prometheus Install Instructions](https://github.com/bitnami/charts/tree/master/bitnami/prometheus-operator#tldr)
