@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: chart
+upstream:
+  type: git
+  git:
+    commit: f366632e10e03ea2f0fc76e2897dd603233df797
+    repo: https://github.com/bitnami/charts
+    directory: bitnami/redis
+    ref: master
