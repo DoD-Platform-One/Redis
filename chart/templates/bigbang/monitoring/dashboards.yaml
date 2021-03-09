@@ -9,5 +9,5 @@ metadata:
   namespace: {{ .Values.monitoring.namespace }}
 data:
   redis_rev2.json: |
-    {{ .Files.Get "grafana_dashboards/redis_rev2.json"}}
+    {{ .Files.Get "grafana_dashboards/redis_rev2.json" | nindent 4 }}
 {{ end }}
