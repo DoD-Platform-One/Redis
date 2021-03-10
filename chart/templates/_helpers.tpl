@@ -268,7 +268,12 @@ Also, we can not use a single if because lazy evaluation is not an option
 {{- if .Values.global.imagePullSecrets }}
 imagePullSecrets:
 {{- range .Values.global.imagePullSecrets }}
-  - name: {{ . }}
+    {{- $credType := typeOf . -}}
+    {{ if eq $credType "map[string]interface {}" }}
+    - name: {{ get . "name" }}
+    {{ else }}
+    - name: {{ . }}
+    {{ end }}
 {{- end }}
 {{- else if or .Values.image.pullSecrets .Values.metrics.image.pullSecrets .Values.sysctlImage.pullSecrets .Values.volumePermissions.image.pullSecrets }}
 imagePullSecrets:
