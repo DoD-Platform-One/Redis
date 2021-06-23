@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [14.1.0-bb.1]
+### Added
+- NetworkPolicy to ensure API access
+
 ## [14.1.0-bb.0]
 ### UPGRADE NOTICE
 - A clean upgrade job will run which requires complete deletion of the previous redis instance, which means downtime can be expected
