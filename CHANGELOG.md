@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ---
 
 ## [14.1.0-bb.1]
+### Changed
+- Changed cleanUpgrade image from gitlab/kubectl to bigbang/base.
+
+## [14.1.0-bb.1]
 ### Added
 - NetworkPolicy to ensure API access
 
