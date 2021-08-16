@@ -4,7 +4,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
-## [14.1.0-bb.1]
+## [14.1.0-bb.3]
+### Changed
+- Updated clean upgrade job to include resource requests and limits in order to resolve OPA Gatekeeper violations
+
+## [14.1.0-bb.2]
 ### Changed
 - Changed cleanUpgrade image from gitlab/kubectl to bigbang/base.
 
