@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [14.1.0-bb.4]
+### Changed
+- Removed `sidecar.istio.io/inject: 'false'` annotation from clean upgrade job and added `curl -X POST http://localhost:15020/quitquitquit` to cleanly terminate the istio sidecar container when the job completes. This was done to resolve OPA Gatekeeper violations
+
 ## [14.1.0-bb.3]
 ### Changed
 - Updated clean upgrade job to include resource requests and limits in order to resolve OPA Gatekeeper violations
