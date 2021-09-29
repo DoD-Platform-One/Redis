@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [14.1.0-bb.5]
+### Changed
+- Disabled clean upgrade job. Job was only needed when upgrading to Redis 6.2.2 and the 14.1.0 upstream chart. Keeping in for users upgrading from old version of BB
+
 ## [14.1.0-bb.4]
 ### Changed
 - Removed `sidecar.istio.io/inject: 'false'` annotation from clean upgrade job and added `curl -X POST http://localhost:15020/quitquitquit` to cleanly terminate the istio sidecar container when the job completes. This was done to resolve OPA Gatekeeper violations
