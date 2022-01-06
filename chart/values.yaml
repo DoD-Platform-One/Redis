@@ -1316,7 +1316,7 @@ metrics:
         expr: redis_up{service="{{ template "common.names.fullname" . }}-metrics"} == 0
         for: 2m
         labels:
-        severity: error
+          severity: error
         annotations:
           summary: Redis(TM) instance {{ "{{ $labels.instance }}" }} down
           description: Redis(TM) instance {{ "{{ $labels.instance }}" }} is down

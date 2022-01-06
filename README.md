@@ -1,6 +1,6 @@
 # redis
 
-![Version: 14.1.0-bb.6](https://img.shields.io/badge/Version-14.1.0--bb.6-informational?style=flat-square) ![AppVersion: 6.2.2](https://img.shields.io/badge/AppVersion-6.2.2-informational?style=flat-square)
+![Version: 14.1.0-bb.7](https://img.shields.io/badge/Version-14.1.0--bb.7-informational?style=flat-square) ![AppVersion: 6.2.2](https://img.shields.io/badge/AppVersion-6.2.2-informational?style=flat-square)
 
 Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -356,8 +356,7 @@ helm install redis chart/
 | metrics.prometheusRule.rules[0].alert | string | `"RedisDown"` |  |
 | metrics.prometheusRule.rules[0].expr | string | `"redis_up{service=\"{{ template \"common.names.fullname\" . }}-metrics\"} == 0"` |  |
 | metrics.prometheusRule.rules[0].for | string | `"2m"` |  |
-| metrics.prometheusRule.rules[0].labels | string | `nil` |  |
-| metrics.prometheusRule.rules[0].severity | string | `"error"` |  |
+| metrics.prometheusRule.rules[0].labels.severity | string | `"error"` |  |
 | metrics.prometheusRule.rules[0].annotations.summary | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} down"` |  |
 | metrics.prometheusRule.rules[0].annotations.description | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} is down"` |  |
 | metrics.prometheusRule.rules[1].alert | string | `"RedisMemoryHigh"` |  |
