@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [14.1.0-bb.7]
+### Changed
+- Fixed indentation in prometheusRule leading to errors in templating when being read by the kube-operator
+
 ## [14.1.0-bb.6]
 ### Changed
 - Uncommented prometheusRule rule examples within chart. When enabled via BigBang, 3 prometheusRule templates will be created in cluster
