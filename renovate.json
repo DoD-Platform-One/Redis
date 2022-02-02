@@ -1,0 +1,30 @@
+{
+  "baseBranches": ["main"],
+  "dependencyDashboard": "true",
+  "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
+  "dependencyDashboardTitle": "Renovate: Upgrade Redis Package Dependencies",
+  "draftPR": "true",
+  "labels": ["redis","Package Sustainment","kind::chore"],
+  "ignoreDeps": ["docker.io/bitnami/redis-sentinel"],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "Ironbank",
+      "registryUrls": ["https://registry1.dso.mil"]
+    },
+    {
+      "matchPackageNames": ["registry1.dso.mil/ironbank/big-bang/base"],
+      "allowedVersions": "!/8.4/"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^chart/values\\.yaml$"],
+      "matchStrings": [
+        "image: \"(?<depName>\\S+):(?<currentValue>.+)\""
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "separateMajorMinor": false
+}
