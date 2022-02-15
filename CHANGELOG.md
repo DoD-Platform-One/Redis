@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [16.4.0-bb.0]
+### UPGRADE NOTICE
+- Updated to Redis 6.2.5 and 16.4.0 upstream chart
+
 ## [14.1.0-bb.7]
 ### Changed
 - Fixed indentation in prometheusRule leading to errors in templating when being read by the kube-operator
