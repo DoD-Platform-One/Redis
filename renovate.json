@@ -4,7 +4,7 @@
   "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
   "dependencyDashboardTitle": "Renovate: Upgrade Redis Package Dependencies",
   "draftPR": "true",
-  "labels": ["redis","Package Sustainment","kind::chore"],
+  "labels": ["redis","Package Sustainment","kind::maintenance"],
   "ignoreDeps": ["docker.io/bitnami/redis-sentinel"],
   "packageRules": [
     {
