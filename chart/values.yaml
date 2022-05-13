@@ -22,7 +22,7 @@ monitoring:
 # REQUIRED for Chart v14 upgrade
 cleanUpgrade:
   enabled: false
-  image: "registry1.dso.mil/ironbank/big-bang/base:1.0.0"
+  image: "registry1.dso.mil/ironbank/big-bang/base:1.2.0"
   resources:
     requests:
       memory: 256Mi
@@ -75,6 +75,9 @@ commonLabels: {}
 ## @param commonAnnotations Annotations to add to all deployed objects
 ##
 commonAnnotations: {}
+## @param secretAnnotations Annotations to add to secret
+##
+secretAnnotations: {}
 ## @param clusterDomain Kubernetes cluster domain name
 ##
 clusterDomain: cluster.local
@@ -115,7 +118,7 @@ image:
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: 6.2.5
+  tag: 6.2.6
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -166,6 +169,7 @@ auth:
   ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
   ##
   usePasswordFiles: false
+
 ## @param commonConfiguration [string] Common configuration to be added into the ConfigMap
 ## ref: https://redis.io/topics/config
 ##
@@ -390,7 +394,21 @@ master:
   ##     topologyKey: node
   ##     whenUnsatisfiable: DoNotSchedule
   ##
-  topologySpreadConstraints: {}
+  topologySpreadConstraints: []
+  ## @param master.dnsPolicy DNS Policy for Redis&trade; master pod
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+  ## E.g.
+  ## dnsPolicy: ClusterFirst
+  dnsPolicy: ""
+  ## @param master.dnsConfig DNS Configuration for Redis&trade; master pod
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+  ## E.g.
+  ## dnsConfig:
+  ##   options:
+  ##   - name: ndots
+  ##     value: "4"
+  ##   - name: single-request-reopen
+  dnsConfig: {}
   ## @param master.lifecycleHooks for the Redis&trade; master container(s) to automate configuration before or after startup
   ##
   lifecycleHooks: {}
@@ -431,6 +449,9 @@ master:
     ## @param master.persistence.medium Provide a medium for `emptyDir` volumes.
     ##
     medium: ""
+    ## @param master.persistence.sizeLimit Set this to enable a size limit for `emptyDir` volumes.
+    ##
+    sizeLimit: ""
     ## @param master.persistence.path The path the volume will be mounted at on Redis&trade; master containers
     ## NOTE: Useful when using different Redis&trade; images
     ##
@@ -463,6 +484,7 @@ master:
     ##
     selector: {}
     ## @param master.persistence.dataSource Custom PVC data source
+    ##
     dataSource: {}
     ## @param master.persistence.existingClaim Use a existing PVC which must be created manually before bound
     ## NOTE: requires master.persistence.enabled: true
@@ -488,6 +510,10 @@ master:
     ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
     ##
     externalTrafficPolicy: Cluster
+    ## @param master.service.internalTrafficPolicy Redis&trade; master service internal traffic policy (requires Kubernetes v1.22 or greater to be usable)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/
+    ##
+    internalTrafficPolicy: Cluster
     ## @param master.service.extraPorts Extra ports to expose (normally used with the `sidecar` value)
     ##
     extraPorts: []
@@ -581,12 +607,12 @@ replica:
   ## @param replica.startupProbe.successThreshold Success threshold for startupProbe
   ##
   startupProbe:
-    enabled: false
-    initialDelaySeconds: 20
-    periodSeconds: 5
+    enabled: true
+    initialDelaySeconds: 10
+    periodSeconds: 10
     timeoutSeconds: 5
     successThreshold: 1
-    failureThreshold: 5
+    failureThreshold: 22
   ## @param replica.livenessProbe.enabled Enable livenessProbe on Redis&trade; replicas nodes
   ## @param replica.livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
   ## @param replica.livenessProbe.periodSeconds Period seconds for livenessProbe
@@ -739,7 +765,21 @@ replica:
   ##     topologyKey: node
   ##     whenUnsatisfiable: DoNotSchedule
   ##
-  topologySpreadConstraints: {}
+  topologySpreadConstraints: []
+  ## @param replica.dnsPolicy DNS Policy for Redis&trade; replica pods
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+  ## E.g.
+  ## dnsPolicy: ClusterFirst
+  dnsPolicy: ""
+  ## @param replica.dnsConfig DNS Configuration for Redis&trade; replica pods
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+  ## E.g.
+  ## dnsConfig:
+  ##   options:
+  ##   - name: ndots
+  ##     value: "4"
+  ##   - name: single-request-reopen
+  dnsConfig: {}
   ## @param replica.lifecycleHooks for the Redis&trade; replica container(s) to automate configuration before or after startup
   ##
   lifecycleHooks: {}
@@ -780,7 +820,10 @@ replica:
     ## @param replica.persistence.medium Provide a medium for `emptyDir` volumes.
     ##
     medium: ""
-    ## @param replica.persistence.path The path the volume will be mounted at on Redis&trade; replicas containers
+    ## @param replica.persistence.sizeLimit Set this to enable a size limit for `emptyDir` volumes.
+    ##
+    sizeLimit: ""
+    ##  @param replica.persistence.path The path the volume will be mounted at on Redis&trade; replicas containers
     ## NOTE: Useful when using different Redis&trade; images
     ##
     path: /data
@@ -812,6 +855,7 @@ replica:
     ##
     selector: {}
     ## @param replica.persistence.dataSource Custom PVC data source
+    ##
     dataSource: {}
   ## Redis&trade; replicas service parameters
   ##
@@ -833,6 +877,10 @@ replica:
     ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
     ##
     externalTrafficPolicy: Cluster
+    ## @param replica.service.internalTrafficPolicy Redis&trade; replicas service internal traffic policy (requires Kubernetes v1.22 or greater to be usable)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/
+    ##
+    internalTrafficPolicy: Cluster
     ## @param replica.service.extraPorts Extra ports to expose (normally used with the `sidecar` value)
     ##
     extraPorts: []
@@ -896,7 +944,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 6.2.6-debian-10-r118
+    tag: 6.2.7-debian-10-r0
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
     ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -919,6 +967,9 @@ sentinel:
   ## @param sentinel.quorum Sentinel Quorum
   ##
   quorum: 2
+  ## @param sentinel.getMasterTimeout Amount of time to allow before get_sentinel_master_info() times out.
+  ## NOTE: This is directly related to the startupProbes which are configured to run every 10 seconds for a total of 22 failures. If adjusting this value, also adjust the startupProbes.
+  getMasterTimeout: 220
   ## @param sentinel.automateClusterRecovery Automate cluster recovery in cases where the last replica is not considered a good replica and Sentinel won't automatically failover to it.
   ## This also prevents any new replica from starting until the last remaining replica is elected as master to guarantee that it is the one to be elected by Sentinel, and not a newly started replica with no data.
   ## NOTE: This feature requires a "downAfterMilliseconds" value less or equal to 2000.
@@ -962,6 +1013,7 @@ sentinel:
   ## @param sentinel.externalMaster.enabled Use external master for bootstrapping
   ## @param sentinel.externalMaster.host External master host to bootstrap from
   ## @param sentinel.externalMaster.port Port for Redis service external master host
+  ##
   externalMaster:
     enabled: false
     host: ""
@@ -980,12 +1032,12 @@ sentinel:
   ## @param sentinel.startupProbe.successThreshold Success threshold for startupProbe
   ##
   startupProbe:
-    enabled: false
-    initialDelaySeconds: 20
-    periodSeconds: 5
+    enabled: true
+    initialDelaySeconds: 10
+    periodSeconds: 10
     timeoutSeconds: 5
     successThreshold: 1
-    failureThreshold: 5
+    failureThreshold: 22
   ## @param sentinel.livenessProbe.enabled Enable livenessProbe on Redis&trade; Sentinel nodes
   ## @param sentinel.livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
   ## @param sentinel.livenessProbe.periodSeconds Period seconds for livenessProbe
@@ -1023,6 +1075,39 @@ sentinel:
   ## @param sentinel.customReadinessProbe Custom readinessProbe that overrides the default one
   ##
   customReadinessProbe: {}
+  ## Persistence parameters
+  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    ## @param sentinel.persistence.enabled Enable persistence on Redis&trade; sentinel nodes using Persistent Volume Claims (Experimental)
+    ##
+    enabled: false
+    ## @param sentinel.persistence.storageClass Persistent Volume storage class
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
+    ##
+    storageClass: ""
+    ## @param sentinel.persistence.accessModes Persistent Volume access modes
+    ##
+    accessModes:
+      - ReadWriteOnce
+    ## @param sentinel.persistence.size Persistent Volume size
+    ##
+    size: 100Mi
+    ## @param sentinel.persistence.annotations Additional custom annotations for the PVC
+    ##
+    annotations: {}
+    ## @param sentinel.persistence.selector Additional labels to match for the PVC
+    ## e.g:
+    ## selector:
+    ##   matchLabels:
+    ##     app: my-app
+    ##
+    selector: {}
+    ## @param sentinel.persistence.dataSource Custom PVC data source
+    ##
+    dataSource: {}
   ## Redis&trade; Sentinel resource requests and limits
   ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
   ## @param sentinel.resources.limits The resources limits for the Redis&trade; Sentinel containers
@@ -1060,6 +1145,7 @@ sentinel:
     type: ClusterIP
     ## @param sentinel.service.ports.redis Redis&trade; service port for Redis&trade;
     ## @param sentinel.service.ports.sentinel Redis&trade; service port for Redis&trade; Sentinel
+    ##
     ports:
       redis: 6379
       sentinel: 26379
@@ -1134,7 +1220,7 @@ networkPolicy:
   ##                   - frontend
   ##
   extraIngress: []
-  ## @param networkPolicy.extraEgress Add extra ingress rules to the NetworkPolicy
+  ## @param networkPolicy.extraEgress Add extra egress rules to the NetworkPolicy
   ## e.g:
   ## extraEgress:
   ##   - ports:
@@ -1286,6 +1372,13 @@ metrics:
   ##   check-keys: myKey,myOtherKey
   ##
   extraArgs: {}
+  ## @param metrics.extraEnvVars Array with extra environment variables to add to Redis&trade; exporter
+  ## e.g:
+  ## extraEnvVars:
+  ##   - name: FOO
+  ##     value: "bar"
+  ##
+  extraEnvVars: []
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param metrics.containerSecurityContext.enabled Enabled Redis&trade; exporter containers' Security Context
@@ -1546,7 +1639,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/bitnami-shell
-    tag: 10-debian-10-r329
+    tag: 10-debian-10-r408
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
@@ -1596,7 +1689,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/bitnami-shell
-    tag: 10-debian-10-r329
+    tag: 10-debian-10-r408
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
