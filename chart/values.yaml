@@ -22,7 +22,7 @@ monitoring:
 # REQUIRED for Chart v14 upgrade
 cleanUpgrade:
   enabled: false
-  image: "registry1.dso.mil/ironbank/big-bang/base:1.2.0"
+  image: "registry1.dso.mil/ironbank/big-bang/base:1.18.0"
   resources:
     requests:
       memory: 256Mi
@@ -118,7 +118,7 @@ image:
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: 6.2.6
+  tag: 7.0.2
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -1349,7 +1349,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: 1.35.0
+    tag: 1.37.0
     pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
