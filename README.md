@@ -1,6 +1,6 @@
 # redis
 
-![Version: 16.12.3-bb.0](https://img.shields.io/badge/Version-16.12.3--bb.0-informational?style=flat-square) ![AppVersion: 7.0.2](https://img.shields.io/badge/AppVersion-7.0.2-informational?style=flat-square)
+![Version: 16.12.3-bb.0](https://img.shields.io/badge/Version-16.12.3--bb.0-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
