@@ -1390,17 +1390,10 @@ metrics:
   ## @param metrics.image.pullSecrets Redis&reg; Exporter image pull secrets
   ##
   image:
-<<<<<<< HEAD
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
     tag: 1.37.0
     pullPolicy: Always
-=======
-    registry: docker.io
-    repository: bitnami/redis-exporter
-    tag: 1.40.0-debian-11-r0
-    pullPolicy: IfNotPresent
->>>>>>> update "chart" (https://github.com/bitnami/charts) from "master" (9cfe4a48cc35851faea6be7ffb2a978d223befa0) to "master" (4880df88e0973b2fd895cc8dd76f565302697824)
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -1449,7 +1442,6 @@ metrics:
   ## @param metrics.resources.requests The requested resources for the Redis&reg; exporter container
   ##
   resources:
-<<<<<<< HEAD
     requests:
       memory: 256Mi
       cpu: 100m
@@ -1457,11 +1449,6 @@ metrics:
       memory: 256Mi
       cpu: 100m
   ## @param metrics.podLabels Extra labels for Redis(TM) exporter pods
-=======
-    limits: {}
-    requests: {}
-  ## @param metrics.podLabels Extra labels for Redis&reg; exporter pods
->>>>>>> update "chart" (https://github.com/bitnami/charts) from "master" (9cfe4a48cc35851faea6be7ffb2a978d223befa0) to "master" (4880df88e0973b2fd895cc8dd76f565302697824)
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   ##
   podLabels: {}
@@ -1638,7 +1625,6 @@ metrics:
     additionalLabels: {}
     ## @param metrics.prometheusRule.rules Custom Prometheus rules
     ## e.g:
-<<<<<<< HEAD
     rules:
       - alert: RedisDown
         expr: redis_up{service="{{ template "common.names.fullname" . }}-metrics"} == 0
@@ -1673,42 +1659,6 @@ metrics:
             Redis(TM) instance {{ "{{ $labels.instance }}" }} has evicted {{ "{{ $value }}" }} keys in the last 5 minutes.
     ##
     ## rules: []
-=======
-    ## rules:
-    ##   - alert: RedisDown
-    ##     expr: redis_up{service="{{ template "common.names.fullname" . }}-metrics"} == 0
-    ##     for: 2m
-    ##     labels:
-    ##       severity: error
-    ##     annotations:
-    ##       summary: Redis&reg; instance {{ "{{ $labels.instance }}" }} down
-    ##       description: Redis&reg; instance {{ "{{ $labels.instance }}" }} is down
-    ##    - alert: RedisMemoryHigh
-    ##      expr: >
-    ##        redis_memory_used_bytes{service="{{ template "common.names.fullname" . }}-metrics"} * 100
-    ##        /
-    ##        redis_memory_max_bytes{service="{{ template "common.names.fullname" . }}-metrics"}
-    ##        > 90
-    ##      for: 2m
-    ##      labels:
-    ##        severity: error
-    ##      annotations:
-    ##        summary: Redis&reg; instance {{ "{{ $labels.instance }}" }} is using too much memory
-    ##        description: |
-    ##          Redis&reg; instance {{ "{{ $labels.instance }}" }} is using {{ "{{ $value }}" }}% of its available memory.
-    ##    - alert: RedisKeyEviction
-    ##      expr: |
-    ##        increase(redis_evicted_keys_total{service="{{ template "common.names.fullname" . }}-metrics"}[5m]) > 0
-    ##      for: 1s
-    ##      labels:
-    ##        severity: error
-    ##      annotations:
-    ##        summary: Redis&reg; instance {{ "{{ $labels.instance }}" }} has evicted keys
-    ##        description: |
-    ##          Redis&reg; instance {{ "{{ $labels.instance }}" }} has evicted {{ "{{ $value }}" }} keys in the last 5 minutes.
-    ##
-    rules: []
->>>>>>> update "chart" (https://github.com/bitnami/charts) from "master" (9cfe4a48cc35851faea6be7ffb2a978d223befa0) to "master" (4880df88e0973b2fd895cc8dd76f565302697824)
 
 ## @section Init Container Parameters
 ##
