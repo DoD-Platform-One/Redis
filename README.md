@@ -1,8 +1,8 @@
 # redis
 
-![Version: 16.9.2-bb.0](https://img.shields.io/badge/Version-16.9.2--bb.0-informational?style=flat-square) ![AppVersion: 6.2.6](https://img.shields.io/badge/AppVersion-6.2.6-informational?style=flat-square)
+![Version: 16.12.3-bb.0](https://img.shields.io/badge/Version-16.12.3--bb.0-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
-Redis(TM) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
+Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
 * <https://github.com/bitnami/charts/tree/master/bitnami/redis>
@@ -44,7 +44,7 @@ helm install redis chart/
 | istio.redis.hosts[0] | string | `"*"` |  |
 | monitoring.enabled | bool | `false` |  |
 | cleanUpgrade.enabled | bool | `false` |  |
-| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:1.2.0"` |  |
+| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:1.18.0"` |  |
 | cleanUpgrade.resources.requests.memory | string | `"256Mi"` |  |
 | cleanUpgrade.resources.requests.cpu | string | `"100m"` |  |
 | cleanUpgrade.resources.limits.memory | string | `"256Mi"` |  |
@@ -68,7 +68,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"6.2.6"` |  |
+| image.tag | string | `"7.0.0-debian-10-r3"` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.debug | bool | `false` |  |
 | architecture | string | `"replication"` |  |
@@ -80,6 +80,7 @@ helm install redis chart/
 | auth.usePasswordFiles | bool | `false` |  |
 | commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly yes\n# Disable RDB persistence, AOF persistence already enabled.\nsave \"\""` |  |
 | existingConfigmap | string | `""` |  |
+| master.count | int | `1` |  |
 | master.configuration | string | `""` |  |
 | master.disableCommands[0] | string | `"FLUSHDB"` |  |
 | master.disableCommands[1] | string | `"FLUSHALL"` |  |
@@ -161,12 +162,14 @@ helm install redis chart/
 | master.service.ports.redis | int | `6379` |  |
 | master.service.nodePorts.redis | string | `""` |  |
 | master.service.externalTrafficPolicy | string | `"Cluster"` |  |
-| master.service.internalTrafficPolicy | string | `"Cluster"` |  |
 | master.service.extraPorts | list | `[]` |  |
+| master.service.internalTrafficPolicy | string | `"Cluster"` |  |
 | master.service.clusterIP | string | `""` |  |
 | master.service.loadBalancerIP | string | `""` |  |
 | master.service.loadBalancerSourceRanges | list | `[]` |  |
 | master.service.annotations | object | `{}` |  |
+| master.service.sessionAffinity | string | `"None"` |  |
+| master.service.sessionAffinityConfig | object | `{}` |  |
 | master.terminationGracePeriodSeconds | int | `30` |  |
 | replica.replicaCount | int | `3` |  |
 | replica.configuration | string | `""` |  |
@@ -248,6 +251,7 @@ helm install redis chart/
 | replica.persistence.annotations | object | `{}` |  |
 | replica.persistence.selector | object | `{}` |  |
 | replica.persistence.dataSource | object | `{}` |  |
+| replica.persistence.existingClaim | string | `""` |  |
 | replica.service.type | string | `"ClusterIP"` |  |
 | replica.service.ports.redis | int | `6379` |  |
 | replica.service.nodePorts.redis | string | `""` |  |
@@ -258,6 +262,8 @@ helm install redis chart/
 | replica.service.loadBalancerIP | string | `""` |  |
 | replica.service.loadBalancerSourceRanges | list | `[]` |  |
 | replica.service.annotations | object | `{}` |  |
+| replica.service.sessionAffinity | string | `"None"` |  |
+| replica.service.sessionAffinityConfig | object | `{}` |  |
 | replica.terminationGracePeriodSeconds | int | `30` |  |
 | replica.autoscaling.enabled | bool | `false` |  |
 | replica.autoscaling.minReplicas | int | `1` |  |
@@ -267,7 +273,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"6.2.7-debian-10-r0"` |  |
+| sentinel.image.tag | string | `"6.2.7-debian-11-r4"` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
 | sentinel.image.debug | bool | `false` |  |
@@ -317,6 +323,7 @@ helm install redis chart/
 | sentinel.persistence.annotations | object | `{}` |  |
 | sentinel.persistence.selector | object | `{}` |  |
 | sentinel.persistence.dataSource | object | `{}` |  |
+| sentinel.persistence.medium | string | `""` |  |
 | sentinel.resources.requests.memory | string | `"256Mi"` |  |
 | sentinel.resources.requests.cpu | string | `"100m"` |  |
 | sentinel.resources.limits.memory | string | `"256Mi"` |  |
@@ -337,6 +344,8 @@ helm install redis chart/
 | sentinel.service.loadBalancerIP | string | `""` |  |
 | sentinel.service.loadBalancerSourceRanges | list | `[]` |  |
 | sentinel.service.annotations | object | `{}` |  |
+| sentinel.service.sessionAffinity | string | `"None"` |  |
+| sentinel.service.sessionAffinityConfig | object | `{}` |  |
 | sentinel.terminationGracePeriodSeconds | int | `30` |  |
 | networkPolicy.enabled | bool | `false` |  |
 | networkPolicy.allowExternal | bool | `true` |  |
@@ -367,7 +376,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"1.35.0"` |  |
+| metrics.image.tag | string | `"1.37.0"` |  |
 | metrics.image.pullPolicy | string | `"Always"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
 | metrics.command | list | `[]` |  |
@@ -445,7 +454,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| volumePermissions.image.tag | string | `"10-debian-10-r408"` |  |
+| volumePermissions.image.tag | string | `"11-debian-11-r3"` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
 | volumePermissions.resources.requests.memory | string | `"256Mi"` |  |
@@ -456,7 +465,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| sysctl.image.tag | string | `"10-debian-10-r408"` |  |
+| sysctl.image.tag | string | `"11-debian-11-r3"` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
 | sysctl.command | list | `[]` |  |
