@@ -1,6 +1,6 @@
 # redis
 
-![Version: 16.12.3-bb.0](https://img.shields.io/badge/Version-16.12.3--bb.0-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
+![Version: 16.12.3-bb.1](https://img.shields.io/badge/Version-16.12.3--bb.1-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -44,7 +44,7 @@ helm install redis chart/
 | istio.redis.hosts[0] | string | `"*"` |  |
 | monitoring.enabled | bool | `false` |  |
 | cleanUpgrade.enabled | bool | `false` |  |
-| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:1.18.0"` |  |
+| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:2.0.0"` |  |
 | cleanUpgrade.resources.requests.memory | string | `"256Mi"` |  |
 | cleanUpgrade.resources.requests.cpu | string | `"100m"` |  |
 | cleanUpgrade.resources.limits.memory | string | `"256Mi"` |  |
