@@ -1,6 +1,6 @@
 # redis
 
-![Version: 16.12.3-bb.1](https://img.shields.io/badge/Version-16.12.3--bb.1-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
+![Version: 16.12.3-bb.2](https://img.shields.io/badge/Version-16.12.3--bb.2-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -121,6 +121,7 @@ helm install redis chart/
 | master.podSecurityContext.fsGroup | int | `1001` |  |
 | master.containerSecurityContext.enabled | bool | `true` |  |
 | master.containerSecurityContext.runAsUser | int | `1001` |  |
+| master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | master.kind | string | `"StatefulSet"` |  |
 | master.schedulerName | string | `""` |  |
 | master.updateStrategy.type | string | `"RollingUpdate"` |  |
@@ -215,6 +216,7 @@ helm install redis chart/
 | replica.podSecurityContext.fsGroup | int | `1001` |  |
 | replica.containerSecurityContext.enabled | bool | `true` |  |
 | replica.containerSecurityContext.runAsUser | int | `1001` |  |
+| replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | replica.schedulerName | string | `""` |  |
 | replica.updateStrategy.type | string | `"RollingUpdate"` |  |
 | replica.updateStrategy.rollingUpdate | object | `{}` |  |
@@ -330,6 +332,7 @@ helm install redis chart/
 | sentinel.resources.limits.cpu | string | `"100m"` |  |
 | sentinel.containerSecurityContext.enabled | bool | `true` |  |
 | sentinel.containerSecurityContext.runAsUser | int | `1001` |  |
+| sentinel.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | sentinel.lifecycleHooks | object | `{}` |  |
 | sentinel.extraVolumes | list | `[]` |  |
 | sentinel.extraVolumeMounts | list | `[]` |  |
@@ -385,6 +388,7 @@ helm install redis chart/
 | metrics.extraEnvVars | list | `[]` |  |
 | metrics.containerSecurityContext.enabled | bool | `true` |  |
 | metrics.containerSecurityContext.runAsUser | int | `1001` |  |
+| metrics.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | metrics.extraVolumes | list | `[]` |  |
 | metrics.extraVolumeMounts | list | `[]` |  |
 | metrics.resources.requests.memory | string | `"256Mi"` |  |
@@ -410,6 +414,7 @@ helm install redis chart/
 | metrics.sentinel.extraArgs | object | `{}` |  |
 | metrics.sentinel.containerSecurityContext.enabled | bool | `true` |  |
 | metrics.sentinel.containerSecurityContext.runAsUser | int | `1001` |  |
+| metrics.sentinel.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | metrics.sentinel.resources.requests.memory | string | `"256Mi"` |  |
 | metrics.sentinel.resources.requests.cpu | string | `"100m"` |  |
 | metrics.sentinel.resources.limits.memory | string | `"256Mi"` |  |
@@ -462,6 +467,7 @@ helm install redis chart/
 | volumePermissions.resources.limits.memory | string | `"256Mi"` |  |
 | volumePermissions.resources.limits.cpu | string | `"100m"` |  |
 | volumePermissions.containerSecurityContext.runAsUser | int | `0` |  |
+| volumePermissions.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/bitnami-shell"` |  |
