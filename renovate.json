@@ -5,6 +5,7 @@
   "dependencyDashboardTitle": "Renovate: Upgrade Redis Package Dependencies",
   "draftPR": "true",
   "labels": ["redis","Package Sustainment","kind::maintenance"],
+  "commitMessagePrefix": "SKIP UPDATE CHECK",
   "ignoreDeps": ["docker.io/bitnami/redis-sentinel"],
   "packageRules": [
     {
