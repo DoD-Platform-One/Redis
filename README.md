@@ -1,6 +1,6 @@
 # redis
 
-![Version: 16.12.3-bb.2](https://img.shields.io/badge/Version-16.12.3--bb.2-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
+![Version: 16.12.3-bb.3](https://img.shields.io/badge/Version-16.12.3--bb.3-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -425,6 +425,8 @@ helm install redis chart/
 | metrics.sentinel.service.loadBalancerIP | string | `""` |  |
 | metrics.sentinel.service.loadBalancerSourceRanges | list | `[]` |  |
 | metrics.sentinel.service.annotations | object | `{}` |  |
+| metrics.serviceMonitor.scheme | string | `""` |  |
+| metrics.serviceMonitor.tlsConfig | object | `{}` |  |
 | metrics.serviceMonitor.enabled | bool | `false` |  |
 | metrics.serviceMonitor.namespace | string | `"monitoring"` |  |
 | metrics.serviceMonitor.selector.prometheus | string | `"kube-prometheus"` |  |
