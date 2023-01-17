@@ -25,3 +25,11 @@ name: redis
 sources:
   - https://github.com/bitnami/bitnami-docker-redis
 version: 16.12.3-bb.3
+annotations:
+  bigbang.dev/applicationVersions: |
+    - Redis: 7.0.0
+  # velero-plugin-for-{csi|aws|azure} images below are optional and are used 
+  # dependent on your configuration of the `initContainers` value
+  helm.sh/images: |
+    - name: redis
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.0.0-debian-10-r3
