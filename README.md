@@ -1,6 +1,6 @@
 # redis
 
-![Version: 16.12.3-bb.3](https://img.shields.io/badge/Version-16.12.3--bb.3-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
+![Version: 16.12.3-bb.4](https://img.shields.io/badge/Version-16.12.3--bb.4-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -379,7 +379,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"1.37.0"` |  |
+| metrics.image.tag | string | `"v1.45.0"` |  |
 | metrics.image.pullPolicy | string | `"Always"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
 | metrics.command | list | `[]` |  |
@@ -425,8 +425,6 @@ helm install redis chart/
 | metrics.sentinel.service.loadBalancerIP | string | `""` |  |
 | metrics.sentinel.service.loadBalancerSourceRanges | list | `[]` |  |
 | metrics.sentinel.service.annotations | object | `{}` |  |
-| metrics.serviceMonitor.scheme | string | `""` |  |
-| metrics.serviceMonitor.tlsConfig | object | `{}` |  |
 | metrics.serviceMonitor.enabled | bool | `false` |  |
 | metrics.serviceMonitor.namespace | string | `"monitoring"` |  |
 | metrics.serviceMonitor.selector.prometheus | string | `"kube-prometheus"` |  |
@@ -437,6 +435,8 @@ helm install redis chart/
 | metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
 | metrics.serviceMonitor.honorLabels | bool | `false` |  |
 | metrics.serviceMonitor.additionalLabels | object | `{}` |  |
+| metrics.serviceMonitor.scheme | string | `""` |  |
+| metrics.serviceMonitor.tlsConfig | object | `{}` |  |
 | metrics.prometheusRule.enabled | bool | `false` |  |
 | metrics.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheusRule.additionalLabels | object | `{}` |  |

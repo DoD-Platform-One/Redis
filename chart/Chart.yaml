@@ -1,5 +1,3 @@
-annotations:
-  category: Database
 apiVersion: v2
 appVersion: 7.0.0
 dependencies:
@@ -24,12 +22,13 @@ maintainers:
 name: redis
 sources:
   - https://github.com/bitnami/bitnami-docker-redis
-version: 16.12.3-bb.3
+version: 16.12.3-bb.4
 annotations:
+  category: Database
   bigbang.dev/applicationVersions: |
     - Redis: 7.0.0
   helm.sh/images: |
     - name: redis
       image: registry1.dso.mil/ironbank/bitnami/redis:7.0.0-debian-10-r3
     - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:1.37.0
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.45.0
