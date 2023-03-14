@@ -1,13 +1,13 @@
 # redis
 
-![Version: 16.12.3-bb.4](https://img.shields.io/badge/Version-16.12.3--bb.4-informational?style=flat-square) ![AppVersion: 7.0.0](https://img.shields.io/badge/AppVersion-7.0.0-informational?style=flat-square)
+![Version: 17.7.2-bb.0](https://img.shields.io/badge/Version-17.7.2--bb.0-informational?style=flat-square) ![AppVersion: 7.0.8](https://img.shields.io/badge/AppVersion-7.0.8-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
-* <https://github.com/bitnami/charts/tree/master/bitnami/redis>
+* <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
-* <https://github.com/bitnami/bitnami-docker-redis>
+* <https://github.com/bitnami/containers/tree/main/bitnami/redis>
 
 ## Learn More
 * [Application Overview](docs/overview.md)
@@ -63,13 +63,14 @@ helm install redis chart/
 | secretAnnotations | object | `{}` |  |
 | clusterDomain | string | `"cluster.local"` |  |
 | extraDeploy | list | `[]` |  |
+| useHostnames | bool | `true` |  |
 | diagnosticMode.enabled | bool | `false` |  |
 | diagnosticMode.command[0] | string | `"sleep"` |  |
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.0.0-debian-10-r3"` |  |
-| image.pullPolicy | string | `"Always"` |  |
+| image.tag | string | `"7.0.8"` |  |
+| image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.debug | bool | `false` |  |
 | architecture | string | `"replication"` |  |
 | auth.enabled | bool | `true` |  |
@@ -125,7 +126,7 @@ helm install redis chart/
 | master.kind | string | `"StatefulSet"` |  |
 | master.schedulerName | string | `""` |  |
 | master.updateStrategy.type | string | `"RollingUpdate"` |  |
-| master.updateStrategy.rollingUpdate | object | `{}` |  |
+| master.minReadySeconds | int | `0` |  |
 | master.priorityClassName | string | `""` |  |
 | master.hostAliases | list | `[]` |  |
 | master.podLabels | object | `{}` |  |
@@ -152,6 +153,7 @@ helm install redis chart/
 | master.persistence.sizeLimit | string | `""` |  |
 | master.persistence.path | string | `"/data"` |  |
 | master.persistence.subPath | string | `""` |  |
+| master.persistence.subPathExpr | string | `""` |  |
 | master.persistence.storageClass | string | `""` |  |
 | master.persistence.accessModes[0] | string | `"ReadWriteOnce"` |  |
 | master.persistence.size | string | `"8Gi"` |  |
@@ -168,10 +170,15 @@ helm install redis chart/
 | master.service.clusterIP | string | `""` |  |
 | master.service.loadBalancerIP | string | `""` |  |
 | master.service.loadBalancerSourceRanges | list | `[]` |  |
+| master.service.externalIPs | list | `[]` |  |
 | master.service.annotations | object | `{}` |  |
 | master.service.sessionAffinity | string | `"None"` |  |
 | master.service.sessionAffinityConfig | object | `{}` |  |
 | master.terminationGracePeriodSeconds | int | `30` |  |
+| master.serviceAccount.create | bool | `false` |  |
+| master.serviceAccount.name | string | `""` |  |
+| master.serviceAccount.automountServiceAccountToken | bool | `true` |  |
+| master.serviceAccount.annotations | object | `{}` |  |
 | replica.replicaCount | int | `3` |  |
 | replica.configuration | string | `""` |  |
 | replica.disableCommands[0] | string | `"FLUSHDB"` |  |
@@ -219,7 +226,7 @@ helm install redis chart/
 | replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | replica.schedulerName | string | `""` |  |
 | replica.updateStrategy.type | string | `"RollingUpdate"` |  |
-| replica.updateStrategy.rollingUpdate | object | `{}` |  |
+| replica.minReadySeconds | int | `0` |  |
 | replica.priorityClassName | string | `""` |  |
 | replica.podManagementPolicy | string | `""` |  |
 | replica.hostAliases | list | `[]` |  |
@@ -247,6 +254,7 @@ helm install redis chart/
 | replica.persistence.sizeLimit | string | `""` |  |
 | replica.persistence.path | string | `"/data"` |  |
 | replica.persistence.subPath | string | `""` |  |
+| replica.persistence.subPathExpr | string | `""` |  |
 | replica.persistence.storageClass | string | `""` |  |
 | replica.persistence.accessModes[0] | string | `"ReadWriteOnce"` |  |
 | replica.persistence.size | string | `"8Gi"` |  |
@@ -272,10 +280,15 @@ helm install redis chart/
 | replica.autoscaling.maxReplicas | int | `11` |  |
 | replica.autoscaling.targetCPU | string | `""` |  |
 | replica.autoscaling.targetMemory | string | `""` |  |
+| replica.serviceAccount.create | bool | `false` |  |
+| replica.serviceAccount.name | string | `""` |  |
+| replica.serviceAccount.automountServiceAccountToken | bool | `true` |  |
+| replica.serviceAccount.annotations | object | `{}` |  |
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"6.2.7-debian-11-r4"` |  |
+| sentinel.image.tag | string | `"7.0.7-debian-11-r10"` |  |
+| sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
 | sentinel.image.debug | bool | `false` |  |
@@ -283,8 +296,9 @@ helm install redis chart/
 | sentinel.quorum | int | `2` |  |
 | sentinel.getMasterTimeout | int | `220` |  |
 | sentinel.automateClusterRecovery | bool | `false` |  |
+| sentinel.redisShutdownWaitFailover | bool | `true` |  |
 | sentinel.downAfterMilliseconds | int | `60000` |  |
-| sentinel.failoverTimeout | int | `18000` |  |
+| sentinel.failoverTimeout | int | `180000` |  |
 | sentinel.parallelSyncs | int | `1` |  |
 | sentinel.configuration | string | `""` |  |
 | sentinel.command | list | `[]` |  |
@@ -326,6 +340,7 @@ helm install redis chart/
 | sentinel.persistence.selector | object | `{}` |  |
 | sentinel.persistence.dataSource | object | `{}` |  |
 | sentinel.persistence.medium | string | `""` |  |
+| sentinel.persistence.sizeLimit | string | `""` |  |
 | sentinel.resources.requests.memory | string | `"256Mi"` |  |
 | sentinel.resources.requests.cpu | string | `"100m"` |  |
 | sentinel.resources.limits.memory | string | `"256Mi"` |  |
@@ -379,9 +394,31 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.45.0"` |  |
-| metrics.image.pullPolicy | string | `"Always"` |  |
+| metrics.image.tag | string | `"v1.46.0"` |  |
+| metrics.image.digest | string | `""` |  |
+| metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
+| metrics.startupProbe.enabled | bool | `false` |  |
+| metrics.startupProbe.initialDelaySeconds | int | `10` |  |
+| metrics.startupProbe.periodSeconds | int | `10` |  |
+| metrics.startupProbe.timeoutSeconds | int | `5` |  |
+| metrics.startupProbe.successThreshold | int | `1` |  |
+| metrics.startupProbe.failureThreshold | int | `5` |  |
+| metrics.livenessProbe.enabled | bool | `true` |  |
+| metrics.livenessProbe.initialDelaySeconds | int | `10` |  |
+| metrics.livenessProbe.periodSeconds | int | `10` |  |
+| metrics.livenessProbe.timeoutSeconds | int | `5` |  |
+| metrics.livenessProbe.successThreshold | int | `1` |  |
+| metrics.livenessProbe.failureThreshold | int | `5` |  |
+| metrics.readinessProbe.enabled | bool | `true` |  |
+| metrics.readinessProbe.initialDelaySeconds | int | `5` |  |
+| metrics.readinessProbe.periodSeconds | int | `10` |  |
+| metrics.readinessProbe.timeoutSeconds | int | `1` |  |
+| metrics.readinessProbe.successThreshold | int | `1` |  |
+| metrics.readinessProbe.failureThreshold | int | `3` |  |
+| metrics.customStartupProbe | object | `{}` |  |
+| metrics.customLivenessProbe | object | `{}` |  |
+| metrics.customReadinessProbe | object | `{}` |  |
 | metrics.command | list | `[]` |  |
 | metrics.redisTargetHost | string | `"localhost"` |  |
 | metrics.extraArgs | object | `{}` |  |
@@ -405,29 +442,7 @@ helm install redis chart/
 | metrics.service.loadBalancerIP | string | `""` |  |
 | metrics.service.loadBalancerSourceRanges | list | `[]` |  |
 | metrics.service.annotations | object | `{}` |  |
-| metrics.sentinel.enabled | bool | `false` |  |
-| metrics.sentinel.image.registry | string | `"docker.io"` |  |
-| metrics.sentinel.image.repository | string | `"bitnami/redis-sentinel-exporter"` |  |
-| metrics.sentinel.image.tag | string | `"1.7.1-debian-10-r122"` |  |
-| metrics.sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
-| metrics.sentinel.image.pullSecrets | list | `[]` |  |
-| metrics.sentinel.extraArgs | object | `{}` |  |
-| metrics.sentinel.containerSecurityContext.enabled | bool | `true` |  |
-| metrics.sentinel.containerSecurityContext.runAsUser | int | `1001` |  |
-| metrics.sentinel.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
-| metrics.sentinel.resources.requests.memory | string | `"256Mi"` |  |
-| metrics.sentinel.resources.requests.cpu | string | `"100m"` |  |
-| metrics.sentinel.resources.limits.memory | string | `"256Mi"` |  |
-| metrics.sentinel.resources.limits.cpu | string | `"100m"` |  |
-| metrics.sentinel.service.type | string | `"ClusterIP"` |  |
-| metrics.sentinel.service.port | int | `9355` |  |
-| metrics.sentinel.service.externalTrafficPolicy | string | `"Cluster"` |  |
-| metrics.sentinel.service.loadBalancerIP | string | `""` |  |
-| metrics.sentinel.service.loadBalancerSourceRanges | list | `[]` |  |
-| metrics.sentinel.service.annotations | object | `{}` |  |
 | metrics.serviceMonitor.enabled | bool | `false` |  |
-| metrics.serviceMonitor.namespace | string | `"monitoring"` |  |
-| metrics.serviceMonitor.selector.prometheus | string | `"kube-prometheus"` |  |
 | metrics.serviceMonitor.namespace | string | `""` |  |
 | metrics.serviceMonitor.interval | string | `"30s"` |  |
 | metrics.serviceMonitor.scrapeTimeout | string | `""` |  |
@@ -437,31 +452,16 @@ helm install redis chart/
 | metrics.serviceMonitor.additionalLabels | object | `{}` |  |
 | metrics.serviceMonitor.scheme | string | `""` |  |
 | metrics.serviceMonitor.tlsConfig | object | `{}` |  |
+| metrics.serviceMonitor.podTargetLabels | list | `[]` |  |
 | metrics.prometheusRule.enabled | bool | `false` |  |
 | metrics.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheusRule.additionalLabels | object | `{}` |  |
-| metrics.prometheusRule.rules[0].alert | string | `"RedisDown"` |  |
-| metrics.prometheusRule.rules[0].expr | string | `"redis_up{service=\"{{ template \"common.names.fullname\" . }}-metrics\"} == 0"` |  |
-| metrics.prometheusRule.rules[0].for | string | `"2m"` |  |
-| metrics.prometheusRule.rules[0].labels.severity | string | `"error"` |  |
-| metrics.prometheusRule.rules[0].annotations.summary | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} down"` |  |
-| metrics.prometheusRule.rules[0].annotations.description | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} is down"` |  |
-| metrics.prometheusRule.rules[1].alert | string | `"RedisMemoryHigh"` |  |
-| metrics.prometheusRule.rules[1].expr | string | `"redis_memory_used_bytes{service=\"{{ template \"common.names.fullname\" . }}-metrics\"} * 100 / redis_memory_max_bytes{service=\"{{ template \"common.names.fullname\" . }}-metrics\"} > 90\n"` |  |
-| metrics.prometheusRule.rules[1].for | string | `"2m"` |  |
-| metrics.prometheusRule.rules[1].labels.severity | string | `"error"` |  |
-| metrics.prometheusRule.rules[1].annotations.summary | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} is using too much memory"` |  |
-| metrics.prometheusRule.rules[1].annotations.description | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} is using {{ \"{{ $value }}\" }}% of its available memory.\n"` |  |
-| metrics.prometheusRule.rules[2].alert | string | `"RedisKeyEviction"` |  |
-| metrics.prometheusRule.rules[2].expr | string | `"increase(redis_evicted_keys_total{service=\"{{ template \"common.names.fullname\" . }}-metrics\"}[5m]) > 0\n"` |  |
-| metrics.prometheusRule.rules[2].for | string | `"1s"` |  |
-| metrics.prometheusRule.rules[2].labels.severity | string | `"error"` |  |
-| metrics.prometheusRule.rules[2].annotations.summary | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} has evicted keys"` |  |
-| metrics.prometheusRule.rules[2].annotations.description | string | `"Redis(TM) instance {{ \"{{ $labels.instance }}\" }} has evicted {{ \"{{ $value }}\" }} keys in the last 5 minutes.\n"` |  |
+| metrics.prometheusRule.rules | list | `[]` |  |
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| volumePermissions.image.tag | string | `"11-debian-11-r3"` |  |
+| volumePermissions.image.tag | string | `"11-debian-11-r72"` |  |
+| volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
 | volumePermissions.resources.requests.memory | string | `"256Mi"` |  |
@@ -473,7 +473,8 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| sysctl.image.tag | string | `"11-debian-11-r3"` |  |
+| sysctl.image.tag | string | `"11-debian-11-r72"` |  |
+| sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
 | sysctl.command | list | `[]` |  |
