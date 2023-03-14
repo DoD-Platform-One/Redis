@@ -39,6 +39,9 @@ spec:
       tlsConfig:
         {{- toYaml .Values.metrics.serviceMonitor.tlsConfig | nindent 8 }}
       {{- end }}
+  {{- if .Values.metrics.serviceMonitor.podTargetLabels }}
+  podTargetLabels: {{- toYaml .Values.metrics.serviceMonitor.podTargetLabels | nindent 4 }}
+  {{- end }}
   namespaceSelector:
     matchNames:
       - {{ .Release.Namespace }}
