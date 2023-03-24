@@ -11,8 +11,8 @@ Disclaimer: Redis is a registered trademark of Redis Ltd. Any rights therein are
 ## TL;DR
 
 ```console
-$ helm repo add my-repo https://charts.bitnami.com/bitnami
-$ helm install my-release my-repo/redis
+helm repo add my-repo https://charts.bitnami.com/bitnami
+helm install my-release my-repo/redis
 ```
 
 ## Introduction
@@ -47,8 +47,8 @@ The main features of each chart are the following:
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm repo add my-repo https://charts.bitnami.com/bitnami
-$ helm install my-release my-repo/redis
+helm repo add my-repo https://charts.bitnami.com/bitnami
+helm install my-release my-repo/redis
 ```
 
 The command deploys Redis&reg; on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.

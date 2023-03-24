@@ -1,5 +1,15 @@
+annotations:
+  category: Database
+  licenses: Apache-2.0
+  bigbang.dev/applicationVersions: |
+    - Redis: 7.0.10
+  helm.sh/images: |
+    - name: redis
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.0.10
+    - name: exporter
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.48.0
 apiVersion: v2
-appVersion: 7.0.8
+appVersion: 7.0.10
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
@@ -19,14 +29,4 @@ maintainers:
 name: redis
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/redis
-version: 17.7.2-bb.0
-annotations:
-  category: Database
-  licenses: Apache-2.0
-  bigbang.dev/applicationVersions: |
-    - Redis: 7.0.0
-  helm.sh/images: |
-    - name: redis
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.0.8
-    - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.46.0
+version: 17.9.1-bb.0
