@@ -7,7 +7,7 @@ annotations:
     - name: redis
       image: registry1.dso.mil/ironbank/bitnami/redis:7.0.10
     - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.48.0
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.50.0
 apiVersion: v2
 appVersion: 7.0.10
 dependencies:
@@ -29,4 +29,4 @@ maintainers:
 name: redis
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/redis
-version: 17.9.1-bb.0
+version: 17.9.3-bb.0
