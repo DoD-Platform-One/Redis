@@ -86,9 +86,15 @@ clusterDomain: cluster.local
 ## @param extraDeploy Array of extra objects to deploy with the release
 ##
 extraDeploy: []
-## @param useHostnames Use hostnames internally when announcing replication
-###
+## @param useHostnames Use hostnames internally when announcing replication. If false, the hostname will be resolved to an IP address
+##
 useHostnames: true
+## @param nameResolutionThreshold Failure threshold for internal hostnames resolution
+##
+nameResolutionThreshold: 5
+## @param nameResolutionTimeout Timeout seconds between probes for internal hostnames resolution
+##
+nameResolutionTimeout: 5
 
 ## Enable diagnostic mode in the deployment
 ##
@@ -124,7 +130,7 @@ image:
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: 7.0.10
+  tag: 7.0.11
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -495,6 +501,9 @@ master:
     ## @param master.persistence.annotations Additional custom annotations for the PVC
     ##
     annotations: {}
+    ## @param master.persistence.labels Additional custom labels for the PVC
+    ##
+    labels: {}
     ## @param master.persistence.selector Additional labels to match for the PVC
     ## e.g:
     ## selector:
@@ -830,6 +839,7 @@ replica:
   ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
   ## E.g.
   ## dnsPolicy: ClusterFirst
+  ##
   dnsPolicy: ""
   ## @param replica.dnsConfig DNS Configuration for Redis&reg; replica pods
   ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
@@ -839,6 +849,7 @@ replica:
   ##   - name: ndots
   ##     value: "4"
   ##   - name: single-request-reopen
+  ##
   dnsConfig: {}
   ## @param replica.lifecycleHooks for the Redis&reg; replica container(s) to automate configuration before or after startup
   ##
@@ -990,7 +1001,7 @@ replica:
   autoscaling:
     ## @param replica.autoscaling.enabled Enable replica autoscaling settings
     ##
-    enabled: false
+    enabled: true
     ## @param replica.autoscaling.minReplicas Minimum replicas for the pod autoscaling
     ##
     minReplicas: 1
@@ -1042,7 +1053,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 7.0.10-debian-11-r2
+    tag: 7.0.10-debian-11-r8
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -1754,7 +1765,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/bitnami-shell
-    tag: 11-debian-11-r102
+    tag: 11-debian-11-r107
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1809,7 +1820,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/bitnami-shell
-    tag: 11-debian-11-r102
+    tag: 11-debian-11-r107
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.

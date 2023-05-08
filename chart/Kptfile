@@ -5,7 +5,7 @@ metadata:
 upstream:
   type: git
   git:
-    commit: 5b8193e8ac7784063c17998207c74e25e898a43d
+    commit: e970673297032d2c420d0f6eb3ef657511c4091c
     repo: https://github.com/bitnami/charts
     directory: bitnami/redis
     ref: main
