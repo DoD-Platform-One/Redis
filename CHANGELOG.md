@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [17.10.2-bb.1]
+### Changed
+- Updated imagePullSecrets to de-duplicate
+
 ## [17.10.2-bb.0]
 ### Changed
 - Updated to Redis 7.0.11 and 17.10.2 upstream chart

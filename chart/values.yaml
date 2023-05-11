@@ -143,8 +143,7 @@ image:
   ## pullSecrets:
   ##   - myRegistryKeySecretName
   ##
-  pullSecrets:
-    - private-registry
+  pullSecrets: []
   ## Enable debug mode
   ##
   debug: false

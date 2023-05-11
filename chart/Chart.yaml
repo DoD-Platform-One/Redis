@@ -29,4 +29,4 @@ maintainers:
 name: redis
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/redis
-version: 17.10.2-bb.0
+version: 17.10.2-bb.1

@@ -1,6 +1,6 @@
 # redis
 
-![Version: 17.10.2-bb.0](https://img.shields.io/badge/Version-17.10.2--bb.0-informational?style=flat-square) ![AppVersion: 7.0.11](https://img.shields.io/badge/AppVersion-7.0.11-informational?style=flat-square)
+![Version: 17.10.2-bb.1](https://img.shields.io/badge/Version-17.10.2--bb.1-informational?style=flat-square) ![AppVersion: 7.0.11](https://img.shields.io/badge/AppVersion-7.0.11-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -73,7 +73,7 @@ helm install redis chart/
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
 | image.tag | string | `"7.0.11"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.pullSecrets[0] | string | `"private-registry"` |  |
+| image.pullSecrets | list | `[]` |  |
 | image.debug | bool | `false` |  |
 | architecture | string | `"replication"` |  |
 | auth.enabled | bool | `true` |  |
