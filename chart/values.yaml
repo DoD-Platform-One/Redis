@@ -130,7 +130,7 @@ image:
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##
-  tag: 7.0.11
+  tag: 7.0.12
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -1052,7 +1052,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 7.0.10-debian-11-r8
+    tag: 7.0.12-debian-11-r1
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -1164,10 +1164,10 @@ sentinel:
   livenessProbe:
     enabled: true
     initialDelaySeconds: 20
-    periodSeconds: 5
+    periodSeconds: 10
     timeoutSeconds: 5
     successThreshold: 1
-    failureThreshold: 5
+    failureThreshold: 6
   ## @param sentinel.readinessProbe.enabled Enable readinessProbe on Redis&reg; Sentinel nodes
   ## @param sentinel.readinessProbe.initialDelaySeconds Initial delay seconds for readinessProbe
   ## @param sentinel.readinessProbe.periodSeconds Period seconds for readinessProbe
@@ -1181,7 +1181,7 @@ sentinel:
     periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
-    failureThreshold: 5
+    failureThreshold: 6
   ## @param sentinel.customStartupProbe Custom startupProbe that overrides the default one
   ##
   customStartupProbe: {}
@@ -1501,7 +1501,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.50.0
+    tag: v1.51.0
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1655,6 +1655,9 @@ metrics:
     ## @param metrics.service.annotations Additional custom annotations for Redis&reg; exporter service
     ##
     annotations: {}
+    ## @param metrics.service.clusterIP Redis&reg; exporter service Cluster IP
+    ##
+    clusterIP: ""
   ## Prometheus Service Monitor
   ## ref: https://github.com/coreos/prometheus-operator
   ##      https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#endpoint
@@ -1691,6 +1694,13 @@ metrics:
     ## @param metrics.serviceMonitor.podTargetLabels Labels from the Kubernetes pod to be transferred to the created metrics
     ##
     podTargetLabels: []
+    ## @param metrics.serviceMonitor.sampleLimit Limit of how many samples should be scraped from every Pod
+    ##
+    sampleLimit: false
+    ## @param metrics.serviceMonitor.targetLimit Limit of how many targets should be scraped
+    ##
+    targetLimit: false
+
   ## Custom PrometheusRule to be defined
   ## ref: https://github.com/coreos/prometheus-operator#customresourcedefinitions
   ##
@@ -1752,19 +1762,19 @@ volumePermissions:
   ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
   ##
   enabled: false
-  ## Bitnami Shell image
-  ## ref: https://hub.docker.com/r/bitnami/bitnami-shell/tags/
-  ## @param volumePermissions.image.registry Bitnami Shell image registry
-  ## @param volumePermissions.image.repository Bitnami Shell image repository
-  ## @param volumePermissions.image.tag Bitnami Shell image tag (immutable tags are recommended)
-  ## @param volumePermissions.image.digest Bitnami Shell image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
-  ## @param volumePermissions.image.pullPolicy Bitnami Shell image pull policy
-  ## @param volumePermissions.image.pullSecrets Bitnami Shell image pull secrets
+  ## OS Shell + Utility image
+  ## ref: https://hub.docker.com/r/bitnami/os-shell/tags/
+  ## @param volumePermissions.image.registry OS Shell + Utility image registry
+  ## @param volumePermissions.image.repository OS Shell + Utility image repository
+  ## @param volumePermissions.image.tag OS Shell + Utility image tag (immutable tags are recommended)
+  ## @param volumePermissions.image.digest OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
+  ## @param volumePermissions.image.pullPolicy OS Shell + Utility image pull policy
+  ## @param volumePermissions.image.pullSecrets OS Shell + Utility image pull secrets
   ##
   image:
     registry: docker.io
-    repository: bitnami/bitnami-shell
-    tag: 11-debian-11-r107
+    repository: bitnami/os-shell
+    tag: 11-debian-11-r3
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1807,19 +1817,19 @@ sysctl:
   ## @param sysctl.enabled Enable init container to modify Kernel settings
   ##
   enabled: false
-  ## Bitnami Shell image
-  ## ref: https://hub.docker.com/r/bitnami/bitnami-shell/tags/
-  ## @param sysctl.image.registry Bitnami Shell image registry
-  ## @param sysctl.image.repository Bitnami Shell image repository
-  ## @param sysctl.image.tag Bitnami Shell image tag (immutable tags are recommended)
-  ## @param sysctl.image.digest Bitnami Shell image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
-  ## @param sysctl.image.pullPolicy Bitnami Shell image pull policy
-  ## @param sysctl.image.pullSecrets Bitnami Shell image pull secrets
+  ## OS Shell + Utility image
+  ## ref: https://hub.docker.com/r/bitnami/os-shell/tags/
+  ## @param sysctl.image.registry OS Shell + Utility image registry
+  ## @param sysctl.image.repository OS Shell + Utility image repository
+  ## @param sysctl.image.tag OS Shell + Utility image tag (immutable tags are recommended)
+  ## @param sysctl.image.digest OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag
+  ## @param sysctl.image.pullPolicy OS Shell + Utility image pull policy
+  ## @param sysctl.image.pullSecrets OS Shell + Utility image pull secrets
   ##
   image:
     registry: docker.io
-    repository: bitnami/bitnami-shell
-    tag: 11-debian-11-r107
+    repository: bitnami/os-shell
+    tag: 11-debian-11-r3
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
