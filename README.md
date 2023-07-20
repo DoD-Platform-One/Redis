@@ -1,35 +1,26 @@
 # redis
 
-![Version: 17.10.2-bb.1](https://img.shields.io/badge/Version-17.10.2--bb.1-informational?style=flat-square) ![AppVersion: 7.0.11](https://img.shields.io/badge/AppVersion-7.0.11-informational?style=flat-square)
+![Version: 17.13.2-bb.0](https://img.shields.io/badge/Version-17.13.2--bb.0-informational?style=flat-square) ![AppVersion: 7.0.12](https://img.shields.io/badge/AppVersion-7.0.12-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
-## Upstream References
+**Homepage:** <https://bitnami.com>
+
+## Maintainers
+
+| Name | Email | Url |
+| ---- | ------ | --- |
+| VMware, Inc. |  | <https://github.com/bitnami/charts> |
+
+## Source Code
+
 * <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
-* <https://github.com/bitnami/containers/tree/main/bitnami/redis>
+## Requirements
 
-## Learn More
-* [Application Overview](docs/overview.md)
-* [Other Documentation](docs/)
-
-## Pre-Requisites
-
-* Kubernetes Cluster deployed
-* Kubernetes config installed in `~/.kube/config`
-* Helm installed
-
-Install Helm
-
-https://helm.sh/docs/intro/install/
-
-## Deployment
-
-* Clone down the repository
-* cd into directory
-```bash
-helm install redis chart/
-```
+| Repository | Name | Version |
+|------------|------|---------|
+| oci://registry-1.docker.io/bitnamicharts | common | 2.x.x |
 
 ## Values
 
@@ -71,7 +62,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.0.11"` |  |
+| image.tag | string | `"7.0.12"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
 | image.debug | bool | `false` |  |
@@ -292,7 +283,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.0.10-debian-11-r8"` |  |
+| sentinel.image.tag | string | `"7.0.12-debian-11-r1"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -325,16 +316,16 @@ helm install redis chart/
 | sentinel.startupProbe.failureThreshold | int | `22` |  |
 | sentinel.livenessProbe.enabled | bool | `true` |  |
 | sentinel.livenessProbe.initialDelaySeconds | int | `20` |  |
-| sentinel.livenessProbe.periodSeconds | int | `5` |  |
+| sentinel.livenessProbe.periodSeconds | int | `10` |  |
 | sentinel.livenessProbe.timeoutSeconds | int | `5` |  |
 | sentinel.livenessProbe.successThreshold | int | `1` |  |
-| sentinel.livenessProbe.failureThreshold | int | `5` |  |
+| sentinel.livenessProbe.failureThreshold | int | `6` |  |
 | sentinel.readinessProbe.enabled | bool | `true` |  |
 | sentinel.readinessProbe.initialDelaySeconds | int | `20` |  |
 | sentinel.readinessProbe.periodSeconds | int | `5` |  |
 | sentinel.readinessProbe.timeoutSeconds | int | `1` |  |
 | sentinel.readinessProbe.successThreshold | int | `1` |  |
-| sentinel.readinessProbe.failureThreshold | int | `5` |  |
+| sentinel.readinessProbe.failureThreshold | int | `6` |  |
 | sentinel.customStartupProbe | object | `{}` |  |
 | sentinel.customLivenessProbe | object | `{}` |  |
 | sentinel.customReadinessProbe | object | `{}` |  |
@@ -403,7 +394,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.50.0"` |  |
+| metrics.image.tag | string | `"v1.51.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -451,6 +442,7 @@ helm install redis chart/
 | metrics.service.loadBalancerIP | string | `""` |  |
 | metrics.service.loadBalancerSourceRanges | list | `[]` |  |
 | metrics.service.annotations | object | `{}` |  |
+| metrics.service.clusterIP | string | `""` |  |
 | metrics.serviceMonitor.enabled | bool | `false` |  |
 | metrics.serviceMonitor.namespace | string | `""` |  |
 | metrics.serviceMonitor.interval | string | `"30s"` |  |
@@ -462,14 +454,16 @@ helm install redis chart/
 | metrics.serviceMonitor.scheme | string | `""` |  |
 | metrics.serviceMonitor.tlsConfig | object | `{}` |  |
 | metrics.serviceMonitor.podTargetLabels | list | `[]` |  |
+| metrics.serviceMonitor.sampleLimit | bool | `false` |  |
+| metrics.serviceMonitor.targetLimit | bool | `false` |  |
 | metrics.prometheusRule.enabled | bool | `false` |  |
 | metrics.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheusRule.additionalLabels | object | `{}` |  |
 | metrics.prometheusRule.rules | list | `[]` |  |
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
-| volumePermissions.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| volumePermissions.image.tag | string | `"11-debian-11-r107"` |  |
+| volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
+| volumePermissions.image.tag | string | `"11-debian-11-r3"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -481,8 +475,8 @@ helm install redis chart/
 | volumePermissions.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
-| sysctl.image.repository | string | `"bitnami/bitnami-shell"` |  |
-| sysctl.image.tag | string | `"11-debian-11-r107"` |  |
+| sysctl.image.repository | string | `"bitnami/os-shell"` |  |
+| sysctl.image.tag | string | `"11-debian-11-r3"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
@@ -497,6 +491,5 @@ helm install redis chart/
 | useExternalDNS.annotationKey | string | `"external-dns.alpha.kubernetes.io/"` |  |
 | useExternalDNS.additionalAnnotations | object | `{}` |  |
 
-## Contributing
-
-Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
+----------------------------------------------
+Autogenerated from chart metadata using [helm-docs v1.10.0](https://github.com/norwoodj/helm-docs/releases/v1.10.0)
