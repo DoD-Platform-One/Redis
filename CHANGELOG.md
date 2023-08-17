@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [17.15.4-bb.0]
+### Changed
+- Updated to latest chart upstream
+- Updated to 7.2.0 redis version
+- Updated redis-exporter to v1.52.0
+
 ## [17.13.2-bb.0]
 ### Changed
 - Updated to latest chart upstream
