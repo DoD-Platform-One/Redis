@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.0.4-bb.0](https://img.shields.io/badge/Version-18.0.4--bb.0-informational?style=flat-square) ![AppVersion: 7.2.1](https://img.shields.io/badge/AppVersion-7.2.1-informational?style=flat-square)
+![Version: 18.0.4-bb.1](https://img.shields.io/badge/Version-18.0.4--bb.1-informational?style=flat-square) ![AppVersion: 7.2.1](https://img.shields.io/badge/AppVersion-7.2.1-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -130,6 +130,7 @@ helm install redis chart/
 | master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | master.containerSecurityContext.allowPrivilegeEscalation | bool | `false` |  |
 | master.containerSecurityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
+| master.containerSecurityContext.runAsGroup | int | `1001` |  |
 | master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | master.kind | string | `"StatefulSet"` |  |
 | master.schedulerName | string | `""` |  |
@@ -237,6 +238,7 @@ helm install redis chart/
 | replica.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | replica.containerSecurityContext.allowPrivilegeEscalation | bool | `false` |  |
 | replica.containerSecurityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
+| replica.containerSecurityContext.runAsGroup | int | `1001` |  |
 | replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | replica.schedulerName | string | `""` |  |
 | replica.updateStrategy.type | string | `"RollingUpdate"` |  |
