@@ -1,0 +1,16 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ printf "%s-grafana-dashboards" (include "common.names.fullname" .) }} 
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"  
+data:
+  redis-general-dashboard.json: |
+    {{ .Files.Get "dashboards/redis-general-dashboard.json" | nindent 4 }}
+  redis-streaming-dashboard.json: |
+    {{ .Files.Get "dashboards/redis-streaming-dashboard.json" | nindent 4 }}    
+  redis-prometheus-dashboard.json: |
+    {{ .Files.Get "dashboards/redis-prometheus-dashboard.json" | nindent 4 }}    
+{{- end }}

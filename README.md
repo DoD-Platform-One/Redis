@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.1.5-bb.0](https://img.shields.io/badge/Version-18.1.5--bb.0-informational?style=flat-square) ![AppVersion: 7.2.1](https://img.shields.io/badge/AppVersion-7.2.1-informational?style=flat-square)
+![Version: 18.2.0-bb.0](https://img.shields.io/badge/Version-18.2.0--bb.0-informational?style=flat-square) ![AppVersion: 7.2.2](https://img.shields.io/badge/AppVersion-7.2.2-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -71,7 +71,8 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.2.1"` |  |
+| image.tag | string | `"7.2.2"` |  |
+| image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
 | image.debug | bool | `false` |  |
@@ -308,7 +309,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.2.1-debian-11-r26"` |  |
+| sentinel.image.tag | string | `"7.2.2-debian-11-r0"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -496,6 +497,17 @@ helm install redis chart/
 | metrics.serviceMonitor.podTargetLabels | list | `[]` |  |
 | metrics.serviceMonitor.sampleLimit | bool | `false` |  |
 | metrics.serviceMonitor.targetLimit | bool | `false` |  |
+| metrics.podMonitor.enabled | bool | `false` |  |
+| metrics.podMonitor.namespace | string | `""` |  |
+| metrics.podMonitor.interval | string | `"30s"` |  |
+| metrics.podMonitor.scrapeTimeout | string | `""` |  |
+| metrics.podMonitor.relabellings | list | `[]` |  |
+| metrics.podMonitor.metricRelabelings | list | `[]` |  |
+| metrics.podMonitor.honorLabels | bool | `false` |  |
+| metrics.podMonitor.additionalLabels | object | `{}` |  |
+| metrics.podMonitor.podTargetLabels | list | `[]` |  |
+| metrics.podMonitor.sampleLimit | bool | `false` |  |
+| metrics.podMonitor.targetLimit | bool | `false` |  |
 | metrics.prometheusRule.enabled | bool | `false` |  |
 | metrics.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheusRule.additionalLabels | object | `{}` |  |
