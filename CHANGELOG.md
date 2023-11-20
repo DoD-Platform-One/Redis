@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [18.3.2-bb.0] - 2023-11-13
+### Changed
+- Updated to latest chart upstream
+- Updated redis to 7.2.3
+- Updated big-bang/base to 2.1.0
+
 ## [18.2.0-bb.0] - 2023-10-30
 ### Added
 - Added support for PodMonitor

@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.2.0-bb.0](https://img.shields.io/badge/Version-18.2.0--bb.0-informational?style=flat-square) ![AppVersion: 7.2.2](https://img.shields.io/badge/AppVersion-7.2.2-informational?style=flat-square)
+![Version: 18.3.2-bb.0](https://img.shields.io/badge/Version-18.3.2--bb.0-informational?style=flat-square) ![AppVersion: 7.2.3](https://img.shields.io/badge/AppVersion-7.2.3-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -44,7 +44,7 @@ helm install redis chart/
 | istio.redis.hosts[0] | string | `"*"` |  |
 | monitoring.enabled | bool | `false` |  |
 | cleanUpgrade.enabled | bool | `false` |  |
-| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:2.0.0"` |  |
+| cleanUpgrade.image | string | `"registry1.dso.mil/ironbank/big-bang/base:2.1.0"` |  |
 | cleanUpgrade.resources.requests.memory | string | `"256Mi"` |  |
 | cleanUpgrade.resources.requests.cpu | string | `"100m"` |  |
 | cleanUpgrade.resources.limits.memory | string | `"256Mi"` |  |
@@ -71,7 +71,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.2.2"` |  |
+| image.tag | string | `"7.2.3"` |  |
 | image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
@@ -192,6 +192,7 @@ helm install redis chart/
 | master.serviceAccount.name | string | `""` |  |
 | master.serviceAccount.automountServiceAccountToken | bool | `true` |  |
 | master.serviceAccount.annotations | object | `{}` |  |
+| replica.kind | string | `"StatefulSet"` |  |
 | replica.replicaCount | int | `3` |  |
 | replica.configuration | string | `""` |  |
 | replica.disableCommands[0] | string | `"FLUSHDB"` |  |
@@ -309,7 +310,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.2.2-debian-11-r0"` |  |
+| sentinel.image.tag | string | `"7.2.3-debian-11-r1"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -515,7 +516,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
-| volumePermissions.image.tag | string | `"11-debian-11-r90"` |  |
+| volumePermissions.image.tag | string | `"11-debian-11-r91"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -528,7 +529,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
-| sysctl.image.tag | string | `"11-debian-11-r90"` |  |
+| sysctl.image.tag | string | `"11-debian-11-r91"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
