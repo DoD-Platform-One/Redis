@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.3.2-bb.0](https://img.shields.io/badge/Version-18.3.2--bb.0-informational?style=flat-square) ![AppVersion: 7.2.3](https://img.shields.io/badge/AppVersion-7.2.3-informational?style=flat-square)
+![Version: 18.3.2-bb.1](https://img.shields.io/badge/Version-18.3.2--bb.1-informational?style=flat-square) ![AppVersion: 7.2.3](https://img.shields.io/badge/AppVersion-7.2.3-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -37,6 +37,8 @@ helm install redis chart/
 |-----|------|---------|-------------|
 | hostname | string | `"bigbang.dev"` |  |
 | istio.enabled | bool | `false` |  |
+| istio.hardened.enabled | bool | `false` |  |
+| istio.hardened.customAuthorizationPolicies | list | `[]` |  |
 | istio.redis.enabled | bool | `false` |  |
 | istio.redis.labels | object | `{}` |  |
 | istio.redis.annotations | object | `{}` |  |

@@ -3,6 +3,13 @@
 hostname: bigbang.dev
 istio:
   enabled: false
+  hardened:
+    # when this gets enabled by default, packages that use redis as a dependency will need to disable it and provide their own policies
+    enabled: false
+    customAuthorizationPolicies: []
+    # - name: "allow-nothing"
+    #   enabled: true
+    #   spec: {}
   redis:
     # due to the complexity around this configuration, the redis virtual service is disabled by default
     enabled: false

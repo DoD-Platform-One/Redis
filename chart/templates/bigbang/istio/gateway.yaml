@@ -1,12 +1,14 @@
 {{- if and .Values.istio.enabled .Values.istio.redis.enabled -}}
+{{- $uncleanChartName := printf "%s-%s" .Chart.Name .Chart.Version -}}
+{{- $chartName := regexReplaceAll "\\+" $uncleanChartName "_" -}}
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: redis-gateway
   namespace: {{ .Release.Namespace }}
   labels:
-    app.kubernetes.io/name: {{ template "redis.name" . }}
-    helm.sh/chart: {{ template "redis.chart" . }}
+    app.kubernetes.io/name: {{ include "common.names.name" . }}
+    helm.sh/chart: {{ $chartName }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/part-of: redis

@@ -1,22 +1,24 @@
 {{- if and .Values.istio.enabled .Values.istio.redis.enabled -}}
+{{- $uncleanChartName := printf "%s-%s" .Chart.Name .Chart.Version -}}
+{{- $chartName := regexReplaceAll "\\+" $uncleanChartName "_" -}}
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: redis
   namespace: {{ .Release.Namespace }}
   labels:
-    app.kubernetes.io/name: {{ template "redis.name" . }}
-    helm.sh/chart: {{ template "redis.chart" . }}
+    app.kubernetes.io/name: {{ include "common.names.name" . }}
+    helm.sh/chart: {{ $chartName }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/part-of: redis
     app.kubernetes.io/component: networking
-  {{- if .Values.istio.redis.labels }}
-{{ toYaml .Values.istio.redis.labels | indent 4 }}
-  {{- end }}
+    {{- if .Values.istio.redis.labels }}
+    {{ toYaml .Values.istio.redis.labels | indent 4 }}
+    {{- end }}
   {{- if .Values.istio.redis.annotations }}
   annotations:
-{{ toYaml .Values.istio.redis.annotations | indent 4 }}
+  {{ toYaml .Values.istio.redis.annotations | indent 4 }}
   {{- end }}
 spec:
   gateways:
@@ -31,6 +33,6 @@ spec:
     route:
     - destination:
         port:
-          number: {{ .Values.master.service.port }}
-        host: {{ template "redis.fullname" . }}-master
+          number: {{ .Values.master.containerPorts.redis }}
+        host: {{ printf "%s-master" (include "common.names.fullname" .) }}
 {{- end }}
