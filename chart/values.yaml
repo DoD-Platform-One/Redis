@@ -1328,7 +1328,7 @@ sentinel:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
-    runAsGroup: 0
+    runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
     seccompProfile:
@@ -1690,7 +1690,7 @@ metrics:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
-    runAsGroup: 0
+    runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
     seccompProfile:

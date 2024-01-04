@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.3.2-bb.1](https://img.shields.io/badge/Version-18.3.2--bb.1-informational?style=flat-square) ![AppVersion: 7.2.3](https://img.shields.io/badge/AppVersion-7.2.3-informational?style=flat-square)
+![Version: 18.3.2-bb.2](https://img.shields.io/badge/Version-18.3.2--bb.2-informational?style=flat-square) ![AppVersion: 7.2.3](https://img.shields.io/badge/AppVersion-7.2.3-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -378,7 +378,7 @@ helm install redis chart/
 | sentinel.resources.limits.cpu | string | `"100m"` |  |
 | sentinel.containerSecurityContext.enabled | bool | `true` |  |
 | sentinel.containerSecurityContext.runAsUser | int | `1001` |  |
-| sentinel.containerSecurityContext.runAsGroup | int | `0` |  |
+| sentinel.containerSecurityContext.runAsGroup | int | `1001` |  |
 | sentinel.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | sentinel.containerSecurityContext.allowPrivilegeEscalation | bool | `false` |  |
 | sentinel.containerSecurityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
@@ -465,7 +465,7 @@ helm install redis chart/
 | metrics.extraEnvVars | list | `[]` |  |
 | metrics.containerSecurityContext.enabled | bool | `true` |  |
 | metrics.containerSecurityContext.runAsUser | int | `1001` |  |
-| metrics.containerSecurityContext.runAsGroup | int | `0` |  |
+| metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
 | metrics.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | metrics.containerSecurityContext.allowPrivilegeEscalation | bool | `false` |  |
 | metrics.containerSecurityContext.seccompProfile.type | string | `"RuntimeDefault"` |  |
