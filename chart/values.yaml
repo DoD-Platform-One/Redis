@@ -78,6 +78,9 @@ nameOverride: ""
 ## @param fullnameOverride String to fully override common.names.fullname
 ##
 fullnameOverride: ""
+## @param namespaceOverride String to fully override common.names.namespace
+##
+namespaceOverride: ""
 ## @param commonLabels Labels to add to all deployed objects
 ##
 commonLabels: {}
@@ -141,7 +144,7 @@ image:
   digest: ""
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
-  ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+  ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
   ##
   pullPolicy: IfNotPresent
   ## Optionally specify an array of imagePullSecrets.
@@ -309,7 +312,7 @@ master:
   ##
   customReadinessProbe: {}
   ## Redis&reg; master resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param master.resources.limits The resources limits for the Redis&reg; master containers
   ## @param master.resources.requests The requested resources for the Redis&reg; master containers
   ##
@@ -323,14 +326,21 @@ master:
   ## Configure Pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param master.podSecurityContext.enabled Enabled Redis&reg; master pods' Security Context
+  ## @param master.podSecurityContext.fsGroupChangePolicy Set filesystem group change policy
+  ## @param master.podSecurityContext.sysctls Set kernel settings using the sysctl interface
+  ## @param master.podSecurityContext.supplementalGroups Set filesystem extra groups
   ## @param master.podSecurityContext.fsGroup Set Redis&reg; master pod's Security Context fsGroup
   ##
   podSecurityContext:
     enabled: true
+    fsGroupChangePolicy: Always
+    sysctls: []
+    supplementalGroups: []
     fsGroup: 1001
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param master.containerSecurityContext.enabled Enabled Redis&reg; master containers' Security Context
+  ## @param master.containerSecurityContext.seLinuxOptions Set SELinux options in container
   ## @param master.containerSecurityContext.runAsUser Set Redis&reg; master containers' Security Context runAsUser
   ## @param master.containerSecurityContext.runAsGroup Set Redis&reg; master containers' Security Context runAsGroup
   ## @param master.containerSecurityContext.runAsNonRoot Set Redis&reg; master containers' Security Context runAsNonRoot
@@ -340,6 +350,7 @@ master:
   ##
   containerSecurityContext:
     enabled: true
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -349,7 +360,7 @@ master:
     capabilities:
       drop:
         - ALL
-  ## @param master.kind Use either Deployment or StatefulSet (default)
+  ## @param master.kind Use either Deployment, StatefulSet (default) or DaemonSet
   ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
   ##
   kind: StatefulSet
@@ -419,7 +430,7 @@ master:
   ##
   affinity: {}
   ## @param master.nodeSelector Node labels for Redis&reg; master pods assignment
-  ## ref: https://kubernetes.io/docs/user-guide/node-selection/
+  ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
   ##
   nodeSelector: {}
   ## @param master.tolerations Tolerations for Redis&reg; master pods assignment
@@ -482,7 +493,7 @@ master:
   ##
   initContainers: []
   ## Persistence parameters
-  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
   ##
   persistence:
     ## @param master.persistence.enabled Enable persistence on Redis&reg; master nodes using Persistent Volume Claims
@@ -582,6 +593,10 @@ master:
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
     ##
     loadBalancerIP: ""
+    ## @param master.service.loadBalancerClass master service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
+    ##
+    loadBalancerClass: ""
     ## @param master.service.loadBalancerSourceRanges Redis&reg; master service Load Balancer sources
     ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
     ## e.g.
@@ -619,7 +634,7 @@ master:
   serviceAccount:
     ## @param master.serviceAccount.create Specifies whether a ServiceAccount should be created
     ##
-    create: false
+    create: true
     ## @param master.serviceAccount.name The name of the ServiceAccount to use.
     ## If not set and create is true, a name is generated using the common.names.fullname template
     ##
@@ -627,7 +642,7 @@ master:
     ## @param master.serviceAccount.automountServiceAccountToken Whether to auto mount the service account token
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
     ##
-    automountServiceAccountToken: true
+    automountServiceAccountToken: false
     ## @param master.serviceAccount.annotations Additional custom annotations for the ServiceAccount
     ##
     annotations: {}
@@ -752,7 +767,7 @@ replica:
   ##
   customReadinessProbe: {}
   ## Redis&reg; replicas resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param replica.resources.limits The resources limits for the Redis&reg; replicas containers
   ## @param replica.resources.requests The requested resources for the Redis&reg; replicas containers
   ##
@@ -770,14 +785,21 @@ replica:
   ## Configure Pods Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param replica.podSecurityContext.enabled Enabled Redis&reg; replicas pods' Security Context
+  ## @param replica.podSecurityContext.fsGroupChangePolicy Set filesystem group change policy
+  ## @param replica.podSecurityContext.sysctls Set kernel settings using the sysctl interface
+  ## @param replica.podSecurityContext.supplementalGroups Set filesystem extra groups
   ## @param replica.podSecurityContext.fsGroup Set Redis&reg; replicas pod's Security Context fsGroup
   ##
   podSecurityContext:
     enabled: true
+    fsGroupChangePolicy: Always
+    sysctls: []
+    supplementalGroups: []
     fsGroup: 1001
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param replica.containerSecurityContext.enabled Enabled Redis&reg; replicas containers' Security Context
+  ## @param replica.containerSecurityContext.seLinuxOptions Set SELinux options in container
   ## @param replica.containerSecurityContext.runAsUser Set Redis&reg; replicas containers' Security Context runAsUser
   ## @param replica.containerSecurityContext.runAsGroup Set Redis&reg; replicas containers' Security Context runAsGroup
   ## @param replica.containerSecurityContext.runAsNonRoot Set Redis&reg; replicas containers' Security Context runAsNonRoot
@@ -787,6 +809,7 @@ replica:
   ##
   containerSecurityContext:
     enabled: true
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -866,7 +889,7 @@ replica:
   ##
   affinity: {}
   ## @param replica.nodeSelector Node labels for Redis&reg; replicas pods assignment
-  ## ref: https://kubernetes.io/docs/user-guide/node-selection/
+  ## ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
   ##
   nodeSelector: {}
   ## @param replica.tolerations Tolerations for Redis&reg; replicas pods assignment
@@ -929,7 +952,7 @@ replica:
   ##
   initContainers: []
   ## Persistence Parameters
-  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
   ##
   persistence:
     ## @param replica.persistence.enabled Enable persistence on Redis&reg; replicas nodes using Persistent Volume Claims
@@ -1029,6 +1052,10 @@ replica:
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
     ##
     loadBalancerIP: ""
+    ## @param replica.service.loadBalancerClass replicas service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
+    ##
+    loadBalancerClass: ""
     ## @param replica.service.loadBalancerSourceRanges Redis&reg; replicas service Load Balancer sources
     ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
     ## e.g.
@@ -1076,7 +1103,7 @@ replica:
   serviceAccount:
     ## @param replica.serviceAccount.create Specifies whether a ServiceAccount should be created
     ##
-    create: false
+    create: true
     ## @param replica.serviceAccount.name The name of the ServiceAccount to use.
     ## If not set and create is true, a name is generated using the common.names.fullname template
     ##
@@ -1084,7 +1111,7 @@ replica:
     ## @param replica.serviceAccount.automountServiceAccountToken Whether to auto mount the service account token
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
     ##
-    automountServiceAccountToken: true
+    automountServiceAccountToken: false
     ## @param replica.serviceAccount.annotations Additional custom annotations for the ServiceAccount
     ##
     annotations: {}
@@ -1110,11 +1137,11 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 7.2.3-debian-11-r1
+    tag: 7.2.4-debian-11-r3
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
-    ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+    ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
     ##
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1139,7 +1166,7 @@ sentinel:
   quorum: 2
   ## @param sentinel.getMasterTimeout Amount of time to allow before get_sentinel_master_info() times out.
   ##
-  getMasterTimeout: 99
+  getMasterTimeout: 90
   ## @param sentinel.automateClusterRecovery Automate cluster recovery in cases where the last replica is not considered a good replica and Sentinel won't automatically failover to it.
   ## This also prevents any new replica from starting until the last remaining replica is elected as master to guarantee that it is the one to be elected by Sentinel, and not a newly started replica with no data.
   ## NOTE: This feature requires a "downAfterMilliseconds" value less or equal to 2000.
@@ -1252,7 +1279,7 @@ sentinel:
   ##
   customReadinessProbe: {}
   ## Persistence parameters
-  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
   ##
   persistence:
     ## @param sentinel.persistence.enabled Enable persistence on Redis&reg; sentinel nodes using Persistent Volume Claims (Experimental)
@@ -1304,7 +1331,7 @@ sentinel:
     whenScaled: Retain
     whenDeleted: Retain
   ## Redis&reg; Sentinel resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param sentinel.resources.limits The resources limits for the Redis&reg; Sentinel containers
   ## @param sentinel.resources.requests The requested resources for the Redis&reg; Sentinel containers
   ##
@@ -1318,6 +1345,7 @@ sentinel:
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param sentinel.containerSecurityContext.enabled Enabled Redis&reg; Sentinel containers' Security Context
+  ## @param sentinel.containerSecurityContext.seLinuxOptions Set SELinux options in container
   ## @param sentinel.containerSecurityContext.runAsUser Set Redis&reg; Sentinel containers' Security Context runAsUser
   ## @param sentinel.containerSecurityContext.runAsGroup Set Redis&reg; Sentinel containers' Security Context runAsGroup
   ## @param sentinel.containerSecurityContext.runAsNonRoot Set Redis&reg; Sentinel containers' Security Context runAsNonRoot
@@ -1327,6 +1355,7 @@ sentinel:
   ##
   containerSecurityContext:
     enabled: true
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -1381,6 +1410,10 @@ sentinel:
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
     ##
     loadBalancerIP: ""
+    ## @param sentinel.service.loadBalancerClass sentinel service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
+    ##
+    loadBalancerClass: ""
     ## @param sentinel.service.loadBalancerSourceRanges Redis&reg; Sentinel service Load Balancer sources
     ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
     ## e.g.
@@ -1526,7 +1559,7 @@ serviceAccount:
   ## @param serviceAccount.automountServiceAccountToken Whether to auto mount the service account token
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
   ##
-  automountServiceAccountToken: true
+  automountServiceAccountToken: false
   ## @param serviceAccount.annotations Additional custom annotations for the ServiceAccount
   ##
   annotations: {}
@@ -1680,6 +1713,7 @@ metrics:
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param metrics.containerSecurityContext.enabled Enabled Redis&reg; exporter containers' Security Context
+  ## @param metrics.containerSecurityContext.seLinuxOptions Set SELinux options in container
   ## @param metrics.containerSecurityContext.runAsUser Set Redis&reg; exporter containers' Security Context runAsUser
   ## @param metrics.containerSecurityContext.runAsGroup Set Redis&reg; exporter containers' Security Context runAsGroup
   ## @param metrics.containerSecurityContext.runAsNonRoot Set Redis&reg; exporter containers' Security Context runAsNonRoot
@@ -1689,6 +1723,7 @@ metrics:
   ##
   containerSecurityContext:
     enabled: true
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -1705,7 +1740,7 @@ metrics:
   ##
   extraVolumeMounts: []
   ## Redis&reg; exporter resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param metrics.resources.limits The resources limits for the Redis&reg; exporter container
   ## @param metrics.resources.requests The requested resources for the Redis&reg; exporter container
   ##
@@ -1747,6 +1782,10 @@ metrics:
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
     ##
     loadBalancerIP: ""
+    ## @param metrics.service.loadBalancerClass exporter service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
+    ##
+    loadBalancerClass: ""
     ## @param metrics.service.loadBalancerSourceRanges Redis&reg; exporter service Load Balancer sources
     ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
     ## e.g.
@@ -1914,7 +1953,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r91
+    tag: 11-debian-11-r94
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1926,7 +1965,7 @@ volumePermissions:
     ##
     pullSecrets: []
   ## Init container's resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param volumePermissions.resources.limits The resources limits for the init container
   ## @param volumePermissions.resources.requests The requested resources for the init container
   ##
@@ -1939,12 +1978,14 @@ volumePermissions:
       cpu: 100m
   ## Init container Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
+  ## @param volumePermissions.containerSecurityContext.seLinuxOptions Set SELinux options in container
   ## @param volumePermissions.containerSecurityContext.runAsUser Set init container's Security Context runAsUser
   ## NOTE: when runAsUser is set to special value "auto", init container will try to chown the
   ##   data folder to auto-determined user&group, using commands: `id -u`:`id -G | cut -d" " -f2`
   ##   "auto" is especially useful for OpenShift which has scc with dynamic user ids (and 0 is not allowed)
   ##
   containerSecurityContext:
+    seLinuxOptions: {}
     runAsUser: 0
     capabilities:
       drop:
@@ -1969,7 +2010,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r91
+    tag: 11-debian-11-r94
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1987,7 +2028,7 @@ sysctl:
   ##
   mountHostSys: false
   ## Init container's resource requests and limits
-  ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
+  ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
   ## @param sysctl.resources.limits The resources limits for the init container
   ## @param sysctl.resources.requests The requested resources for the init container
   ##
