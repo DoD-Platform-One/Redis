@@ -11,10 +11,10 @@ Disclaimer: Redis is a registered trademark of Redis Ltd. Any rights therein are
 ## TL;DR
 
 ```console
-helm install my-release oci://REGISTRY_NAME/REPOSITORY_NAME/redis
+helm install my-release oci://registry-1.docker.io/bitnamicharts/redis
 ```
 
-> Note: You need to substitute the placeholders `REGISTRY_NAME` and `REPOSITORY_NAME` with a reference to your Helm chart registry and repository. For example, in the case of Bitnami, you need to use `REGISTRY_NAME=registry-1.docker.io` and `REPOSITORY_NAME=bitnamicharts`.
+Looking to use Redisreg; in production? Try [VMware Tanzu Application Catalog](https://bitnami.com/enterprise), the enterprise edition of Bitnami Application Catalog.
 
 ## Introduction
 
@@ -36,8 +36,6 @@ The main features of each chart are the following:
 | Supports multiple databases                            | Supports only one database. Better if you have a big dataset           |
 | Single write point (single master)                     | Multiple write points (multiple masters)                               |
 | ![Redis&reg; Topology](img/redis-topology.png) | ![Redis&reg; Cluster Topology](img/redis-cluster-topology.png) |
-
-Looking to use Redisreg; in production? Try [VMware Tanzu Application Catalog](https://bitnami.com/enterprise), the enterprise edition of Bitnami Application Catalog.
 
 ## Prerequisites
 
@@ -87,6 +85,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `kubeVersion`             | Override Kubernetes version                                                                                    | `""`            |
 | `nameOverride`            | String to partially override common.names.fullname                                                             | `""`            |
 | `fullnameOverride`        | String to fully override common.names.fullname                                                                 | `""`            |
+| `namespaceOverride`       | String to fully override common.names.namespace                                                                | `""`            |
 | `commonLabels`            | Labels to add to all deployed objects                                                                          | `{}`            |
 | `commonAnnotations`       | Annotations to add to all deployed objects                                                                     | `{}`            |
 | `secretAnnotations`       | Annotations to add to secret                                                                                   | `{}`            |
@@ -164,15 +163,19 @@ The command removes all the Kubernetes components associated with the chart and 
 | `master.resources.limits`                                  | The resources limits for the Redis&reg; master containers                                             | `{}`                     |
 | `master.resources.requests`                                | The requested resources for the Redis&reg; master containers                                          | `{}`                     |
 | `master.podSecurityContext.enabled`                        | Enabled Redis&reg; master pods' Security Context                                                      | `true`                   |
+| `master.podSecurityContext.fsGroupChangePolicy`            | Set filesystem group change policy                                                                    | `Always`                 |
+| `master.podSecurityContext.sysctls`                        | Set kernel settings using the sysctl interface                                                        | `[]`                     |
+| `master.podSecurityContext.supplementalGroups`             | Set filesystem extra groups                                                                           | `[]`                     |
 | `master.podSecurityContext.fsGroup`                        | Set Redis&reg; master pod's Security Context fsGroup                                                  | `1001`                   |
 | `master.containerSecurityContext.enabled`                  | Enabled Redis&reg; master containers' Security Context                                                | `true`                   |
+| `master.containerSecurityContext.seLinuxOptions`           | Set SELinux options in container                                                                      | `{}`                     |
 | `master.containerSecurityContext.runAsUser`                | Set Redis&reg; master containers' Security Context runAsUser                                          | `1001`                   |
 | `master.containerSecurityContext.runAsGroup`               | Set Redis&reg; master containers' Security Context runAsGroup                                         | `0`                      |
 | `master.containerSecurityContext.runAsNonRoot`             | Set Redis&reg; master containers' Security Context runAsNonRoot                                       | `true`                   |
 | `master.containerSecurityContext.allowPrivilegeEscalation` | Is it possible to escalate Redis&reg; pod(s) privileges                                               | `false`                  |
 | `master.containerSecurityContext.seccompProfile.type`      | Set Redis&reg; master containers' Security Context seccompProfile                                     | `RuntimeDefault`         |
 | `master.containerSecurityContext.capabilities.drop`        | Set Redis&reg; master containers' Security Context capabilities to drop                               | `["ALL"]`                |
-| `master.kind`                                              | Use either Deployment or StatefulSet (default)                                                        | `StatefulSet`            |
+| `master.kind`                                              | Use either Deployment, StatefulSet (default) or DaemonSet                                             | `StatefulSet`            |
 | `master.schedulerName`                                     | Alternate scheduler for Redis&reg; master pods                                                        | `""`                     |
 | `master.updateStrategy.type`                               | Redis&reg; master statefulset strategy type                                                           | `RollingUpdate`          |
 | `master.minReadySeconds`                                   | How many seconds a pod needs to be ready before killing the next, during update                       | `0`                      |
@@ -222,15 +225,16 @@ The command removes all the Kubernetes components associated with the chart and 
 | `master.service.internalTrafficPolicy`                     | Redis&reg; master service internal traffic policy (requires Kubernetes v1.22 or greater to be usable) | `Cluster`                |
 | `master.service.clusterIP`                                 | Redis&reg; master service Cluster IP                                                                  | `""`                     |
 | `master.service.loadBalancerIP`                            | Redis&reg; master service Load Balancer IP                                                            | `""`                     |
+| `master.service.loadBalancerClass`                         | master service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)       | `""`                     |
 | `master.service.loadBalancerSourceRanges`                  | Redis&reg; master service Load Balancer sources                                                       | `[]`                     |
 | `master.service.externalIPs`                               | Redis&reg; master service External IPs                                                                | `[]`                     |
 | `master.service.annotations`                               | Additional custom annotations for Redis&reg; master service                                           | `{}`                     |
 | `master.service.sessionAffinity`                           | Session Affinity for Kubernetes service, can be "None" or "ClientIP"                                  | `None`                   |
 | `master.service.sessionAffinityConfig`                     | Additional settings for the sessionAffinity                                                           | `{}`                     |
 | `master.terminationGracePeriodSeconds`                     | Integer setting the termination grace period for the redis-master pods                                | `30`                     |
-| `master.serviceAccount.create`                             | Specifies whether a ServiceAccount should be created                                                  | `false`                  |
+| `master.serviceAccount.create`                             | Specifies whether a ServiceAccount should be created                                                  | `true`                   |
 | `master.serviceAccount.name`                               | The name of the ServiceAccount to use.                                                                | `""`                     |
-| `master.serviceAccount.automountServiceAccountToken`       | Whether to auto mount the service account token                                                       | `true`                   |
+| `master.serviceAccount.automountServiceAccountToken`       | Whether to auto mount the service account token                                                       | `false`                  |
 | `master.serviceAccount.annotations`                        | Additional custom annotations for the ServiceAccount                                                  | `{}`                     |
 
 ### Redis&reg; replicas configuration parameters
@@ -277,8 +281,12 @@ The command removes all the Kubernetes components associated with the chart and 
 | `replica.resources.limits`                                  | The resources limits for the Redis&reg; replicas containers                                             | `{}`                     |
 | `replica.resources.requests`                                | The requested resources for the Redis&reg; replicas containers                                          | `{}`                     |
 | `replica.podSecurityContext.enabled`                        | Enabled Redis&reg; replicas pods' Security Context                                                      | `true`                   |
+| `replica.podSecurityContext.fsGroupChangePolicy`            | Set filesystem group change policy                                                                      | `Always`                 |
+| `replica.podSecurityContext.sysctls`                        | Set kernel settings using the sysctl interface                                                          | `[]`                     |
+| `replica.podSecurityContext.supplementalGroups`             | Set filesystem extra groups                                                                             | `[]`                     |
 | `replica.podSecurityContext.fsGroup`                        | Set Redis&reg; replicas pod's Security Context fsGroup                                                  | `1001`                   |
 | `replica.containerSecurityContext.enabled`                  | Enabled Redis&reg; replicas containers' Security Context                                                | `true`                   |
+| `replica.containerSecurityContext.seLinuxOptions`           | Set SELinux options in container                                                                        | `{}`                     |
 | `replica.containerSecurityContext.runAsUser`                | Set Redis&reg; replicas containers' Security Context runAsUser                                          | `1001`                   |
 | `replica.containerSecurityContext.runAsGroup`               | Set Redis&reg; replicas containers' Security Context runAsGroup                                         | `0`                      |
 | `replica.containerSecurityContext.runAsNonRoot`             | Set Redis&reg; replicas containers' Security Context runAsNonRoot                                       | `true`                   |
@@ -335,6 +343,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `replica.service.extraPorts`                                | Extra ports to expose (normally used with the `sidecar` value)                                          | `[]`                     |
 | `replica.service.clusterIP`                                 | Redis&reg; replicas service Cluster IP                                                                  | `""`                     |
 | `replica.service.loadBalancerIP`                            | Redis&reg; replicas service Load Balancer IP                                                            | `""`                     |
+| `replica.service.loadBalancerClass`                         | replicas service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)       | `""`                     |
 | `replica.service.loadBalancerSourceRanges`                  | Redis&reg; replicas service Load Balancer sources                                                       | `[]`                     |
 | `replica.service.annotations`                               | Additional custom annotations for Redis&reg; replicas service                                           | `{}`                     |
 | `replica.service.sessionAffinity`                           | Session Affinity for Kubernetes service, can be "None" or "ClientIP"                                    | `None`                   |
@@ -345,9 +354,9 @@ The command removes all the Kubernetes components associated with the chart and 
 | `replica.autoscaling.maxReplicas`                           | Maximum replicas for the pod autoscaling                                                                | `11`                     |
 | `replica.autoscaling.targetCPU`                             | Percentage of CPU to consider when autoscaling                                                          | `""`                     |
 | `replica.autoscaling.targetMemory`                          | Percentage of Memory to consider when autoscaling                                                       | `""`                     |
-| `replica.serviceAccount.create`                             | Specifies whether a ServiceAccount should be created                                                    | `false`                  |
+| `replica.serviceAccount.create`                             | Specifies whether a ServiceAccount should be created                                                    | `true`                   |
 | `replica.serviceAccount.name`                               | The name of the ServiceAccount to use.                                                                  | `""`                     |
-| `replica.serviceAccount.automountServiceAccountToken`       | Whether to auto mount the service account token                                                         | `true`                   |
+| `replica.serviceAccount.automountServiceAccountToken`       | Whether to auto mount the service account token                                                         | `false`                  |
 | `replica.serviceAccount.annotations`                        | Additional custom annotations for the ServiceAccount                                                    | `{}`                     |
 
 ### Redis&reg; Sentinel configuration parameters
@@ -364,7 +373,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `sentinel.annotations`                                       | Additional custom annotations for Redis&reg; Sentinel resource                                                                              | `{}`                             |
 | `sentinel.masterSet`                                         | Master set name                                                                                                                             | `mymaster`                       |
 | `sentinel.quorum`                                            | Sentinel Quorum                                                                                                                             | `2`                              |
-| `sentinel.getMasterTimeout`                                  | Amount of time to allow before get_sentinel_master_info() times out.                                                                        | `99`                             |
+| `sentinel.getMasterTimeout`                                  | Amount of time to allow before get_sentinel_master_info() times out.                                                                        | `90`                             |
 | `sentinel.automateClusterRecovery`                           | Automate cluster recovery in cases where the last replica is not considered a good replica and Sentinel won't automatically failover to it. | `false`                          |
 | `sentinel.redisShutdownWaitFailover`                         | Whether the Redis&reg; master container waits for the failover at shutdown (in addition to the Redis&reg; Sentinel container).              | `true`                           |
 | `sentinel.downAfterMilliseconds`                             | Timeout for detecting a Redis&reg; node is down                                                                                             | `60000`                          |
@@ -419,6 +428,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `sentinel.resources.limits`                                  | The resources limits for the Redis&reg; Sentinel containers                                                                                 | `{}`                             |
 | `sentinel.resources.requests`                                | The requested resources for the Redis&reg; Sentinel containers                                                                              | `{}`                             |
 | `sentinel.containerSecurityContext.enabled`                  | Enabled Redis&reg; Sentinel containers' Security Context                                                                                    | `true`                           |
+| `sentinel.containerSecurityContext.seLinuxOptions`           | Set SELinux options in container                                                                                                            | `{}`                             |
 | `sentinel.containerSecurityContext.runAsUser`                | Set Redis&reg; Sentinel containers' Security Context runAsUser                                                                              | `1001`                           |
 | `sentinel.containerSecurityContext.runAsGroup`               | Set Redis&reg; Sentinel containers' Security Context runAsGroup                                                                             | `0`                              |
 | `sentinel.containerSecurityContext.runAsNonRoot`             | Set Redis&reg; Sentinel containers' Security Context runAsNonRoot                                                                           | `true`                           |
@@ -437,6 +447,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `sentinel.service.extraPorts`                                | Extra ports to expose (normally used with the `sidecar` value)                                                                              | `[]`                             |
 | `sentinel.service.clusterIP`                                 | Redis&reg; Sentinel service Cluster IP                                                                                                      | `""`                             |
 | `sentinel.service.loadBalancerIP`                            | Redis&reg; Sentinel service Load Balancer IP                                                                                                | `""`                             |
+| `sentinel.service.loadBalancerClass`                         | sentinel service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)                                           | `""`                             |
 | `sentinel.service.loadBalancerSourceRanges`                  | Redis&reg; Sentinel service Load Balancer sources                                                                                           | `[]`                             |
 | `sentinel.service.annotations`                               | Additional custom annotations for Redis&reg; Sentinel service                                                                               | `{}`                             |
 | `sentinel.service.sessionAffinity`                           | Session Affinity for Kubernetes service, can be "None" or "ClientIP"                                                                        | `None`                           |
@@ -464,7 +475,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `rbac.rules`                                    | Custom RBAC rules to set                                                                                                                    | `[]`    |
 | `serviceAccount.create`                         | Specifies whether a ServiceAccount should be created                                                                                        | `true`  |
 | `serviceAccount.name`                           | The name of the ServiceAccount to use.                                                                                                      | `""`    |
-| `serviceAccount.automountServiceAccountToken`   | Whether to auto mount the service account token                                                                                             | `true`  |
+| `serviceAccount.automountServiceAccountToken`   | Whether to auto mount the service account token                                                                                             | `false` |
 | `serviceAccount.annotations`                    | Additional custom annotations for the ServiceAccount                                                                                        | `{}`    |
 | `pdb.create`                                    | Specifies whether a PodDisruptionBudget should be created                                                                                   | `false` |
 | `pdb.minAvailable`                              | Min number of pods that must still be available after the eviction                                                                          | `1`     |
@@ -515,6 +526,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `metrics.extraArgs`                                         | Extra arguments for Redis&reg; exporter, for example:                                                               | `{}`                             |
 | `metrics.extraEnvVars`                                      | Array with extra environment variables to add to Redis&reg; exporter                                                | `[]`                             |
 | `metrics.containerSecurityContext.enabled`                  | Enabled Redis&reg; exporter containers' Security Context                                                            | `true`                           |
+| `metrics.containerSecurityContext.seLinuxOptions`           | Set SELinux options in container                                                                                    | `{}`                             |
 | `metrics.containerSecurityContext.runAsUser`                | Set Redis&reg; exporter containers' Security Context runAsUser                                                      | `1001`                           |
 | `metrics.containerSecurityContext.runAsGroup`               | Set Redis&reg; exporter containers' Security Context runAsGroup                                                     | `0`                              |
 | `metrics.containerSecurityContext.runAsNonRoot`             | Set Redis&reg; exporter containers' Security Context runAsNonRoot                                                   | `true`                           |
@@ -532,6 +544,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `metrics.service.externalTrafficPolicy`                     | Redis&reg; exporter service external traffic policy                                                                 | `Cluster`                        |
 | `metrics.service.extraPorts`                                | Extra ports to expose (normally used with the `sidecar` value)                                                      | `[]`                             |
 | `metrics.service.loadBalancerIP`                            | Redis&reg; exporter service Load Balancer IP                                                                        | `""`                             |
+| `metrics.service.loadBalancerClass`                         | exporter service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)                   | `""`                             |
 | `metrics.service.loadBalancerSourceRanges`                  | Redis&reg; exporter service Load Balancer sources                                                                   | `[]`                             |
 | `metrics.service.annotations`                               | Additional custom annotations for Redis&reg; exporter service                                                       | `{}`                             |
 | `metrics.service.clusterIP`                                 | Redis&reg; exporter service Cluster IP                                                                              | `""`                             |
@@ -564,27 +577,28 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ### Init Container Parameters
 
-| Name                                                   | Description                                                                                                        | Value                      |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| `volumePermissions.enabled`                            | Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`                    | `false`                    |
-| `volumePermissions.image.registry`                     | OS Shell + Utility image registry                                                                                  | `REGISTRY_NAME`            |
-| `volumePermissions.image.repository`                   | OS Shell + Utility image repository                                                                                | `REPOSITORY_NAME/os-shell` |
-| `volumePermissions.image.digest`                       | OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag | `""`                       |
-| `volumePermissions.image.pullPolicy`                   | OS Shell + Utility image pull policy                                                                               | `IfNotPresent`             |
-| `volumePermissions.image.pullSecrets`                  | OS Shell + Utility image pull secrets                                                                              | `[]`                       |
-| `volumePermissions.resources.limits`                   | The resources limits for the init container                                                                        | `{}`                       |
-| `volumePermissions.resources.requests`                 | The requested resources for the init container                                                                     | `{}`                       |
-| `volumePermissions.containerSecurityContext.runAsUser` | Set init container's Security Context runAsUser                                                                    | `0`                        |
-| `sysctl.enabled`                                       | Enable init container to modify Kernel settings                                                                    | `false`                    |
-| `sysctl.image.registry`                                | OS Shell + Utility image registry                                                                                  | `REGISTRY_NAME`            |
-| `sysctl.image.repository`                              | OS Shell + Utility image repository                                                                                | `REPOSITORY_NAME/os-shell` |
-| `sysctl.image.digest`                                  | OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag | `""`                       |
-| `sysctl.image.pullPolicy`                              | OS Shell + Utility image pull policy                                                                               | `IfNotPresent`             |
-| `sysctl.image.pullSecrets`                             | OS Shell + Utility image pull secrets                                                                              | `[]`                       |
-| `sysctl.command`                                       | Override default init-sysctl container command (useful when using custom images)                                   | `[]`                       |
-| `sysctl.mountHostSys`                                  | Mount the host `/sys` folder to `/host-sys`                                                                        | `false`                    |
-| `sysctl.resources.limits`                              | The resources limits for the init container                                                                        | `{}`                       |
-| `sysctl.resources.requests`                            | The requested resources for the init container                                                                     | `{}`                       |
+| Name                                                        | Description                                                                                                        | Value                      |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| `volumePermissions.enabled`                                 | Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`                    | `false`                    |
+| `volumePermissions.image.registry`                          | OS Shell + Utility image registry                                                                                  | `REGISTRY_NAME`            |
+| `volumePermissions.image.repository`                        | OS Shell + Utility image repository                                                                                | `REPOSITORY_NAME/os-shell` |
+| `volumePermissions.image.digest`                            | OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag | `""`                       |
+| `volumePermissions.image.pullPolicy`                        | OS Shell + Utility image pull policy                                                                               | `IfNotPresent`             |
+| `volumePermissions.image.pullSecrets`                       | OS Shell + Utility image pull secrets                                                                              | `[]`                       |
+| `volumePermissions.resources.limits`                        | The resources limits for the init container                                                                        | `{}`                       |
+| `volumePermissions.resources.requests`                      | The requested resources for the init container                                                                     | `{}`                       |
+| `volumePermissions.containerSecurityContext.seLinuxOptions` | Set SELinux options in container                                                                                   | `{}`                       |
+| `volumePermissions.containerSecurityContext.runAsUser`      | Set init container's Security Context runAsUser                                                                    | `0`                        |
+| `sysctl.enabled`                                            | Enable init container to modify Kernel settings                                                                    | `false`                    |
+| `sysctl.image.registry`                                     | OS Shell + Utility image registry                                                                                  | `REGISTRY_NAME`            |
+| `sysctl.image.repository`                                   | OS Shell + Utility image repository                                                                                | `REPOSITORY_NAME/os-shell` |
+| `sysctl.image.digest`                                       | OS Shell + Utility image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag | `""`                       |
+| `sysctl.image.pullPolicy`                                   | OS Shell + Utility image pull policy                                                                               | `IfNotPresent`             |
+| `sysctl.image.pullSecrets`                                  | OS Shell + Utility image pull secrets                                                                              | `[]`                       |
+| `sysctl.command`                                            | Override default init-sysctl container command (useful when using custom images)                                   | `[]`                       |
+| `sysctl.mountHostSys`                                       | Mount the host `/sys` folder to `/host-sys`                                                                        | `false`                    |
+| `sysctl.resources.limits`                                   | The resources limits for the init container                                                                        | `{}`                       |
+| `sysctl.resources.requests`                                 | The requested resources for the init container                                                                     | `{}`                       |
 
 ### useExternalDNS Parameters
 
@@ -616,11 +630,11 @@ helm install my-release -f values.yaml oci://REGISTRY_NAME/REPOSITORY_NAME/redis
 ```
 
 > Note: You need to substitute the placeholders `REGISTRY_NAME` and `REPOSITORY_NAME` with a reference to your Helm chart registry and repository. For example, in the case of Bitnami, you need to use `REGISTRY_NAME=registry-1.docker.io` and `REPOSITORY_NAME=bitnamicharts`.
-> **Tip**: You can use the default [values.yaml](values.yaml)
+> **Tip**: You can use the default [values.yaml](https://github.com/bitnami/charts/tree/main/bitnami/redis/values.yaml)
 
 ## Configuration and installation details
 
-### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+### [Rolling VS Immutable tags](https://docs.bitnami.com/tutorials/understand-rolling-tags-containers)
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
@@ -864,7 +878,7 @@ The Redis&reg; sentinel exporter was removed in this version because the upstrea
   - `sentinel.metrics.*` parameters are deprecated in favor of `metrics.sentinel.*` ones.
 - New parameters to add custom command, environment variables, sidecars, init containers, etc. were added.
 - Chart labels were adapted to follow the [Helm charts standard labels](https://helm.sh/docs/chart_best_practices/labels/#standard-labels).
-- values.yaml metadata was adapted to follow the format supported by [Readme Generator for Helm](https://github.com/bitnami-labs/readme-generator-for-helm).
+- values.yaml metadata was adapted to follow the format supported by [Readme Generator for Helm](https://github.com/bitnami/readme-generator-for-helm).
 
 Consequences:
 
@@ -1004,7 +1018,7 @@ kubectl patch deployments my-release-redis-metrics --type=json -p='[{"op": "remo
 
 ## License
 
-Copyright &copy; 2023 VMware, Inc.
+Copyright &copy; 2024 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
