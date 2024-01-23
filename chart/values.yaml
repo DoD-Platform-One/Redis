@@ -350,7 +350,7 @@ master:
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: {}
+    #seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -809,7 +809,7 @@ replica:
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: {}
+    #seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -1355,7 +1355,7 @@ sentinel:
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: {}
+    #seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -1723,7 +1723,7 @@ metrics:
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: {}
+    #seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
@@ -1985,7 +1985,7 @@ volumePermissions:
   ##   "auto" is especially useful for OpenShift which has scc with dynamic user ids (and 0 is not allowed)
   ##
   containerSecurityContext:
-    seLinuxOptions: {}
+    #seLinuxOptions: {}
     runAsUser: 0
     capabilities:
       drop:
