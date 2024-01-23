@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.7.1-bb.0](https://img.shields.io/badge/Version-18.7.1--bb.0-informational?style=flat-square) ![AppVersion: 7.2.4](https://img.shields.io/badge/AppVersion-7.2.4-informational?style=flat-square)
+![Version: 18.7.1-bb.1](https://img.shields.io/badge/Version-18.7.1--bb.1-informational?style=flat-square) ![AppVersion: 7.2.4](https://img.shields.io/badge/AppVersion-7.2.4-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -132,7 +132,6 @@ helm install redis chart/
 | master.podSecurityContext.supplementalGroups | list | `[]` |  |
 | master.podSecurityContext.fsGroup | int | `1001` |  |
 | master.containerSecurityContext.enabled | bool | `true` |  |
-| master.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | master.containerSecurityContext.runAsUser | int | `1001` |  |
 | master.containerSecurityContext.runAsGroup | int | `1001` |  |
 | master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
@@ -248,7 +247,6 @@ helm install redis chart/
 | replica.podSecurityContext.supplementalGroups | list | `[]` |  |
 | replica.podSecurityContext.fsGroup | int | `1001` |  |
 | replica.containerSecurityContext.enabled | bool | `true` |  |
-| replica.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | replica.containerSecurityContext.runAsUser | int | `1001` |  |
 | replica.containerSecurityContext.runAsGroup | int | `1001` |  |
 | replica.containerSecurityContext.runAsNonRoot | bool | `true` |  |
@@ -388,7 +386,6 @@ helm install redis chart/
 | sentinel.resources.limits.memory | string | `"256Mi"` |  |
 | sentinel.resources.limits.cpu | string | `"100m"` |  |
 | sentinel.containerSecurityContext.enabled | bool | `true` |  |
-| sentinel.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | sentinel.containerSecurityContext.runAsUser | int | `1001` |  |
 | sentinel.containerSecurityContext.runAsGroup | int | `1001` |  |
 | sentinel.containerSecurityContext.runAsNonRoot | bool | `true` |  |
@@ -477,7 +474,6 @@ helm install redis chart/
 | metrics.extraArgs | object | `{}` |  |
 | metrics.extraEnvVars | list | `[]` |  |
 | metrics.containerSecurityContext.enabled | bool | `true` |  |
-| metrics.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | metrics.containerSecurityContext.runAsUser | int | `1001` |  |
 | metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
 | metrics.containerSecurityContext.runAsNonRoot | bool | `true` |  |
@@ -541,7 +537,6 @@ helm install redis chart/
 | volumePermissions.resources.requests.cpu | string | `"100m"` |  |
 | volumePermissions.resources.limits.memory | string | `"256Mi"` |  |
 | volumePermissions.resources.limits.cpu | string | `"100m"` |  |
-| volumePermissions.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | volumePermissions.containerSecurityContext.runAsUser | int | `0` |  |
 | volumePermissions.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
 | sysctl.enabled | bool | `false` |  |
