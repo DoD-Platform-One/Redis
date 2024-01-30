@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [18.9.1-bb.0] - 2024-01-18
+### Changed
+- Updated chart to 18.9.1
+- Updatd redis-exporter from v1.56.0 to v1.57.0
+
 ## [18.7.1-bb.1] - 2024-01-23
 ### Changed
 - Commented out upstream empty seLinuxOptions: {} blocks--gatekeeper is blocking these
