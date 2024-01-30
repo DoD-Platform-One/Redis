@@ -1,6 +1,6 @@
 # redis
 
-![Version: 18.7.1-bb.1](https://img.shields.io/badge/Version-18.7.1--bb.1-informational?style=flat-square) ![AppVersion: 7.2.4](https://img.shields.io/badge/AppVersion-7.2.4-informational?style=flat-square)
+![Version: 18.9.1-bb.0](https://img.shields.io/badge/Version-18.9.1--bb.0-informational?style=flat-square) ![AppVersion: 7.2.4](https://img.shields.io/badge/AppVersion-7.2.4-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -444,7 +444,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.56.0"` |  |
+| metrics.image.tag | string | `"v1.57.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -511,6 +511,7 @@ helm install redis chart/
 | metrics.serviceMonitor.podTargetLabels | list | `[]` |  |
 | metrics.serviceMonitor.sampleLimit | bool | `false` |  |
 | metrics.serviceMonitor.targetLimit | bool | `false` |  |
+| metrics.serviceMonitor.additionalEndpoints | list | `[]` |  |
 | metrics.podMonitor.enabled | bool | `false` |  |
 | metrics.podMonitor.namespace | string | `""` |  |
 | metrics.podMonitor.interval | string | `"30s"` |  |
@@ -522,6 +523,7 @@ helm install redis chart/
 | metrics.podMonitor.podTargetLabels | list | `[]` |  |
 | metrics.podMonitor.sampleLimit | bool | `false` |  |
 | metrics.podMonitor.targetLimit | bool | `false` |  |
+| metrics.podMonitor.additionalEndpoints | list | `[]` |  |
 | metrics.prometheusRule.enabled | bool | `false` |  |
 | metrics.prometheusRule.namespace | string | `""` |  |
 | metrics.prometheusRule.additionalLabels | object | `{}` |  |
