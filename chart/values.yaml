@@ -65,7 +65,6 @@ global:
   storageClass: ""
   redis:
     password: ""
-
 ## @section Common parameters
 ##
 
@@ -105,7 +104,6 @@ nameResolutionThreshold: 5
 ## @param nameResolutionTimeout Timeout seconds between probes for internal hostnames resolution
 ##
 nameResolutionTimeout: 5
-
 ## Enable diagnostic mode in the deployment
 ##
 diagnosticMode:
@@ -120,7 +118,6 @@ diagnosticMode:
   ##
   args:
     - infinity
-
 ## @section Redis&reg; Image parameters
 ##
 
@@ -158,7 +155,6 @@ image:
   ## Enable debug mode
   ##
   debug: false
-
 ## @section Redis&reg; common configuration parameters
 ## https://github.com/bitnami/containers/tree/main/bitnami/redis#configuration
 ##
@@ -191,7 +187,6 @@ auth:
   ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
   ##
   usePasswordFiles: false
-
 ## @param commonConfiguration [string] Common configuration to be added into the ConfigMap
 ## ref: https://redis.io/topics/config
 ##
@@ -203,10 +198,8 @@ commonConfiguration: |-
 ## @param existingConfigmap The name of an existing ConfigMap with your custom configuration for Redis&reg; nodes
 ##
 existingConfigmap: ""
-
 ## @section Redis&reg; master configuration parameters
 ##
-
 master:
   ## @param master.count Number of Redis&reg; master instances to deploy (experimental, requires additional configuration)
   ##
@@ -649,10 +642,8 @@ master:
     ## @param master.serviceAccount.annotations Additional custom annotations for the ServiceAccount
     ##
     annotations: {}
-
 ## @section Redis&reg; replicas configuration parameters
 ##
-
 replica:
   ## @param replica.kind Use either DaemonSet or StatefulSet (default)
   ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
@@ -1143,7 +1134,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 7.2.4-debian-11-r3
+    tag: 7.2.4-debian-11-r6
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -1450,7 +1441,6 @@ sentinel:
   ## @param sentinel.terminationGracePeriodSeconds Integer setting the termination grace period for the redis-node pods
   ##
   terminationGracePeriodSeconds: 30
-
 ## @section Other Parameters
 ##
 
@@ -1459,20 +1449,22 @@ sentinel:
 ##
 serviceBindings:
   enabled: false
-
 ## Network Policy configuration
 ## ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 ##
 networkPolicy:
   ## @param networkPolicy.enabled Enable creation of NetworkPolicy resources
   ##
-  enabled: false
+  enabled: true
   ## @param networkPolicy.allowExternal Don't require client label for connections
   ## When set to false, only pods with the correct client label will have network access to the ports
   ## Redis&reg; is listening on. When true, Redis&reg; will accept connections from any source
   ## (with the correct destination port).
   ##
   allowExternal: true
+  ## @param networkPolicy.allowExternalEgress Allow the pod to access any range of port and all destinations.
+  ##
+  allowExternalEgress: true
   ## @param networkPolicy.extraIngress Add extra ingress rules to the NetworkPolicy
   ## e.g:
   ## extraIngress:
@@ -1512,7 +1504,6 @@ networkPolicy:
   ##
   ingressNSMatchLabels: {}
   ingressNSPodMatchLabels: {}
-
   metrics:
     ## @param networkPolicy.metrics.allowExternal Don't require client label for connections for metrics endpoint
     ## When set to false, only pods with the correct client label will have network access to the metrics port
@@ -1523,7 +1514,6 @@ networkPolicy:
     ##
     ingressNSMatchLabels: {}
     ingressNSPodMatchLabels: {}
-
 ## PodSecurityPolicy configuration
 ## ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
 ##
@@ -1612,10 +1602,8 @@ tls:
   ## @param tls.dhParamsFilename File containing DH params (in order to support DH based ciphers)
   ##
   dhParamsFilename: ""
-
 ## @section Metrics Parameters
 ##
-
 metrics:
   ## @param metrics.enabled Start a sidecar prometheus exporter to expose Redis&reg; metrics
   ##
@@ -1632,7 +1620,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.57.0
+    tag: v1.58.0
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1643,6 +1631,10 @@ metrics:
     ##   - myRegistryKeySecretName
     ##
     pullSecrets: []
+  ## @param metrics.containerPorts.http Metrics HTTP container port
+  ##
+  containerPorts:
+    http: 9121
   ## Configure extra options for Redis&reg; containers' liveness, readiness & startup probes
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
   ## @param metrics.startupProbe.enabled Enable startupProbe on Redis&reg; replicas nodes
@@ -1771,12 +1763,16 @@ metrics:
   ## Redis&reg; exporter service parameters
   ##
   service:
+    ## @param metrics.service.enabled Create Service resource(s) for scraping metrics using PrometheusOperator ServiceMonitor, can be disabled when using a PodMonitor
+    ##
+    enabled: true
     ## @param metrics.service.type Redis&reg; exporter service type
     ##
     type: ClusterIP
-    ## @param metrics.service.port Redis&reg; exporter service port
+    ## @param metrics.service.ports.http Redis&reg; exporter service port
     ##
-    port: 9121
+    ports:
+      http: 9121
     ## @param metrics.service.externalTrafficPolicy Redis&reg; exporter service external traffic policy
     ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
     ##
@@ -1810,6 +1806,9 @@ metrics:
   ##      https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#endpoint
   ##
   serviceMonitor:
+    ## @param metrics.serviceMonitor.port the service port to scrape metrics from
+    ##
+    port: http-metrics
     ## @param metrics.serviceMonitor.enabled Create ServiceMonitor resource(s) for scraping metrics using PrometheusOperator
     ##
     enabled: false
@@ -1850,18 +1849,24 @@ metrics:
     ## @param metrics.serviceMonitor.additionalEndpoints  Additional endpoints to scrape (e.g sentinel)
     ##
     additionalEndpoints: []
-      # uncomment in order to scrape sentinel metrics
-      # - port: http-metrics
-      #   interval: 30s
-      #   path: /scrape
-      #   params:
-      #     target:
-      #       - localhost:26379
+    # uncomment in order to scrape sentinel metrics, also to in order distinguish between Sentinel and Redis container metrics
+    # add metricRelabelings with label like app=redis to main redis pod-monitor port
+    # - interval: "30s"
+    #   path: "/scrape"
+    #   port: "metrics"
+    #   params:
+    #     target: ["localhost:26379"]
+    #   metricRelabelings:
+    #     - targetLabel: "app"
+    #       replacement: "sentinel"
   ## Prometheus Pod Monitor
   ## ref: https://github.com/coreos/prometheus-operator
   ##      https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#podmonitor
   ##
   podMonitor:
+    ## @param metrics.podMonitor.port the pod port to scrape metrics from
+    ##
+    port: metrics
     ## @param metrics.podMonitor.enabled Create PodMonitor resource(s) for scraping metrics using PrometheusOperator
     ##
     enabled: false
@@ -1880,6 +1885,8 @@ metrics:
     ## @param metrics.podMonitor.metricRelabelings Metrics RelabelConfigs to apply to samples before ingestion.
     ##
     metricRelabelings: []
+    # - targetLabel: "app"
+    #   replacement: "redis"
     ## @param metrics.podMonitor.honorLabels Specify honorLabels parameter to add the scrape endpoint
     ##
     honorLabels: false
@@ -1898,14 +1905,14 @@ metrics:
     ## @param metrics.podMonitor.additionalEndpoints  Additional endpoints to scrape (e.g sentinel)
     ##
     additionalEndpoints: []
-      # uncomment in order to scrape sentinel metrics
-      # - port: metrics
-      #   interval: 30s
-      #   path: /scrape
-      #   params:
-      #     target:
-      #       - localhost:26379
-
+    # - interval: "30s"
+    #   path: "/scrape"
+    #   port: "metrics"
+    #   params:
+    #     target: ["localhost:26379"]
+    #   metricRelabelings:
+    #     - targetLabel: "app"
+    #       replacement: "sentinel"
   ## Custom PrometheusRule to be defined
   ## ref: https://github.com/coreos/prometheus-operator#customresourcedefinitions
   ##
@@ -1955,7 +1962,6 @@ metrics:
     ##          Redis&reg; instance {{ "{{ $labels.instance }}" }} has evicted {{ "{{ $value }}" }} keys in the last 5 minutes.
     ##
     rules: []
-
 ## @section Init Container Parameters
 ##
 
@@ -1979,7 +1985,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r94
+    tag: 11-debian-11-r96
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2036,7 +2042,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r94
+    tag: 11-debian-11-r96
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
