@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -29,7 +32,10 @@
   "liveNow": false,
   "panels": [
     {
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -105,7 +111,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -182,7 +191,10 @@
       "type": "stat"
     },
     {
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -266,7 +278,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -361,7 +376,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -474,7 +492,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -580,7 +601,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -681,7 +705,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -777,7 +804,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -885,7 +915,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -995,7 +1028,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "editable": true,
       "error": false,
       "fieldConfig": {
@@ -1089,7 +1125,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "Prometheus",
+       "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []

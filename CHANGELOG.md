@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [18.15.0-bb.1] - 2024-04-18
+### Changed
+- Fixed bug with missing grafana dashboard data when Thanos is enabled
+
 ## [18.15.0-bb.0] - 2024-02-22
 ### Changed
 - Updated chart to 18.15.0
