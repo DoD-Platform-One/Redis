@@ -79,6 +79,15 @@ global:
   storageClass: ""
   redis:
     password: ""
+  ## Compatibility adaptations for Kubernetes platforms
+  ##
+  compatibility:
+    ## Compatibility adaptations for Openshift
+    ##
+    openshift:
+      ## @param global.compatibility.openshift.adaptSecurityContext Adapt the securityContext sections of the deployment to make them compatible with Openshift restricted-v2 SCC: remove runAsUser, runAsGroup and fsGroup and let the platform use their allowed default IDs. Possible values: auto (apply if the detected running cluster is Openshift), force (perform the adaptation always), disabled (do not perform adaptation)
+      ##
+      adaptSecurityContext: auto
 ## @section Common parameters
 ##
 
@@ -201,6 +210,9 @@ auth:
   ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
   ##
   usePasswordFiles: false
+  ## @param auth.usePasswordFileFromSecret Mount password file from secret
+  ##
+  usePasswordFileFromSecret: true
 ## @param commonConfiguration [string] Common configuration to be added into the ConfigMap
 ## ref: https://redis.io/topics/config
 ##
@@ -352,21 +364,22 @@ master:
   ## @param master.containerSecurityContext.runAsGroup Set Redis&reg; master containers' Security Context runAsGroup
   ## @param master.containerSecurityContext.runAsNonRoot Set Redis&reg; master containers' Security Context runAsNonRoot
   ## @param master.containerSecurityContext.allowPrivilegeEscalation Is it possible to escalate Redis&reg; pod(s) privileges
+  ## @param master.containerSecurityContext.readOnlyRootFilesystem Set container's Security Context read-only root filesystem
   ## @param master.containerSecurityContext.seccompProfile.type Set Redis&reg; master containers' Security Context seccompProfile
   ## @param master.containerSecurityContext.capabilities.drop Set Redis&reg; master containers' Security Context capabilities to drop
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: null
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: true
     seccompProfile:
       type: RuntimeDefault
     capabilities:
-      drop:
-        - ALL
+      drop: ["ALL"]
   ## @param master.kind Use either Deployment, StatefulSet (default) or DaemonSet
   ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
   ##
@@ -575,6 +588,10 @@ master:
     ## @param master.service.type Redis&reg; master service type
     ##
     type: ClusterIP
+    ## @param master.service.portNames.redis Redis&reg; master service port name
+    ##
+    portNames:
+      redis: "tcp-redis"
     ## @param master.service.ports.redis Redis&reg; master service port
     ##
     ports:
@@ -812,21 +829,22 @@ replica:
   ## @param replica.containerSecurityContext.runAsGroup Set Redis&reg; replicas containers' Security Context runAsGroup
   ## @param replica.containerSecurityContext.runAsNonRoot Set Redis&reg; replicas containers' Security Context runAsNonRoot
   ## @param replica.containerSecurityContext.allowPrivilegeEscalation Set Redis&reg; replicas pod's Security Context allowPrivilegeEscalation
+  ## @param replica.containerSecurityContext.readOnlyRootFilesystem Set container's Security Context read-only root filesystem
   ## @param replica.containerSecurityContext.seccompProfile.type Set Redis&reg; replicas containers' Security Context seccompProfile
   ## @param replica.containerSecurityContext.capabilities.drop Set Redis&reg; replicas containers' Security Context capabilities to drop
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: null
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: true
     seccompProfile:
       type: RuntimeDefault
     capabilities:
-      drop:
-        - ALL
+      drop: ["ALL"]
   ## @param replica.schedulerName Alternate scheduler for Redis&reg; replicas pods
   ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
   ##
@@ -1148,7 +1166,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 7.2.4-debian-11-r6
+    tag: 7.2.4-debian-12-r13
     digest: ""
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -1360,22 +1378,23 @@ sentinel:
   ## @param sentinel.containerSecurityContext.runAsUser Set Redis&reg; Sentinel containers' Security Context runAsUser
   ## @param sentinel.containerSecurityContext.runAsGroup Set Redis&reg; Sentinel containers' Security Context runAsGroup
   ## @param sentinel.containerSecurityContext.runAsNonRoot Set Redis&reg; Sentinel containers' Security Context runAsNonRoot
+  ## @param sentinel.containerSecurityContext.readOnlyRootFilesystem Set container's Security Context read-only root filesystem
   ## @param sentinel.containerSecurityContext.allowPrivilegeEscalation Set Redis&reg; Sentinel containers' Security Context allowPrivilegeEscalation
   ## @param sentinel.containerSecurityContext.seccompProfile.type Set Redis&reg; Sentinel containers' Security Context seccompProfile
   ## @param sentinel.containerSecurityContext.capabilities.drop Set Redis&reg; Sentinel containers' Security Context capabilities to drop
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: null
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: true
     seccompProfile:
       type: RuntimeDefault
     capabilities:
-      drop:
-        - ALL
+      drop: ["ALL"]
   ## @param sentinel.lifecycleHooks for the Redis&reg; sentinel container(s) to automate configuration before or after startup
   ##
   lifecycleHooks: {}
@@ -1386,7 +1405,7 @@ sentinel:
   ##
   extraVolumeMounts: []
   ## Redis&reg; Sentinel service parameters
-  ##
+  ## Note: values passed in this section also configure the master service, unless the sentinel.masterService is explicitly overridden.
   service:
     ## @param sentinel.service.type Redis&reg; Sentinel service type
     ##
@@ -1417,6 +1436,11 @@ sentinel:
     ## @param sentinel.service.clusterIP Redis&reg; Sentinel service Cluster IP
     ##
     clusterIP: ""
+    ## @param sentinel.service.createMaster Enable master service pointing to the current master (experimental)
+    ## NOTE: rbac.create need to be set to true
+    ##
+    createMaster: false
+
     ## @param sentinel.service.loadBalancerIP Redis&reg; Sentinel service Load Balancer IP
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
     ##
@@ -1452,6 +1476,68 @@ sentinel:
       ## @param sentinel.service.headless.annotations Annotations for the headless service.
       ##
       annotations: {}
+
+  ## Redis&reg; master service parameters
+  ##
+  masterService:
+    ## @param sentinel.masterService.enabled Enable master service pointing to the current master (experimental)
+    ## NOTE: rbac.create need to be set to true
+    ##
+    enabled: false
+    ## @param sentinel.masterService.type Redis&reg; Sentinel master service type
+    ##
+    type: ClusterIP
+    ## @param sentinel.masterService.ports.redis Redis&reg; service port for Redis&reg;
+    ##
+    ports:
+      redis: 6379
+    ## @param sentinel.masterService.nodePorts.redis Node port for Redis&reg;
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
+    ## NOTE: choose port between <30000-32767>
+    ## NOTE: By leaving these values blank, they will be generated by ports-configmap
+    ##       If setting manually, please leave at least replica.replicaCount + 1 in between sentinel.service.nodePorts.redis and sentinel.service.nodePorts.sentinel to take into account the ports that will be created while incrementing that base port
+    ##
+    nodePorts:
+      redis: ""
+    ## @param sentinel.masterService.externalTrafficPolicy Redis&reg; master service external traffic policy
+    ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
+    ##
+    externalTrafficPolicy: ""
+    ## @param sentinel.masterService.extraPorts Extra ports to expose (normally used with the `sidecar` value)
+    ##
+    extraPorts: []
+    ## @param sentinel.masterService.clusterIP Redis&reg; master service Cluster IP
+    ##
+    clusterIP: ""
+    ## @param sentinel.masterService.loadBalancerIP Redis&reg; master service Load Balancer IP
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
+    ##
+    loadBalancerIP: ""
+    ## @param sentinel.masterService.loadBalancerClass master service Load Balancer class if service type is `LoadBalancer` (optional, cloud specific)
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
+    ##
+    loadBalancerClass: ""
+    ## @param sentinel.masterService.loadBalancerSourceRanges Redis&reg; master service Load Balancer sources
+    ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
+    ## e.g.
+    ## loadBalancerSourceRanges:
+    ##   - 10.10.10.0/24
+    ##
+    loadBalancerSourceRanges: []
+    ## @param sentinel.masterService.annotations Additional custom annotations for Redis&reg; master service
+    ##
+    annotations: {}
+    ## @param sentinel.masterService.sessionAffinity Session Affinity for Kubernetes service, can be "None" or "ClientIP"
+    ## If "ClientIP", consecutive client requests will be directed to the same Pod
+    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
+    ##
+    sessionAffinity: None
+    ## @param sentinel.masterService.sessionAffinityConfig Additional settings for the sessionAffinity
+    ## sessionAffinityConfig:
+    ##   clientIP:
+    ##     timeoutSeconds: 300
+    ##
+    sessionAffinityConfig: {}
   ## @param sentinel.terminationGracePeriodSeconds Integer setting the termination grace period for the redis-node pods
   ##
   terminationGracePeriodSeconds: 30
@@ -1634,7 +1720,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.58.0
+    tag: v1.59.0
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -1730,21 +1816,22 @@ metrics:
   ## @param metrics.containerSecurityContext.runAsGroup Set Redis&reg; exporter containers' Security Context runAsGroup
   ## @param metrics.containerSecurityContext.runAsNonRoot Set Redis&reg; exporter containers' Security Context runAsNonRoot
   ## @param metrics.containerSecurityContext.allowPrivilegeEscalation Set Redis&reg; exporter containers' Security Context allowPrivilegeEscalation
+  ## @param metrics.containerSecurityContext.readOnlyRootFilesystem Set container's Security Context read-only root filesystem
   ## @param metrics.containerSecurityContext.seccompProfile.type Set Redis&reg; exporter containers' Security Context seccompProfile
   ## @param metrics.containerSecurityContext.capabilities.drop Set Redis&reg; exporter containers' Security Context capabilities to drop
   ##
   containerSecurityContext:
     enabled: true
-    seLinuxOptions: null
+    seLinuxOptions: {}
     runAsUser: 1001
     runAsGroup: 1001
     runAsNonRoot: true
     allowPrivilegeEscalation: false
+    readOnlyRootFilesystem: true
     seccompProfile:
       type: RuntimeDefault
     capabilities:
-      drop:
-        - ALL
+      drop: ["ALL"]
   ## @param metrics.extraVolumes Optionally specify extra list of additional volumes for the Redis&reg; metrics sidecar
   ##
   extraVolumes: []
@@ -1835,7 +1922,10 @@ metrics:
     ## @param metrics.serviceMonitor.scrapeTimeout The timeout after which the scrape is ended
     ##
     scrapeTimeout: ""
-    ## @param metrics.serviceMonitor.relabellings Metrics RelabelConfigs to apply to samples before scraping.
+    ## @param metrics.serviceMonitor.relabelings Metrics RelabelConfigs to apply to samples before scraping.
+    ##
+    relabelings: []
+    ## @skip metrics.serviceMonitor.relabellings DEPRECATED: Use `metrics.serviceMonitor.relabelings` instead.
     ##
     relabellings: []
     ## @param metrics.serviceMonitor.metricRelabelings Metrics RelabelConfigs to apply to samples before ingestion.
@@ -1893,7 +1983,10 @@ metrics:
     ## @param metrics.podMonitor.scrapeTimeout The timeout after which the scrape is ended
     ##
     scrapeTimeout: ""
-    ## @param metrics.podMonitor.relabellings Metrics RelabelConfigs to apply to samples before scraping.
+    ## @param metrics.podMonitor.relabelings Metrics RelabelConfigs to apply to samples before scraping.
+    ##
+    relabelings: []
+    ## @skip metrics.podMonitor.relabellings DEPRECATED: Use `metrics.podMonitor.relabelings` instead.
     ##
     relabellings: []
     ## @param metrics.podMonitor.metricRelabelings Metrics RelabelConfigs to apply to samples before ingestion.
@@ -1999,7 +2092,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r96
+    tag: 12-debian-12-r21
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2031,7 +2124,7 @@ volumePermissions:
   ##   "auto" is especially useful for OpenShift which has scc with dynamic user ids (and 0 is not allowed)
   ##
   containerSecurityContext:
-    seLinuxOptions: null
+    seLinuxOptions: {}
     runAsUser: 0
     capabilities:
       drop:
@@ -2056,7 +2149,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 11-debian-11-r96
+    tag: 12-debian-12-r21
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
