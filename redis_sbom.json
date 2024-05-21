@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:3600871d-447a-4e11-bd12-5d0a3bd0254b",
+  "serialNumber": "urn:uuid:86ae87c1-9c4a-470e-ad16-75bd217e44da",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -8189,13 +8189,13 @@
     },
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:d407f8ff535cea57",
+      "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:b2488fded61182bf",
       "name": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter",
-      "version": "v1.58.0",
+      "version": "v1.59.0",
       "components": [
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/alternatives@1.24-1.el9?arch=x86_64\u0026upstream=chkconfig-1.24-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9319bcd88057ca07",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/alternatives@1.24-1.el9?arch=x86_64\u0026upstream=chkconfig-1.24-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9319bcd88057ca07",
           "publisher": "Red Hat, Inc.",
           "name": "alternatives",
           "version": "1.24-1.el9",
@@ -8227,7 +8227,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8249,7 +8249,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/audit-libs@3.1.2-2.el9?arch=x86_64\u0026upstream=audit-3.1.2-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=5fca744e3a0a2fb6",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/audit-libs@3.1.2-2.el9?arch=x86_64\u0026upstream=audit-3.1.2-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d9252f44ab1d6b5a",
           "publisher": "Red Hat, Inc.",
           "name": "audit-libs",
           "version": "3.1.2-2.el9",
@@ -8305,7 +8305,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8327,7 +8327,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/basesystem@11-13.el9?arch=noarch\u0026upstream=basesystem-11-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=fcabd006cb3bfe7d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/basesystem@11-13.el9?arch=noarch\u0026upstream=basesystem-11-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=fcabd006cb3bfe7d",
           "publisher": "Red Hat, Inc.",
           "name": "basesystem",
           "version": "11-13.el9",
@@ -8359,7 +8359,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8381,7 +8381,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/bash@5.1.8-9.el9?arch=x86_64\u0026upstream=bash-5.1.8-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=943712d7e61a7096",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/bash@5.1.8-9.el9?arch=x86_64\u0026upstream=bash-5.1.8-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a6062d7253817d9d",
           "publisher": "Red Hat, Inc.",
           "name": "bash",
           "version": "5.1.8-9.el9",
@@ -8413,7 +8413,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8435,7 +8435,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/bzip2-libs@1.0.8-8.el9?arch=x86_64\u0026upstream=bzip2-1.0.8-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6f2ea00452185c72",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/bzip2-libs@1.0.8-8.el9?arch=x86_64\u0026upstream=bzip2-1.0.8-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6f2ea00452185c72",
           "publisher": "Red Hat, Inc.",
           "name": "bzip2-libs",
           "version": "1.0.8-8.el9",
@@ -8491,7 +8491,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8513,7 +8513,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/ca-certificates@2023.2.60_v7.0.306-90.1.el9_2?arch=noarch\u0026upstream=ca-certificates-2023.2.60_v7.0.306-90.1.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=c20cc291effb1ef6",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/ca-certificates@2023.2.60_v7.0.306-90.1.el9_2?arch=noarch\u0026upstream=ca-certificates-2023.2.60_v7.0.306-90.1.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=c20cc291effb1ef6",
           "publisher": "Red Hat, Inc.",
           "name": "ca-certificates",
           "version": "2023.2.60_v7.0.306-90.1.el9_2",
@@ -8569,7 +8569,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8591,7 +8591,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/coreutils-single@8.32-35.el9?arch=x86_64\u0026upstream=coreutils-8.32-35.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=97c033092a79f4f2",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/coreutils-single@8.32-35.el9?arch=x86_64\u0026upstream=coreutils-8.32-35.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=90ea7db0d87c576b",
           "publisher": "Red Hat, Inc.",
           "name": "coreutils-single",
           "version": "8.32-35.el9",
@@ -8647,7 +8647,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8669,7 +8669,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/crypto-policies@20240202-1.git283706d.el9?arch=noarch\u0026upstream=crypto-policies-20240202-1.git283706d.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a40aba38cb9ecd87",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/crypto-policies@20240202-1.git283706d.el9?arch=noarch\u0026upstream=crypto-policies-20240202-1.git283706d.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=93d58366de27ef4a",
           "publisher": "Red Hat, Inc.",
           "name": "crypto-policies",
           "version": "20240202-1.git283706d.el9",
@@ -8725,7 +8725,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8747,7 +8747,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/crypto-policies-scripts@20240202-1.git283706d.el9?arch=noarch\u0026upstream=crypto-policies-20240202-1.git283706d.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a0e5837bada9d289",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/crypto-policies-scripts@20240202-1.git283706d.el9?arch=noarch\u0026upstream=crypto-policies-20240202-1.git283706d.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a0e5837bada9d289",
           "publisher": "Red Hat, Inc.",
           "name": "crypto-policies-scripts",
           "version": "20240202-1.git283706d.el9",
@@ -8819,7 +8819,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8841,7 +8841,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/curl-minimal@7.76.1-29.el9_4?arch=x86_64\u0026upstream=curl-7.76.1-29.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=c09a5bdedca97cf2",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/curl-minimal@7.76.1-29.el9_4?arch=x86_64\u0026upstream=curl-7.76.1-29.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=5142c3aa22741cbb",
           "publisher": "Red Hat, Inc.",
           "name": "curl-minimal",
           "version": "7.76.1-29.el9_4",
@@ -8897,7 +8897,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -8919,7 +8919,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/cyrus-sasl-lib@2.1.27-21.el9?arch=x86_64\u0026upstream=cyrus-sasl-2.1.27-21.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f9b976e083e7a639",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/cyrus-sasl-lib@2.1.27-21.el9?arch=x86_64\u0026upstream=cyrus-sasl-2.1.27-21.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f9b976e083e7a639",
           "publisher": "Red Hat, Inc.",
           "name": "cyrus-sasl-lib",
           "version": "2.1.27-21.el9",
@@ -8991,7 +8991,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9013,7 +9013,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/dejavu-sans-fonts@2.37-18.el9?arch=noarch\u0026upstream=dejavu-fonts-2.37-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8ffd65a3ba31d3c5",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/dejavu-sans-fonts@2.37-18.el9?arch=noarch\u0026upstream=dejavu-fonts-2.37-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8ffd65a3ba31d3c5",
           "publisher": "Red Hat, Inc.",
           "name": "dejavu-sans-fonts",
           "version": "2.37-18.el9",
@@ -9085,7 +9085,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9107,7 +9107,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/dnf-data@4.14.0-9.el9?arch=noarch\u0026upstream=dnf-4.14.0-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=885e9f8b1bba9a89",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/dnf-data@4.14.0-9.el9?arch=noarch\u0026upstream=dnf-4.14.0-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c7a819f5889d270d",
           "publisher": "Red Hat, Inc.",
           "name": "dnf-data",
           "version": "4.14.0-9.el9",
@@ -9163,7 +9163,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9185,7 +9185,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/expat@2.5.0-2.el9_4?arch=x86_64\u0026upstream=expat-2.5.0-2.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=fac946905b14f31d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/expat@2.5.0-2.el9_4?arch=x86_64\u0026upstream=expat-2.5.0-2.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=fac946905b14f31d",
           "publisher": "Red Hat, Inc.",
           "name": "expat",
           "version": "2.5.0-2.el9_4",
@@ -9217,7 +9217,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9239,7 +9239,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/file-libs@5.39-16.el9?arch=x86_64\u0026upstream=file-5.39-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=43d17d6a0e7ecc45",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/file-libs@5.39-16.el9?arch=x86_64\u0026upstream=file-5.39-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a1a15ba27225256b",
           "publisher": "Red Hat, Inc.",
           "name": "file-libs",
           "version": "5.39-16.el9",
@@ -9295,7 +9295,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9317,7 +9317,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/filesystem@3.16-2.el9?arch=x86_64\u0026upstream=filesystem-3.16-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=dbe4e87f91b9071d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/filesystem@3.16-2.el9?arch=x86_64\u0026upstream=filesystem-3.16-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e61f17f9183fa594",
           "publisher": "Red Hat, Inc.",
           "name": "filesystem",
           "version": "3.16-2.el9",
@@ -9349,7 +9349,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9371,7 +9371,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/findutils@4.8.0-6.el9?arch=x86_64\u0026epoch=1\u0026upstream=findutils-4.8.0-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b3152ef45bfb8cea",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/findutils@4.8.0-6.el9?arch=x86_64\u0026epoch=1\u0026upstream=findutils-4.8.0-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b3152ef45bfb8cea",
           "publisher": "Red Hat, Inc.",
           "name": "findutils",
           "version": "1:4.8.0-6.el9",
@@ -9403,7 +9403,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9429,7 +9429,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/fonts-filesystem@2.0.5-7.el9.1?arch=noarch\u0026epoch=1\u0026upstream=fonts-rpm-macros-2.0.5-7.el9.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=d72ee663c8d4ff8e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/fonts-filesystem@2.0.5-7.el9.1?arch=noarch\u0026epoch=1\u0026upstream=fonts-rpm-macros-2.0.5-7.el9.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=d72ee663c8d4ff8e",
           "publisher": "Red Hat, Inc.",
           "name": "fonts-filesystem",
           "version": "1:2.0.5-7.el9.1",
@@ -9485,7 +9485,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9511,7 +9511,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gawk@5.1.0-6.el9?arch=x86_64\u0026upstream=gawk-5.1.0-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e3571498d06703a7",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gawk@5.1.0-6.el9?arch=x86_64\u0026upstream=gawk-5.1.0-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e3571498d06703a7",
           "publisher": "Red Hat, Inc.",
           "name": "gawk",
           "version": "5.1.0-6.el9",
@@ -9543,7 +9543,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9565,7 +9565,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gdbm-libs@1.19-4.el9?arch=x86_64\u0026epoch=1\u0026upstream=gdbm-1.19-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d59bef29e19a3e9e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gdbm-libs@1.19-4.el9?arch=x86_64\u0026epoch=1\u0026upstream=gdbm-1.19-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d59bef29e19a3e9e",
           "publisher": "Red Hat, Inc.",
           "name": "gdbm-libs",
           "version": "1:1.19-4.el9",
@@ -9621,7 +9621,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9647,7 +9647,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=e334c0e46057462a",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=e334c0e46057462a",
           "name": "github.com/beorn7/perks",
           "version": "v1.0.1",
           "cpe": "cpe:2.3:a:beorn7:perks:v1.0.1:*:*:*:*:*:*:*",
@@ -9671,7 +9671,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9697,7 +9697,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/cespare/xxhash@v2.2.0?package-id=c6130f159bed4b7c#v2",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/cespare/xxhash@v2.2.0?package-id=c6130f159bed4b7c#v2",
           "name": "github.com/cespare/xxhash/v2",
           "version": "v2.2.0",
           "cpe": "cpe:2.3:a:cespare:xxhash\\/v2:v2.2.0:*:*:*:*:*:*:*",
@@ -9721,7 +9721,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9747,11 +9747,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/gomodule/redigo@v1.8.9?package-id=b435cb78c69669da",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/gomodule/redigo@v1.9.2?package-id=0491d15ef931d246",
           "name": "github.com/gomodule/redigo",
-          "version": "v1.8.9",
-          "cpe": "cpe:2.3:a:gomodule:redigo:v1.8.9:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/gomodule/redigo@v1.8.9",
+          "version": "v1.9.2",
+          "cpe": "cpe:2.3:a:gomodule:redigo:v1.9.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/gomodule/redigo@v1.9.2",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -9771,7 +9771,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9787,7 +9787,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:Sl3u\u002B2BI/kk\u002BVEatbj0scLdrFhjPmbxOc1myhDP41ws="
+              "value": "h1:HrutZBLhSIU8abiSfW8pj8mPhOyMYjZT/wcA4/L9L9s="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -9797,61 +9797,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/matttproud/golang_protobuf_extensions@v2.0.0?package-id=5cece035c8527c1b#v2",
-          "name": "github.com/matttproud/golang_protobuf_extensions/v2",
-          "version": "v2.0.0",
-          "cpe": "cpe:2.3:a:matttproud:golang-protobuf-extensions\\/v2:v2.0.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/matttproud/golang_protobuf_extensions@v2.0.0#v2",
-          "properties": [
-            {
-              "name": "syft:package:foundBy",
-              "value": "go-module-binary-cataloger"
-            },
-            {
-              "name": "syft:package:language",
-              "value": "go"
-            },
-            {
-              "name": "syft:package:type",
-              "value": "go-module"
-            },
-            {
-              "name": "syft:package:metadataType",
-              "value": "go-module-buildinfo-entry"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:matttproud:golang_protobuf_extensions\\/v2:v2.0.0:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
-            },
-            {
-              "name": "syft:location:0:path",
-              "value": "/opt/bitnami/redis_exporter/redis_exporter"
-            },
-            {
-              "name": "syft:metadata:architecture",
-              "value": "amd64"
-            },
-            {
-              "name": "syft:metadata:goCompiledVersion",
-              "value": "go1.22.0"
-            },
-            {
-              "name": "syft:metadata:h1Digest",
-              "value": "h1:jWpvCLoY8Z/e3VKvlsiIGKtc\u002BUG6U5vzxaoagmhXfyg="
-            },
-            {
-              "name": "syft:metadata:mainModule",
-              "value": "github.com/oliver006/redis_exporter"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/mna/redisc@v1.4.0?package-id=306e16ed410d584c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/mna/redisc@v1.4.0?package-id=306e16ed410d584c",
           "name": "github.com/mna/redisc",
           "version": "v1.4.0",
           "cpe": "cpe:2.3:a:mna:redisc:v1.4.0:*:*:*:*:*:*:*",
@@ -9875,7 +9821,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9901,11 +9847,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/oliver006/redis_exporter@v1.58.0?package-id=a8b34607ccfbd140",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/oliver006/redis_exporter@v1.59.0?package-id=87a9c07117186016",
           "name": "github.com/oliver006/redis_exporter",
-          "version": "v1.58.0",
-          "cpe": "cpe:2.3:a:oliver006:redis-exporter:v1.58.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/oliver006/redis_exporter@v1.58.0",
+          "version": "v1.59.0",
+          "cpe": "cpe:2.3:a:oliver006:redis-exporter:v1.59.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/oliver006/redis_exporter@v1.59.0",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -9925,11 +9871,11 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:oliver006:redis_exporter:v1.58.0:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:oliver006:redis_exporter:v1.59.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9951,11 +9897,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/prometheus/client_golang@v1.18.0?package-id=77e4848f7dfe0da8",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/prometheus/client_golang@v1.19.0?package-id=074ebc124aeb87e3",
           "name": "github.com/prometheus/client_golang",
-          "version": "v1.18.0",
-          "cpe": "cpe:2.3:a:prometheus:client-golang:v1.18.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/prometheus/client_golang@v1.18.0",
+          "version": "v1.19.0",
+          "cpe": "cpe:2.3:a:prometheus:client-golang:v1.19.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/client_golang@v1.19.0",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -9975,11 +9921,11 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:prometheus:client_golang:v1.18.0:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:prometheus:client_golang:v1.19.0:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -9995,7 +9941,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:HzFfmkOzH5Q8L8G\u002BkSJKUx5dtG87sewO\u002BFoDDqP5Tbk="
+              "value": "h1:ygXvpU1AoN1MhdzckN\u002BPyD9QJOSD4x7kmXYlnfbA6JU="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -10005,11 +9951,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/prometheus/client_model@v0.5.0?package-id=2bf2c79201a2b019",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/prometheus/client_model@v0.6.1?package-id=a9c0911743f68a14",
           "name": "github.com/prometheus/client_model",
-          "version": "v0.5.0",
-          "cpe": "cpe:2.3:a:prometheus:client-model:v0.5.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/prometheus/client_model@v0.5.0",
+          "version": "v0.6.1",
+          "cpe": "cpe:2.3:a:prometheus:client-model:v0.6.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/client_model@v0.6.1",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -10029,11 +9975,11 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:prometheus:client_model:v0.5.0:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:prometheus:client_model:v0.6.1:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10049,7 +9995,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:VQw1hfvPvk3Uv6Qf29VrPF32JB6rtbgI6cYPYQjL0Qw="
+              "value": "h1:ZKSh/rekM\u002Bn3CeS952MLRAdFwIKqeY8b62p8ais2e9E="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -10059,11 +10005,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/prometheus/common@v0.45.0?package-id=03969a2bc641751f",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/prometheus/common@v0.48.0?package-id=a8a7ad53494686cf",
           "name": "github.com/prometheus/common",
-          "version": "v0.45.0",
-          "cpe": "cpe:2.3:a:prometheus:common:v0.45.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/prometheus/common@v0.45.0",
+          "version": "v0.48.0",
+          "cpe": "cpe:2.3:a:prometheus:common:v0.48.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/common@v0.48.0",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -10083,7 +10029,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10099,7 +10045,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:2BGz0eBc2hdMDLnO/8n0jeB3oPrt2D08CekT0lneoxM="
+              "value": "h1:QO8U2CdOzSn1BBsmXJXduaaW\u002BdY/5QLjfB8svtSzKKE="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -10109,7 +10055,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/prometheus/procfs@v0.12.0?package-id=0ac09a0c90116f95",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/prometheus/procfs@v0.12.0?package-id=0ac09a0c90116f95",
           "name": "github.com/prometheus/procfs",
           "version": "v0.12.0",
           "cpe": "cpe:2.3:a:prometheus:procfs:v0.12.0:*:*:*:*:*:*:*",
@@ -10133,7 +10079,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10159,7 +10105,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/github.com/sirupsen/logrus@v1.9.3?package-id=a0e4d8b61e24e0a9",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/github.com/sirupsen/logrus@v1.9.3?package-id=a0e4d8b61e24e0a9",
           "name": "github.com/sirupsen/logrus",
           "version": "v1.9.3",
           "cpe": "cpe:2.3:a:sirupsen:logrus:v1.9.3:*:*:*:*:*:*:*",
@@ -10183,7 +10129,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10209,7 +10155,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/glib2@2.68.4-14.el9?arch=x86_64\u0026upstream=glib2-2.68.4-14.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b39cfa3584dacf09",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/glib2@2.68.4-14.el9?arch=x86_64\u0026upstream=glib2-2.68.4-14.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e9ca0a9e1fc475df",
           "publisher": "Red Hat, Inc.",
           "name": "glib2",
           "version": "2.68.4-14.el9",
@@ -10241,7 +10187,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10263,7 +10209,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/glibc@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e3b8d270355ce7dd",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/glibc@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e3b8d270355ce7dd",
           "publisher": "Red Hat, Inc.",
           "name": "glibc",
           "version": "2.34-100.el9",
@@ -10295,7 +10241,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10317,7 +10263,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/glibc-common@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=db43f7c02279e852",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/glibc-common@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=db1902474f4dd19d",
           "publisher": "Red Hat, Inc.",
           "name": "glibc-common",
           "version": "2.34-100.el9",
@@ -10373,7 +10319,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10395,101 +10341,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/glibc-langpack-en@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=99431f8f5f9a3a39",
-          "publisher": "Red Hat, Inc.",
-          "name": "glibc-langpack-en",
-          "version": "2.34-100.el9",
-          "licenses": [
-            {
-              "license": {
-                "name": "LGPLv2\u002B and LGPLv2\u002B with exceptions and GPLv2\u002B and GPLv2\u002B with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL"
-              }
-            }
-          ],
-          "cpe": "cpe:2.3:a:glibc-langpack-en:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/glibc-langpack-en@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4",
-          "properties": [
-            {
-              "name": "syft:package:foundBy",
-              "value": "rpm-db-cataloger"
-            },
-            {
-              "name": "syft:package:type",
-              "value": "rpm"
-            },
-            {
-              "name": "syft:package:metadataType",
-              "value": "rpm-db-entry"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-langpack-en:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_langpack_en:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_langpack_en:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-langpack:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc-langpack:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_langpack:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc_langpack:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc-langpack-en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:cpe23",
-              "value": "cpe:2.3:a:glibc:glibc_langpack_en:2.34-100.el9:*:*:*:*:*:*:*"
-            },
-            {
-              "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
-            },
-            {
-              "name": "syft:location:0:path",
-              "value": "/var/lib/rpm/rpmdb.sqlite"
-            },
-            {
-              "name": "syft:metadata:release",
-              "value": "100.el9"
-            },
-            {
-              "name": "syft:metadata:size",
-              "value": "5955802"
-            },
-            {
-              "name": "syft:metadata:sourceRpm",
-              "value": "glibc-2.34-100.el9.src.rpm"
-            }
-          ]
-        },
-        {
-          "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/glibc-minimal-langpack@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=0a42879eb7771de8",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/glibc-minimal-langpack@2.34-100.el9?arch=x86_64\u0026upstream=glibc-2.34-100.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=0a42879eb7771de8",
           "publisher": "Red Hat, Inc.",
           "name": "glibc-minimal-langpack",
           "version": "2.34-100.el9",
@@ -10561,7 +10413,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10583,7 +10435,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gmp@6.2.0-13.el9?arch=x86_64\u0026epoch=1\u0026upstream=gmp-6.2.0-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1c5e468d61284435",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gmp@6.2.0-13.el9?arch=x86_64\u0026epoch=1\u0026upstream=gmp-6.2.0-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1c5e468d61284435",
           "publisher": "Red Hat, Inc.",
           "name": "gmp",
           "version": "1:6.2.0-13.el9",
@@ -10615,7 +10467,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10641,7 +10493,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gnupg2@2.3.3-4.el9?arch=x86_64\u0026upstream=gnupg2-2.3.3-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4933454ace5f40dc",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gnupg2@2.3.3-4.el9?arch=x86_64\u0026upstream=gnupg2-2.3.3-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4933454ace5f40dc",
           "publisher": "Red Hat, Inc.",
           "name": "gnupg2",
           "version": "2.3.3-4.el9",
@@ -10673,7 +10525,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10695,7 +10547,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gnutls@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=6e22481c397c51e0",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gnutls@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=0adc520ee93e1a17",
           "publisher": "Red Hat, Inc.",
           "name": "gnutls",
           "version": "3.8.3-4.el9_4",
@@ -10727,7 +10579,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10749,7 +10601,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gnutls-dane@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=fa0568de9b8e3a8e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gnutls-dane@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=fa0568de9b8e3a8e",
           "publisher": "Red Hat, Inc.",
           "name": "gnutls-dane",
           "version": "3.8.3-4.el9_4",
@@ -10805,7 +10657,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10827,7 +10679,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gnutls-utils@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=b5934594873e39c2",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gnutls-utils@3.8.3-4.el9_4?arch=x86_64\u0026upstream=gnutls-3.8.3-4.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=b5934594873e39c2",
           "publisher": "Red Hat, Inc.",
           "name": "gnutls-utils",
           "version": "3.8.3-4.el9_4",
@@ -10883,7 +10735,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10905,7 +10757,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gobject-introspection@1.68.0-11.el9?arch=x86_64\u0026upstream=gobject-introspection-1.68.0-11.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f4422bf03285e92c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gobject-introspection@1.68.0-11.el9?arch=x86_64\u0026upstream=gobject-introspection-1.68.0-11.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f4422bf03285e92c",
           "publisher": "Red Hat, Inc.",
           "name": "gobject-introspection",
           "version": "1.68.0-11.el9",
@@ -10961,7 +10813,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -10983,11 +10835,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/golang.org/x/sys@v0.15.0?package-id=f5211762b907358d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/golang.org/x/sys@v0.16.0?package-id=589c8f8c2ac7df98",
           "name": "golang.org/x/sys",
-          "version": "v0.15.0",
-          "cpe": "cpe:2.3:a:golang:x\\/sys:v0.15.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/golang.org/x/sys@v0.15.0",
+          "version": "v0.16.0",
+          "cpe": "cpe:2.3:a:golang:x\\/sys:v0.16.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/sys@v0.16.0",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -11007,7 +10859,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11023,7 +10875,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:h48lPFYpsTvQJZF4EKyI4aLHaev3CxivZmv7yZig9pc="
+              "value": "h1:xWw16ngr6ZMtmxDyKyIgsE93KNKz5HKmMa3b8ALHidU="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -11033,11 +10885,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/google.golang.org/protobuf@v1.31.0?package-id=dfd0811c4b44321b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/google.golang.org/protobuf@v1.33.0?package-id=20d7859706ae9e23",
           "name": "google.golang.org/protobuf",
-          "version": "v1.31.0",
-          "cpe": "cpe:2.3:a:google:protobuf:v1.31.0:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/google.golang.org/protobuf@v1.31.0",
+          "version": "v1.33.0",
+          "cpe": "cpe:2.3:a:google:protobuf:v1.33.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/google.golang.org/protobuf@v1.33.0",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -11057,7 +10909,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11073,7 +10925,7 @@
             },
             {
               "name": "syft:metadata:h1Digest",
-              "value": "h1:g0LDEJHgrBl9N9r17Ru3sqWhkIx2NB67okBHPwC7hs8="
+              "value": "h1:uNO2rsAINq/JlFpSdYEKIZ0uKD/R9cpdv0T\u002ByoGwGmI="
             },
             {
               "name": "syft:metadata:mainModule",
@@ -11083,7 +10935,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gpg-pubkey@5a6340b3-6229229e?distro=rhel-9.4\u0026package-id=6a4614b48b443e33",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gpg-pubkey@5a6340b3-6229229e?distro=rhel-9.4\u0026package-id=6a4614b48b443e33",
           "name": "gpg-pubkey",
           "version": "5a6340b3-6229229e",
           "licenses": [
@@ -11130,7 +10982,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11148,7 +11000,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gpg-pubkey@fd431d51-4ae0493b?distro=rhel-9.4\u0026package-id=0b9edfc7dd36b25d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gpg-pubkey@fd431d51-4ae0493b?distro=rhel-9.4\u0026package-id=0b9edfc7dd36b25d",
           "name": "gpg-pubkey",
           "version": "fd431d51-4ae0493b",
           "licenses": [
@@ -11195,7 +11047,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11213,7 +11065,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gpgme@1.15.1-6.el9?arch=x86_64\u0026upstream=gpgme-1.15.1-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=5441bf12f7bae9a7",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gpgme@1.15.1-6.el9?arch=x86_64\u0026upstream=gpgme-1.15.1-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=5441bf12f7bae9a7",
           "publisher": "Red Hat, Inc.",
           "name": "gpgme",
           "version": "1.15.1-6.el9",
@@ -11245,7 +11097,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11267,7 +11119,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/grep@3.6-5.el9?arch=x86_64\u0026upstream=grep-3.6-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=70a5e6e8918f3aed",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/grep@3.6-5.el9?arch=x86_64\u0026upstream=grep-3.6-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=70a5e6e8918f3aed",
           "publisher": "Red Hat, Inc.",
           "name": "grep",
           "version": "3.6-5.el9",
@@ -11299,7 +11151,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11321,7 +11173,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/gzip@1.12-1.el9?arch=x86_64\u0026upstream=gzip-1.12-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9a7dbc284437d50c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/gzip@1.12-1.el9?arch=x86_64\u0026upstream=gzip-1.12-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9a7dbc284437d50c",
           "publisher": "Red Hat, Inc.",
           "name": "gzip",
           "version": "1.12-1.el9",
@@ -11353,7 +11205,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11375,7 +11227,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/json-c@0.14-11.el9?arch=x86_64\u0026upstream=json-c-0.14-11.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=651b48f819a5c701",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/json-c@0.14-11.el9?arch=x86_64\u0026upstream=json-c-0.14-11.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=651b48f819a5c701",
           "publisher": "Red Hat, Inc.",
           "name": "json-c",
           "version": "0.14-11.el9",
@@ -11431,7 +11283,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11453,7 +11305,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/json-glib@1.6.6-1.el9?arch=x86_64\u0026upstream=json-glib-1.6.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=365b8419bc55d31c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/json-glib@1.6.6-1.el9?arch=x86_64\u0026upstream=json-glib-1.6.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=365b8419bc55d31c",
           "publisher": "Red Hat, Inc.",
           "name": "json-glib",
           "version": "1.6.6-1.el9",
@@ -11509,7 +11361,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11531,7 +11383,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/keyutils-libs@1.6.3-1.el9?arch=x86_64\u0026upstream=keyutils-1.6.3-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1c733566eec59498",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/keyutils-libs@1.6.3-1.el9?arch=x86_64\u0026upstream=keyutils-1.6.3-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1c733566eec59498",
           "publisher": "Red Hat, Inc.",
           "name": "keyutils-libs",
           "version": "1.6.3-1.el9",
@@ -11587,7 +11439,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11609,7 +11461,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/krb5-libs@1.21.1-1.el9?arch=x86_64\u0026upstream=krb5-1.21.1-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=dea5949a295651c6",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/krb5-libs@1.21.1-1.el9?arch=x86_64\u0026upstream=krb5-1.21.1-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=dea5949a295651c6",
           "publisher": "Red Hat, Inc.",
           "name": "krb5-libs",
           "version": "1.21.1-1.el9",
@@ -11665,7 +11517,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11687,7 +11539,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/langpacks-core-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e5c9121b759c3796",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/langpacks-core-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e5c9121b759c3796",
           "publisher": "Red Hat, Inc.",
           "name": "langpacks-core-en",
           "version": "3.0-16.el9",
@@ -11759,7 +11611,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11781,7 +11633,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/langpacks-core-font-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=029edc2f97f3281a",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/langpacks-core-font-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=029edc2f97f3281a",
           "publisher": "Red Hat, Inc.",
           "name": "langpacks-core-font-en",
           "version": "3.0-16.el9",
@@ -11869,7 +11721,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11891,7 +11743,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/langpacks-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=30e1206228a1b3c6",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/langpacks-en@3.0-16.el9?arch=noarch\u0026upstream=langpacks-3.0-16.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=30e1206228a1b3c6",
           "publisher": "Red Hat, Inc.",
           "name": "langpacks-en",
           "version": "3.0-16.el9",
@@ -11947,7 +11799,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -11969,7 +11821,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libacl@2.3.1-4.el9?arch=x86_64\u0026upstream=acl-2.3.1-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6a12891a28711ed0",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libacl@2.3.1-4.el9?arch=x86_64\u0026upstream=acl-2.3.1-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6a12891a28711ed0",
           "publisher": "Red Hat, Inc.",
           "name": "libacl",
           "version": "2.3.1-4.el9",
@@ -12001,7 +11853,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12023,7 +11875,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libarchive@3.5.3-4.el9?arch=x86_64\u0026upstream=libarchive-3.5.3-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1a7fa851f023f96c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libarchive@3.5.3-4.el9?arch=x86_64\u0026upstream=libarchive-3.5.3-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1a7fa851f023f96c",
           "publisher": "Red Hat, Inc.",
           "name": "libarchive",
           "version": "3.5.3-4.el9",
@@ -12055,7 +11907,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12077,7 +11929,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libassuan@2.5.5-3.el9?arch=x86_64\u0026upstream=libassuan-2.5.5-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9a097a6f219831da",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libassuan@2.5.5-3.el9?arch=x86_64\u0026upstream=libassuan-2.5.5-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9a097a6f219831da",
           "publisher": "Red Hat, Inc.",
           "name": "libassuan",
           "version": "2.5.5-3.el9",
@@ -12109,7 +11961,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12131,7 +11983,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libattr@2.5.1-3.el9?arch=x86_64\u0026upstream=attr-2.5.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=246362466b6f01d4",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libattr@2.5.1-3.el9?arch=x86_64\u0026upstream=attr-2.5.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=246362466b6f01d4",
           "publisher": "Red Hat, Inc.",
           "name": "libattr",
           "version": "2.5.1-3.el9",
@@ -12163,7 +12015,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12185,7 +12037,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libblkid@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=611e8cb845eed362",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libblkid@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1dbeeeab62a7ff2e",
           "publisher": "Red Hat, Inc.",
           "name": "libblkid",
           "version": "2.37.4-18.el9",
@@ -12217,7 +12069,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12239,7 +12091,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libcap@2.48-9.el9_2?arch=x86_64\u0026upstream=libcap-2.48-9.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=e129417de8081c72",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libcap@2.48-9.el9_2?arch=x86_64\u0026upstream=libcap-2.48-9.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=e129417de8081c72",
           "publisher": "Red Hat, Inc.",
           "name": "libcap",
           "version": "2.48-9.el9_2",
@@ -12271,7 +12123,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12293,7 +12145,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libcap-ng@0.8.2-7.el9?arch=x86_64\u0026upstream=libcap-ng-0.8.2-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=2704fa8bf6ffd549",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libcap-ng@0.8.2-7.el9?arch=x86_64\u0026upstream=libcap-ng-0.8.2-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=2704fa8bf6ffd549",
           "publisher": "Red Hat, Inc.",
           "name": "libcap-ng",
           "version": "0.8.2-7.el9",
@@ -12349,7 +12201,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12371,7 +12223,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libcom_err@1.46.5-5.el9?arch=x86_64\u0026upstream=e2fsprogs-1.46.5-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=509571c6c88db196",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libcom_err@1.46.5-5.el9?arch=x86_64\u0026upstream=e2fsprogs-1.46.5-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=509571c6c88db196",
           "publisher": "Red Hat, Inc.",
           "name": "libcom_err",
           "version": "1.46.5-5.el9",
@@ -12427,7 +12279,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12449,7 +12301,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libcurl-minimal@7.76.1-29.el9_4?arch=x86_64\u0026upstream=curl-7.76.1-29.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=f15f19a8ee602d39",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libcurl-minimal@7.76.1-29.el9_4?arch=x86_64\u0026upstream=curl-7.76.1-29.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=f15f19a8ee602d39",
           "publisher": "Red Hat, Inc.",
           "name": "libcurl-minimal",
           "version": "7.76.1-29.el9_4",
@@ -12505,7 +12357,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12527,7 +12379,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libdnf@0.69.0-8.el9?arch=x86_64\u0026upstream=libdnf-0.69.0-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=614a1579aff157c9",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libdnf@0.69.0-8.el9?arch=x86_64\u0026upstream=libdnf-0.69.0-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e764edb01b583ef2",
           "publisher": "Red Hat, Inc.",
           "name": "libdnf",
           "version": "0.69.0-8.el9",
@@ -12559,7 +12411,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12581,7 +12433,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libevent@2.1.12-6.el9?arch=x86_64\u0026upstream=libevent-2.1.12-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6727d21630728a31",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libevent@2.1.12-6.el9?arch=x86_64\u0026upstream=libevent-2.1.12-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6727d21630728a31",
           "publisher": "Red Hat, Inc.",
           "name": "libevent",
           "version": "2.1.12-6.el9",
@@ -12613,7 +12465,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12635,7 +12487,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libffi@3.4.2-8.el9?arch=x86_64\u0026upstream=libffi-3.4.2-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c3cc0616d4f3a6b0",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libffi@3.4.2-8.el9?arch=x86_64\u0026upstream=libffi-3.4.2-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c3cc0616d4f3a6b0",
           "publisher": "Red Hat, Inc.",
           "name": "libffi",
           "version": "3.4.2-8.el9",
@@ -12667,7 +12519,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12689,7 +12541,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libgcc@11.4.1-3.el9?arch=x86_64\u0026upstream=gcc-11.4.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=3566aa18d577f644",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libgcc@11.4.1-3.el9?arch=x86_64\u0026upstream=gcc-11.4.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=3566aa18d577f644",
           "publisher": "Red Hat, Inc.",
           "name": "libgcc",
           "version": "11.4.1-3.el9",
@@ -12721,7 +12573,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12743,7 +12595,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libgcrypt@1.10.0-10.el9_2?arch=x86_64\u0026upstream=libgcrypt-1.10.0-10.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=1a30e5d6cde05811",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libgcrypt@1.10.0-10.el9_2?arch=x86_64\u0026upstream=libgcrypt-1.10.0-10.el9_2.src.rpm\u0026distro=rhel-9.4\u0026package-id=1a30e5d6cde05811",
           "publisher": "Red Hat, Inc.",
           "name": "libgcrypt",
           "version": "1.10.0-10.el9_2",
@@ -12775,7 +12627,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12797,7 +12649,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libgpg-error@1.42-5.el9?arch=x86_64\u0026upstream=libgpg-error-1.42-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b3ad2249280c24fa",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libgpg-error@1.42-5.el9?arch=x86_64\u0026upstream=libgpg-error-1.42-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b3ad2249280c24fa",
           "publisher": "Red Hat, Inc.",
           "name": "libgpg-error",
           "version": "1.42-5.el9",
@@ -12853,7 +12705,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12875,7 +12727,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libidn2@2.3.0-7.el9?arch=x86_64\u0026upstream=libidn2-2.3.0-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f63c2ef431e64a8d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libidn2@2.3.0-7.el9?arch=x86_64\u0026upstream=libidn2-2.3.0-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=f63c2ef431e64a8d",
           "publisher": "Red Hat, Inc.",
           "name": "libidn2",
           "version": "2.3.0-7.el9",
@@ -12907,7 +12759,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12929,7 +12781,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libksba@1.5.1-6.el9_1?arch=x86_64\u0026upstream=libksba-1.5.1-6.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=03fdcceeef615ff5",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libksba@1.5.1-6.el9_1?arch=x86_64\u0026upstream=libksba-1.5.1-6.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=03fdcceeef615ff5",
           "publisher": "Red Hat, Inc.",
           "name": "libksba",
           "version": "1.5.1-6.el9_1",
@@ -12961,7 +12813,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -12983,7 +12835,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libmodulemd@2.13.0-2.el9?arch=x86_64\u0026upstream=libmodulemd-2.13.0-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b2cdb213fba17da0",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libmodulemd@2.13.0-2.el9?arch=x86_64\u0026upstream=libmodulemd-2.13.0-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b2cdb213fba17da0",
           "publisher": "Red Hat, Inc.",
           "name": "libmodulemd",
           "version": "2.13.0-2.el9",
@@ -13015,7 +12867,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13037,7 +12889,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libmount@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=06490321335f5660",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libmount@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=06490321335f5660",
           "publisher": "Red Hat, Inc.",
           "name": "libmount",
           "version": "2.37.4-18.el9",
@@ -13069,7 +12921,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13091,7 +12943,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libnghttp2@1.43.0-5.el9_3.1?arch=x86_64\u0026upstream=nghttp2-1.43.0-5.el9_3.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=d0f31e9a0ece7f58",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libnghttp2@1.43.0-5.el9_3.1?arch=x86_64\u0026upstream=nghttp2-1.43.0-5.el9_3.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=d0f31e9a0ece7f58",
           "publisher": "Red Hat, Inc.",
           "name": "libnghttp2",
           "version": "1.43.0-5.el9_3.1",
@@ -13123,7 +12975,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13145,7 +12997,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libpeas@1.30.0-4.el9?arch=x86_64\u0026upstream=libpeas-1.30.0-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4d4acb669d615b5a",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libpeas@1.30.0-4.el9?arch=x86_64\u0026upstream=libpeas-1.30.0-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4d4acb669d615b5a",
           "publisher": "Red Hat, Inc.",
           "name": "libpeas",
           "version": "1.30.0-4.el9",
@@ -13177,7 +13029,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13199,7 +13051,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/librepo@1.14.5-2.el9?arch=x86_64\u0026upstream=librepo-1.14.5-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1a4dca37f991b245",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/librepo@1.14.5-2.el9?arch=x86_64\u0026upstream=librepo-1.14.5-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=dbd3c765ebb8ee87",
           "publisher": "Red Hat, Inc.",
           "name": "librepo",
           "version": "1.14.5-2.el9",
@@ -13231,7 +13083,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13253,7 +13105,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libreport-filesystem@2.15.2-6.el9?arch=noarch\u0026upstream=libreport-2.15.2-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=5fb58e47d0037baf",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libreport-filesystem@2.15.2-6.el9?arch=noarch\u0026upstream=libreport-2.15.2-6.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=5fb58e47d0037baf",
           "publisher": "Red Hat, Inc.",
           "name": "libreport-filesystem",
           "version": "2.15.2-6.el9",
@@ -13309,7 +13161,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13331,7 +13183,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/librhsm@0.0.3-7.el9_3.1?arch=x86_64\u0026upstream=librhsm-0.0.3-7.el9_3.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=b034d557e9884a88",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/librhsm@0.0.3-7.el9_3.1?arch=x86_64\u0026upstream=librhsm-0.0.3-7.el9_3.1.src.rpm\u0026distro=rhel-9.4\u0026package-id=b034d557e9884a88",
           "publisher": "Red Hat, Inc.",
           "name": "librhsm",
           "version": "0.0.3-7.el9_3.1",
@@ -13363,7 +13215,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13385,7 +13237,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libselinux@3.6-1.el9?arch=x86_64\u0026upstream=libselinux-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=79db8c526f87ba3b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libselinux@3.6-1.el9?arch=x86_64\u0026upstream=libselinux-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d2d6d3f9b0e2d021",
           "publisher": "Red Hat, Inc.",
           "name": "libselinux",
           "version": "3.6-1.el9",
@@ -13417,7 +13269,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13439,7 +13291,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libsemanage@3.6-1.el9?arch=x86_64\u0026upstream=libsemanage-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4e128f0807ad0298",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libsemanage@3.6-1.el9?arch=x86_64\u0026upstream=libsemanage-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=e783470d7f39dbb6",
           "publisher": "Red Hat, Inc.",
           "name": "libsemanage",
           "version": "3.6-1.el9",
@@ -13471,7 +13323,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13493,7 +13345,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libsepol@3.6-1.el9?arch=x86_64\u0026upstream=libsepol-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9891839d8f699944",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libsepol@3.6-1.el9?arch=x86_64\u0026upstream=libsepol-3.6-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9891839d8f699944",
           "publisher": "Red Hat, Inc.",
           "name": "libsepol",
           "version": "3.6-1.el9",
@@ -13525,7 +13377,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13547,7 +13399,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libsigsegv@2.13-4.el9?arch=x86_64\u0026upstream=libsigsegv-2.13-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1d2739e0d786fc71",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libsigsegv@2.13-4.el9?arch=x86_64\u0026upstream=libsigsegv-2.13-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1d2739e0d786fc71",
           "publisher": "Red Hat, Inc.",
           "name": "libsigsegv",
           "version": "2.13-4.el9",
@@ -13579,7 +13431,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13601,7 +13453,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libsmartcols@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=74126b495776cc0b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libsmartcols@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=74126b495776cc0b",
           "publisher": "Red Hat, Inc.",
           "name": "libsmartcols",
           "version": "2.37.4-18.el9",
@@ -13633,7 +13485,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13655,7 +13507,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libsolv@0.7.24-2.el9?arch=x86_64\u0026upstream=libsolv-0.7.24-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=2bb0a052fe290788",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libsolv@0.7.24-2.el9?arch=x86_64\u0026upstream=libsolv-0.7.24-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=2bb0a052fe290788",
           "publisher": "Red Hat, Inc.",
           "name": "libsolv",
           "version": "0.7.24-2.el9",
@@ -13687,7 +13539,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13709,7 +13561,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libstdc%2B%2B@11.4.1-3.el9?arch=x86_64\u0026upstream=gcc-11.4.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=db8f85688aa2ae44",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libstdc%2B%2B@11.4.1-3.el9?arch=x86_64\u0026upstream=gcc-11.4.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=db8f85688aa2ae44",
           "publisher": "Red Hat, Inc.",
           "name": "libstdc\u002B\u002B",
           "version": "11.4.1-3.el9",
@@ -13741,7 +13593,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13763,7 +13615,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libtasn1@4.16.0-8.el9_1?arch=x86_64\u0026upstream=libtasn1-4.16.0-8.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=e089d185e5c321ef",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libtasn1@4.16.0-8.el9_1?arch=x86_64\u0026upstream=libtasn1-4.16.0-8.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=e089d185e5c321ef",
           "publisher": "Red Hat, Inc.",
           "name": "libtasn1",
           "version": "4.16.0-8.el9_1",
@@ -13795,7 +13647,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13817,7 +13669,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libunistring@0.9.10-15.el9?arch=x86_64\u0026upstream=libunistring-0.9.10-15.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a1bb48316a23ba96",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libunistring@0.9.10-15.el9?arch=x86_64\u0026upstream=libunistring-0.9.10-15.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a1bb48316a23ba96",
           "publisher": "Red Hat, Inc.",
           "name": "libunistring",
           "version": "0.9.10-15.el9",
@@ -13849,7 +13701,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13871,7 +13723,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libusbx@1.0.26-1.el9?arch=x86_64\u0026upstream=libusbx-1.0.26-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=85855c571980f5af",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libusbx@1.0.26-1.el9?arch=x86_64\u0026upstream=libusbx-1.0.26-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=85855c571980f5af",
           "publisher": "Red Hat, Inc.",
           "name": "libusbx",
           "version": "1.0.26-1.el9",
@@ -13903,7 +13755,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13925,7 +13777,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libuuid@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=94ad6be7a8142659",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libuuid@2.37.4-18.el9?arch=x86_64\u0026upstream=util-linux-2.37.4-18.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=94ad6be7a8142659",
           "publisher": "Red Hat, Inc.",
           "name": "libuuid",
           "version": "2.37.4-18.el9",
@@ -13957,7 +13809,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -13979,7 +13831,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libverto@0.3.2-3.el9?arch=x86_64\u0026upstream=libverto-0.3.2-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8c9b346e407920ca",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libverto@0.3.2-3.el9?arch=x86_64\u0026upstream=libverto-0.3.2-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8c9b346e407920ca",
           "publisher": "Red Hat, Inc.",
           "name": "libverto",
           "version": "0.3.2-3.el9",
@@ -14011,7 +13863,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14033,7 +13885,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libxcrypt@4.4.18-3.el9?arch=x86_64\u0026upstream=libxcrypt-4.4.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b28e214bc7a8f11d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libxcrypt@4.4.18-3.el9?arch=x86_64\u0026upstream=libxcrypt-4.4.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b28e214bc7a8f11d",
           "publisher": "Red Hat, Inc.",
           "name": "libxcrypt",
           "version": "4.4.18-3.el9",
@@ -14065,7 +13917,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14087,7 +13939,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libxcrypt-compat@4.4.18-3.el9?arch=x86_64\u0026upstream=libxcrypt-4.4.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b5dbf5a7d9c567ab",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libxcrypt-compat@4.4.18-3.el9?arch=x86_64\u0026upstream=libxcrypt-4.4.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b5dbf5a7d9c567ab",
           "publisher": "Red Hat, Inc.",
           "name": "libxcrypt-compat",
           "version": "4.4.18-3.el9",
@@ -14143,7 +13995,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14165,10 +14017,10 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libxml2@2.9.13-5.el9_3?arch=x86_64\u0026upstream=libxml2-2.9.13-5.el9_3.src.rpm\u0026distro=rhel-9.4\u0026package-id=ef7574f1402b0969",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libxml2@2.9.13-6.el9_4?arch=x86_64\u0026upstream=libxml2-2.9.13-6.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=dc90ad31602115f1",
           "publisher": "Red Hat, Inc.",
           "name": "libxml2",
-          "version": "2.9.13-5.el9_3",
+          "version": "2.9.13-6.el9_4",
           "licenses": [
             {
               "license": {
@@ -14176,8 +14028,8 @@
               }
             }
           ],
-          "cpe": "cpe:2.3:a:libxml2:libxml2:2.9.13-5.el9_3:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/libxml2@2.9.13-5.el9_3?arch=x86_64\u0026upstream=libxml2-2.9.13-5.el9_3.src.rpm\u0026distro=rhel-9.4",
+          "cpe": "cpe:2.3:a:libxml2:libxml2:2.9.13-6.el9_4:*:*:*:*:*:*:*",
+          "purl": "pkg:rpm/rhel/libxml2@2.9.13-6.el9_4?arch=x86_64\u0026upstream=libxml2-2.9.13-6.el9_4.src.rpm\u0026distro=rhel-9.4",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -14193,11 +14045,11 @@
             },
             {
               "name": "syft:cpe23",
-              "value": "cpe:2.3:a:redhat:libxml2:2.9.13-5.el9_3:*:*:*:*:*:*:*"
+              "value": "cpe:2.3:a:redhat:libxml2:2.9.13-6.el9_4:*:*:*:*:*:*:*"
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14205,21 +14057,21 @@
             },
             {
               "name": "syft:metadata:release",
-              "value": "5.el9_3"
+              "value": "6.el9_4"
             },
             {
               "name": "syft:metadata:size",
-              "value": "1955228"
+              "value": "1955828"
             },
             {
               "name": "syft:metadata:sourceRpm",
-              "value": "libxml2-2.9.13-5.el9_3.src.rpm"
+              "value": "libxml2-2.9.13-6.el9_4.src.rpm"
             }
           ]
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libyaml@0.2.5-7.el9?arch=x86_64\u0026upstream=libyaml-0.2.5-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=686ed0952093671c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libyaml@0.2.5-7.el9?arch=x86_64\u0026upstream=libyaml-0.2.5-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=686ed0952093671c",
           "publisher": "Red Hat, Inc.",
           "name": "libyaml",
           "version": "0.2.5-7.el9",
@@ -14251,7 +14103,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14273,7 +14125,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/libzstd@1.5.1-2.el9?arch=x86_64\u0026upstream=zstd-1.5.1-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c4d4ecb10dda140c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/libzstd@1.5.1-2.el9?arch=x86_64\u0026upstream=zstd-1.5.1-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c4d4ecb10dda140c",
           "publisher": "Red Hat, Inc.",
           "name": "libzstd",
           "version": "1.5.1-2.el9",
@@ -14305,7 +14157,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14327,7 +14179,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/lua-libs@5.4.4-4.el9?arch=x86_64\u0026upstream=lua-5.4.4-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c3c60231375f9ff1",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/lua-libs@5.4.4-4.el9?arch=x86_64\u0026upstream=lua-5.4.4-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c3c60231375f9ff1",
           "publisher": "Red Hat, Inc.",
           "name": "lua-libs",
           "version": "5.4.4-4.el9",
@@ -14383,7 +14235,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14405,7 +14257,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/lz4-libs@1.9.3-5.el9?arch=x86_64\u0026upstream=lz4-1.9.3-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=830b8696d9e7061c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/lz4-libs@1.9.3-5.el9?arch=x86_64\u0026upstream=lz4-1.9.3-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=830b8696d9e7061c",
           "publisher": "Red Hat, Inc.",
           "name": "lz4-libs",
           "version": "1.9.3-5.el9",
@@ -14461,7 +14313,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14483,7 +14335,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/microdnf@3.9.1-3.el9?arch=x86_64\u0026upstream=microdnf-3.9.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a367e686a65cfe05",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/microdnf@3.9.1-3.el9?arch=x86_64\u0026upstream=microdnf-3.9.1-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a367e686a65cfe05",
           "publisher": "Red Hat, Inc.",
           "name": "microdnf",
           "version": "3.9.1-3.el9",
@@ -14515,7 +14367,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14537,7 +14389,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/mpfr@4.1.0-7.el9?arch=x86_64\u0026upstream=mpfr-4.1.0-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=7283f07ce761bc8e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/mpfr@4.1.0-7.el9?arch=x86_64\u0026upstream=mpfr-4.1.0-7.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=7283f07ce761bc8e",
           "publisher": "Red Hat, Inc.",
           "name": "mpfr",
           "version": "4.1.0-7.el9",
@@ -14569,7 +14421,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14591,7 +14443,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/ncurses-base@6.2-10.20210508.el9?arch=noarch\u0026upstream=ncurses-6.2-10.20210508.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a0d19211c8c4589b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/ncurses-base@6.2-10.20210508.el9?arch=noarch\u0026upstream=ncurses-6.2-10.20210508.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a0d19211c8c4589b",
           "publisher": "Red Hat, Inc.",
           "name": "ncurses-base",
           "version": "6.2-10.20210508.el9",
@@ -14647,7 +14499,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14669,7 +14521,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/ncurses-libs@6.2-10.20210508.el9?arch=x86_64\u0026upstream=ncurses-6.2-10.20210508.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=31b40b2b21390159",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/ncurses-libs@6.2-10.20210508.el9?arch=x86_64\u0026upstream=ncurses-6.2-10.20210508.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=31b40b2b21390159",
           "publisher": "Red Hat, Inc.",
           "name": "ncurses-libs",
           "version": "6.2-10.20210508.el9",
@@ -14725,7 +14577,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14747,7 +14599,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/nettle@3.9.1-1.el9?arch=x86_64\u0026upstream=nettle-3.9.1-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=6ede582c55fee114",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/nettle@3.9.1-1.el9?arch=x86_64\u0026upstream=nettle-3.9.1-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d4d1f5beadb364d6",
           "publisher": "Red Hat, Inc.",
           "name": "nettle",
           "version": "3.9.1-1.el9",
@@ -14779,7 +14631,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14801,7 +14653,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/npth@1.6-8.el9?arch=x86_64\u0026upstream=npth-1.6-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=263b96492eca8d00",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/npth@1.6-8.el9?arch=x86_64\u0026upstream=npth-1.6-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=263b96492eca8d00",
           "publisher": "Red Hat, Inc.",
           "name": "npth",
           "version": "1.6-8.el9",
@@ -14833,7 +14685,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14855,7 +14707,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/openldap@2.6.6-3.el9?arch=x86_64\u0026upstream=openldap-2.6.6-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b7417cc3efe826ef",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/openldap@2.6.6-3.el9?arch=x86_64\u0026upstream=openldap-2.6.6-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=62bd7d5e9ad297cf",
           "publisher": "Red Hat, Inc.",
           "name": "openldap",
           "version": "2.6.6-3.el9",
@@ -14887,7 +14739,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -14909,7 +14761,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/openssl-fips-provider@3.0.7-2.el9?arch=x86_64\u0026upstream=openssl-fips-provider-3.0.7-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9ed8fcdc3f8893d7",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/openssl-fips-provider@3.0.7-2.el9?arch=x86_64\u0026upstream=openssl-fips-provider-3.0.7-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=9ed8fcdc3f8893d7",
           "publisher": "Red Hat, Inc.",
           "name": "openssl-fips-provider",
           "version": "3.0.7-2.el9",
@@ -14981,7 +14833,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15003,7 +14855,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/openssl-libs@3.0.7-27.el9?arch=x86_64\u0026epoch=1\u0026upstream=openssl-3.0.7-27.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=43b6fd8c89da121e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/openssl-libs@3.0.7-27.el9?arch=x86_64\u0026epoch=1\u0026upstream=openssl-3.0.7-27.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=43b6fd8c89da121e",
           "publisher": "Red Hat, Inc.",
           "name": "openssl-libs",
           "version": "1:3.0.7-27.el9",
@@ -15059,7 +14911,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15085,7 +14937,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/p11-kit@0.25.3-2.el9?arch=x86_64\u0026upstream=p11-kit-0.25.3-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=fe65204f85704d54",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/p11-kit@0.25.3-2.el9?arch=x86_64\u0026upstream=p11-kit-0.25.3-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=0506313e008f878b",
           "publisher": "Red Hat, Inc.",
           "name": "p11-kit",
           "version": "0.25.3-2.el9",
@@ -15141,7 +14993,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15163,7 +15015,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/p11-kit-trust@0.25.3-2.el9?arch=x86_64\u0026upstream=p11-kit-0.25.3-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=05d525e19e731d43",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/p11-kit-trust@0.25.3-2.el9?arch=x86_64\u0026upstream=p11-kit-0.25.3-2.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=05d525e19e731d43",
           "publisher": "Red Hat, Inc.",
           "name": "p11-kit-trust",
           "version": "0.25.3-2.el9",
@@ -15235,7 +15087,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15257,7 +15109,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/pcre@8.44-3.el9.3?arch=x86_64\u0026upstream=pcre-8.44-3.el9.3.src.rpm\u0026distro=rhel-9.4\u0026package-id=7003bb2758781491",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/pcre@8.44-3.el9.3?arch=x86_64\u0026upstream=pcre-8.44-3.el9.3.src.rpm\u0026distro=rhel-9.4\u0026package-id=7003bb2758781491",
           "publisher": "Red Hat, Inc.",
           "name": "pcre",
           "version": "8.44-3.el9.3",
@@ -15289,7 +15141,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15311,7 +15163,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/pcre2@10.40-5.el9?arch=x86_64\u0026upstream=pcre2-10.40-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=bee67834b6791a30",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/pcre2@10.40-5.el9?arch=x86_64\u0026upstream=pcre2-10.40-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=bee67834b6791a30",
           "publisher": "Red Hat, Inc.",
           "name": "pcre2",
           "version": "10.40-5.el9",
@@ -15343,7 +15195,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15365,7 +15217,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/pcre2-syntax@10.40-5.el9?arch=noarch\u0026upstream=pcre2-10.40-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=add974587121f27f",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/pcre2-syntax@10.40-5.el9?arch=noarch\u0026upstream=pcre2-10.40-5.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a209df8eaf0523c8",
           "publisher": "Red Hat, Inc.",
           "name": "pcre2-syntax",
           "version": "10.40-5.el9",
@@ -15421,7 +15273,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15443,7 +15295,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/popt@1.18-8.el9?arch=x86_64\u0026upstream=popt-1.18-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=87cdbb049d8ef3e3",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/popt@1.18-8.el9?arch=x86_64\u0026upstream=popt-1.18-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=87cdbb049d8ef3e3",
           "publisher": "Red Hat, Inc.",
           "name": "popt",
           "version": "1.18-8.el9",
@@ -15475,7 +15327,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15497,7 +15349,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/procps-ng@3.3.17-14.el9?arch=x86_64\u0026upstream=procps-ng-3.3.17-14.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1041e9ceed074ee2",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/procps-ng@3.3.17-14.el9?arch=x86_64\u0026upstream=procps-ng-3.3.17-14.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=1041e9ceed074ee2",
           "publisher": "Red Hat, Inc.",
           "name": "procps-ng",
           "version": "3.3.17-14.el9",
@@ -15553,7 +15405,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15575,7 +15427,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/protobuf-c@1.3.3-13.el9?arch=x86_64\u0026upstream=protobuf-c-1.3.3-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8bac69fad07ff91e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/protobuf-c@1.3.3-13.el9?arch=x86_64\u0026upstream=protobuf-c-1.3.3-13.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8bac69fad07ff91e",
           "publisher": "Red Hat, Inc.",
           "name": "protobuf-c",
           "version": "1.3.3-13.el9",
@@ -15631,7 +15483,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15653,7 +15505,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/python-unversioned-command@3.9.18-3.el9?arch=noarch\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=08488c393fc75313",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/python-unversioned-command@3.9.18-3.el9?arch=noarch\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=08488c393fc75313",
           "publisher": "Red Hat, Inc.",
           "name": "python-unversioned-command",
           "version": "3.9.18-3.el9",
@@ -15725,7 +15577,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15747,7 +15599,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/python3@3.9.18-3.el9?arch=x86_64\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d5be57e5902c906f",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/python3@3.9.18-3.el9?arch=x86_64\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d5be57e5902c906f",
           "publisher": "Red Hat, Inc.",
           "name": "python3",
           "version": "3.9.18-3.el9",
@@ -15779,7 +15631,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15801,7 +15653,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/python3-libs@3.9.18-3.el9?arch=x86_64\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=93b7642d15a5abde",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/python3-libs@3.9.18-3.el9?arch=x86_64\u0026upstream=python3.9-3.9.18-3.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=93b7642d15a5abde",
           "publisher": "Red Hat, Inc.",
           "name": "python3-libs",
           "version": "3.9.18-3.el9",
@@ -15857,7 +15709,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15879,7 +15731,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/python3-pip-wheel@21.2.3-8.el9?arch=noarch\u0026upstream=python-pip-21.2.3-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=88670d8b6b89252d",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/python3-pip-wheel@21.2.3-8.el9?arch=noarch\u0026upstream=python-pip-21.2.3-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=88670d8b6b89252d",
           "publisher": "Red Hat, Inc.",
           "name": "python3-pip-wheel",
           "version": "21.2.3-8.el9",
@@ -15951,7 +15803,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -15973,7 +15825,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/python3-setuptools-wheel@53.0.0-12.el9?arch=noarch\u0026upstream=python-setuptools-53.0.0-12.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=cb456e0fda1a5e90",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/python3-setuptools-wheel@53.0.0-12.el9?arch=noarch\u0026upstream=python-setuptools-53.0.0-12.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=cb456e0fda1a5e90",
           "publisher": "Red Hat, Inc.",
           "name": "python3-setuptools-wheel",
           "version": "53.0.0-12.el9",
@@ -16045,7 +15897,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16067,7 +15919,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/readline@8.1-4.el9?arch=x86_64\u0026upstream=readline-8.1-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a04ccc767df1528c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/readline@8.1-4.el9?arch=x86_64\u0026upstream=readline-8.1-4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a04ccc767df1528c",
           "publisher": "Red Hat, Inc.",
           "name": "readline",
           "version": "8.1-4.el9",
@@ -16099,7 +15951,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16121,7 +15973,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/redhat-release@9.4-0.4.el9?arch=x86_64\u0026upstream=redhat-release-9.4-0.4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=aaa3a80ddd441e05",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/redhat-release@9.4-0.4.el9?arch=x86_64\u0026upstream=redhat-release-9.4-0.4.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=8201f1ed5896cd9b",
           "publisher": "Red Hat, Inc.",
           "name": "redhat-release",
           "version": "9.4-0.4.el9",
@@ -16169,7 +16021,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16191,7 +16043,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/rootfiles@8.1-31.el9?arch=noarch\u0026upstream=rootfiles-8.1-31.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c676161f43c98d9b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/rootfiles@8.1-31.el9?arch=noarch\u0026upstream=rootfiles-8.1-31.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=c676161f43c98d9b",
           "publisher": "Red Hat, Inc.",
           "name": "rootfiles",
           "version": "8.1-31.el9",
@@ -16223,7 +16075,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16245,7 +16097,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/rpm@4.16.1.3-29.el9?arch=x86_64\u0026upstream=rpm-4.16.1.3-29.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=d64f21f2fc34144e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/rpm@4.16.1.3-29.el9?arch=x86_64\u0026upstream=rpm-4.16.1.3-29.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b025f49f86ad41eb",
           "publisher": "Red Hat, Inc.",
           "name": "rpm",
           "version": "4.16.1.3-29.el9",
@@ -16277,7 +16129,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16299,7 +16151,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/rpm-libs@4.16.1.3-29.el9?arch=x86_64\u0026upstream=rpm-4.16.1.3-29.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4bb0dffbad576858",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/rpm-libs@4.16.1.3-29.el9?arch=x86_64\u0026upstream=rpm-4.16.1.3-29.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=4bb0dffbad576858",
           "publisher": "Red Hat, Inc.",
           "name": "rpm-libs",
           "version": "4.16.1.3-29.el9",
@@ -16355,7 +16207,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16377,7 +16229,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/sed@4.8-9.el9?arch=x86_64\u0026upstream=sed-4.8-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=ea6c58df85a4b172",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/sed@4.8-9.el9?arch=x86_64\u0026upstream=sed-4.8-9.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=ea6c58df85a4b172",
           "publisher": "Red Hat, Inc.",
           "name": "sed",
           "version": "4.8-9.el9",
@@ -16409,7 +16261,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16431,7 +16283,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/setup@2.13.7-10.el9?arch=noarch\u0026upstream=setup-2.13.7-10.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=03a25a3bb35c3a2c",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/setup@2.13.7-10.el9?arch=noarch\u0026upstream=setup-2.13.7-10.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=a0683610af2074c0",
           "publisher": "Red Hat, Inc.",
           "name": "setup",
           "version": "2.13.7-10.el9",
@@ -16463,7 +16315,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16485,7 +16337,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/shadow-utils@4.9-8.el9?arch=x86_64\u0026epoch=2\u0026upstream=shadow-utils-4.9-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=74f18007e45f1f12",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/shadow-utils@4.9-8.el9?arch=x86_64\u0026epoch=2\u0026upstream=shadow-utils-4.9-8.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=252167acab2d09a1",
           "publisher": "Red Hat, Inc.",
           "name": "shadow-utils",
           "version": "2:4.9-8.el9",
@@ -16541,7 +16393,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16567,7 +16419,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/sqlite-libs@3.34.1-7.el9_3?arch=x86_64\u0026upstream=sqlite-3.34.1-7.el9_3.src.rpm\u0026distro=rhel-9.4\u0026package-id=f9879b950aaab506",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/sqlite-libs@3.34.1-7.el9_3?arch=x86_64\u0026upstream=sqlite-3.34.1-7.el9_3.src.rpm\u0026distro=rhel-9.4\u0026package-id=f9879b950aaab506",
           "publisher": "Red Hat, Inc.",
           "name": "sqlite-libs",
           "version": "3.34.1-7.el9_3",
@@ -16623,7 +16475,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16645,7 +16497,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:golang/stdlib@1.22.0?package-id=0bc584ce2535d563",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:golang/stdlib@1.22.0?package-id=0bc584ce2535d563",
           "name": "stdlib",
           "version": "go1.22.0",
           "licenses": [
@@ -16672,7 +16524,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16686,7 +16538,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/systemd-libs@252-32.el9_4?arch=x86_64\u0026upstream=systemd-252-32.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=459e89c8c426dbb5",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/systemd-libs@252-32.el9_4?arch=x86_64\u0026upstream=systemd-252-32.el9_4.src.rpm\u0026distro=rhel-9.4\u0026package-id=03abf513f8f40523",
           "publisher": "Red Hat, Inc.",
           "name": "systemd-libs",
           "version": "252-32.el9_4",
@@ -16742,7 +16594,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16764,7 +16616,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/tar@1.34-6.el9_1?arch=x86_64\u0026epoch=2\u0026upstream=tar-1.34-6.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=cd347770fb432c11",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/tar@1.34-6.el9_1?arch=x86_64\u0026epoch=2\u0026upstream=tar-1.34-6.el9_1.src.rpm\u0026distro=rhel-9.4\u0026package-id=cd347770fb432c11",
           "publisher": "Red Hat, Inc.",
           "name": "tar",
           "version": "2:1.34-6.el9_1",
@@ -16796,7 +16648,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16822,7 +16674,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/tzdata@2024a-1.el9?arch=noarch\u0026upstream=tzdata-2024a-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=2aaf6cd5def6a1a6",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/tzdata@2024a-1.el9?arch=noarch\u0026upstream=tzdata-2024a-1.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=b4ba3ef7051be978",
           "publisher": "Red Hat, Inc.",
           "name": "tzdata",
           "version": "2024a-1.el9",
@@ -16854,7 +16706,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16876,7 +16728,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/unbound-libs@1.16.2-3.el9_3.5?arch=x86_64\u0026upstream=unbound-1.16.2-3.el9_3.5.src.rpm\u0026distro=rhel-9.4\u0026package-id=ec9c9ce02c5c473e",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/unbound-libs@1.16.2-3.el9_3.5?arch=x86_64\u0026upstream=unbound-1.16.2-3.el9_3.5.src.rpm\u0026distro=rhel-9.4\u0026package-id=ec9c9ce02c5c473e",
           "publisher": "Red Hat, Inc.",
           "name": "unbound-libs",
           "version": "1.16.2-3.el9_3.5",
@@ -16932,7 +16784,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -16954,7 +16806,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/xz-libs@5.2.5-8.el9_0?arch=x86_64\u0026upstream=xz-5.2.5-8.el9_0.src.rpm\u0026distro=rhel-9.4\u0026package-id=f134cb8afcf0053f",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/xz-libs@5.2.5-8.el9_0?arch=x86_64\u0026upstream=xz-5.2.5-8.el9_0.src.rpm\u0026distro=rhel-9.4\u0026package-id=f134cb8afcf0053f",
           "publisher": "Red Hat, Inc.",
           "name": "xz-libs",
           "version": "5.2.5-8.el9_0",
@@ -17010,7 +16862,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -17032,7 +16884,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:pkg:rpm/rhel/zlib@1.2.11-40.el9?arch=x86_64\u0026upstream=zlib-1.2.11-40.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=37e131515aafce9b",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:pkg:rpm/rhel/zlib@1.2.11-40.el9?arch=x86_64\u0026upstream=zlib-1.2.11-40.el9.src.rpm\u0026distro=rhel-9.4\u0026package-id=37e131515aafce9b",
           "publisher": "Red Hat, Inc.",
           "name": "zlib",
           "version": "1.2.11-40.el9",
@@ -17064,7 +16916,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:180d0721da6af07cc7a5908004460d5ed73079b275a042284335aff42a5a3641"
+              "value": "sha256:4e5987c4b7a092b6c37c3f354fce187dbcd0b582aab84511a00d2bba9f489af0"
             },
             {
               "name": "syft:location:0:path",
@@ -17086,7 +16938,7 @@
         },
         {
           "type": "operating-system",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:os:rhel@9.4",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:os:rhel@9.4",
           "name": "rhel",
           "version": "9.4",
           "description": "Red Hat Enterprise Linux 9.4 (Plow)",
@@ -17135,7 +16987,7 @@
       "ref": "redis@0.0.1",
       "dependsOn": [
         "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:73b7c345cf2b350c",
-        "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.58.0:d407f8ff535cea57"
+        "registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter@v1.59.0:b2488fded61182bf"
       ]
     }
   ]
