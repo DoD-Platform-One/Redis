@@ -1,6 +1,6 @@
 # redis
 
-![Version: 19.3.2-bb.0](https://img.shields.io/badge/Version-19.3.2--bb.0-informational?style=flat-square) ![AppVersion: 7.2.4](https://img.shields.io/badge/AppVersion-7.2.4-informational?style=flat-square)
+![Version: 19.5.0-bb.0](https://img.shields.io/badge/Version-19.5.0--bb.0-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -77,7 +77,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.2.4"` |  |
+| image.tag | string | `"7.2.5"` |  |
 | image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
@@ -332,7 +332,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.2.4-debian-12-r13"` |  |
+| sentinel.image.tag | string | `"7.2.5-debian-12-r0"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -578,6 +578,18 @@ helm install redis chart/
 | volumePermissions.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | volumePermissions.containerSecurityContext.runAsUser | int | `0` |  |
 | volumePermissions.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| kubectl.enabled | bool | `false` |  |
+| kubectl.image.registry | string | `"docker.io"` |  |
+| kubectl.image.repository | string | `"bitnami/kubectl"` |  |
+| kubectl.image.tag | string | `"1.29.2-debian-12-r3"` |  |
+| kubectl.image.digest | string | `""` |  |
+| kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
+| kubectl.image.pullSecrets | list | `[]` |  |
+| kubectl.command | list | `["/opt/bitnami/scripts/kubectl-scripts/update-master-label.sh"]` |  |
+| kubectl.resources.requests.memory | string | `"256Mi"` |  |
+| kubectl.resources.requests.cpu | string | `"100m"` |  |
+| kubectl.resources.limits.memory | string | `"256Mi"` |  |
+| kubectl.resources.limits.cpu | string | `"100m"` |  |
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
