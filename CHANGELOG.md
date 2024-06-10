@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [19.5.0-bb.1] - 2024-06-07
+### Changed
+- Updated redis-exporter from 1.59.0 to 1.60.0 (including security fixes for the prometheus golang client from 1.19.0 to 1.19.1)
+- Updated bitnami/kubectl from 1.29.2-debian-12-r3 to 1.30.0-debian-12-r3 (doc updates for vmware, deprecated Contour 1.25 Kubectl 1.26 and Dokuwiki 20230404, add notes re Bitnami package signing process - irrelevant for Iron Bank users, others see https://blog.bitnami.com/2024/03/bitnami-packaged-containers-and-helm.html)
+- Updated DEVELOPMENT_MAINTENANCE instructions for new bitnami chart tagging practice, redis-exporter source, and bitnami container images
+
 ## [19.5.0-bb.0] - 2024-05-23
 ### Changed
 - Updated chart to 19.5.0
