@@ -1,6 +1,6 @@
 # redis
 
-![Version: 19.5.0-bb.1](https://img.shields.io/badge/Version-19.5.0--bb.1-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
+![Version: 19.5.5-bb.0](https://img.shields.io/badge/Version-19.5.5--bb.0-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -479,7 +479,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.60.0"` |  |
+| metrics.image.tag | string | `"v1.61.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -575,7 +575,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
-| volumePermissions.image.tag | string | `"12-debian-12-r21"` |  |
+| volumePermissions.image.tag | string | `"12-debian-12-r22"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -590,7 +590,7 @@ helm install redis chart/
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.30.0-debian-12-r3"` |  |
+| kubectl.image.tag | string | `"1.30.2-debian-12-r0"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |
@@ -611,7 +611,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
-| sysctl.image.tag | string | `"12-debian-12-r21"` |  |
+| sysctl.image.tag | string | `"12-debian-12-r22"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
