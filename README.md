@@ -5,11 +5,13 @@
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
+
 * <https://bitnami.com>
 
 * <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -21,12 +23,13 @@ Redis(R) is an open source, advanced key-value store. It is often referred to as
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install redis chart/
 ```
