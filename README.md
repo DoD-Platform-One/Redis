@@ -1,17 +1,15 @@
 # redis
 
-![Version: 19.5.5-bb.0](https://img.shields.io/badge/Version-19.5.5--bb.0-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
+![Version: 19.5.5-bb.1](https://img.shields.io/badge/Version-19.5.5--bb.1-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
-
 * <https://bitnami.com>
 
 * <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
 ## Learn More
-
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -23,13 +21,12 @@ Redis(R) is an open source, advanced key-value store. It is often referred to as
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
-
 ```bash
 helm install redis chart/
 ```

@@ -1,7 +1,5 @@
 istio:
   enabled: true
-  hardened:
-    enabled: true
 
 networkPolicies:
   enabled: true
