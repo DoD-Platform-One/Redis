@@ -52,6 +52,56 @@ addons:
 9. Pull logs for AuthService Redis Master pod, verify connection from master to replica pods is successful. Output should be seen in logs.
 10. Cleanup/Delete your AuthService branch
 
+### Big Bang Integration Testing
+
+As part of your MR that modifies bigbang packages, you should modify the bigbang  [bigbang/tests/test-values.yaml](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/tests/test-values.yaml?ref_type=heads) against your branch for the CI/CD MR testing by enabling your packages. 
+
+    - To do this, at a minimum, you will need to follow the instructions at [bigbang/docs/developer/test-package-against-bb.md](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/docs/developer/test-package-against-bb.md?ref_type=heads) with changes for Redis enabled (the below is a reference, actual changes could be more depending on what changes where made to Redis in the pakcage MR).
+
+### [test-values.yaml](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/tests/test-values.yaml?ref_type=heads)
+    ```yaml
+    addons:
+      authservice:
+        enabled: true
+        git:
+          tag: ""
+          branch: "your-branch"
+        values:
+          monitoring:
+          enabled: true
+          redis:
+            enabled: true
+          redis-bb:
+            monitoring:
+              enabled: true
+            metrics:
+              enabled: true # To test redis-exporter image
+      ### Additional compononents of Redis should be changed to reflect testing changes introduced in the package MR
+    ```
+
+# Files that need integration testing
+
+If you modify any of these things, you should perform an integration test with your branch against the rest of bigbang. Some of these files have automatic tests already defined, but those automatic tests may not model corner cases found in full integration scenarios.
+
+* `./chart/templates/bigbang/networkpolicies`
+* `./chart/templates/bigbang/authorization-policies`
+* `./chart/templates/bigbang/dashboards/redis-dashboards.yaml`
+* `./chart/templates/bigbang/istio/redis-upgrade.yaml`
+* `./chart/templates/master`
+* `./chart/templates/replica`
+* `./chart/templates/sentinel`
+* `./chart/values.yaml` if it involves any of:
+  * monitoring changes
+  * network policy changes
+  * kyverno policy changes
+  * istio hardening rule changes
+  * service definition changes
+  * TLS settings
+  * server ingress settings
+  * headless server settings (especially port or other comms settings)
+
+Follow [the standard process](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/docs/developer/test-package-against-bb.md?ref_type=heads) for performing an integration test against bigbang.
+
 ### automountServiceAccountToken
 The mutating Kyverno policy named `update-automountserviceaccounttokens` is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`. This policy is configured by namespace in the Big Bang umbrella chart repository at [chart/templates/kyverno-policies/values.yaml](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads). 
 
