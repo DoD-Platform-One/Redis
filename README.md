@@ -1,6 +1,6 @@
 # redis
 
-![Version: 19.5.5-bb.2](https://img.shields.io/badge/Version-19.5.5--bb.2-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
+![Version: 19.6.2-bb.0](https://img.shields.io/badge/Version-19.6.2--bb.0-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -21,9 +21,7 @@ Redis(R) is an open source, advanced key-value store. It is often referred to as
 * Kubernetes config installed in `~/.kube/config`
 * Helm installed
 
-Install Helm
-
-<https://helm.sh/docs/intro/install/>
+[Install Helm](https://helm.sh/docs/intro/install/)
 
 ## Deployment
 
@@ -96,6 +94,7 @@ helm install redis chart/
 | commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly yes\n# Disable RDB persistence, AOF persistence already enabled.\nsave \"\""` |  |
 | existingConfigmap | string | `""` |  |
 | master.count | int | `1` |  |
+| master.revisionHistoryLimit | int | `10` |  |
 | master.configuration | string | `""` |  |
 | master.disableCommands[0] | string | `"FLUSHDB"` |  |
 | master.disableCommands[1] | string | `"FLUSHALL"` |  |
@@ -217,6 +216,7 @@ helm install redis chart/
 | master.pdb.maxUnavailable | string | `""` |  |
 | replica.kind | string | `"StatefulSet"` |  |
 | replica.replicaCount | int | `3` |  |
+| replica.revisionHistoryLimit | int | `10` |  |
 | replica.configuration | string | `""` |  |
 | replica.disableCommands[0] | string | `"FLUSHDB"` |  |
 | replica.disableCommands[1] | string | `"FLUSHALL"` |  |
@@ -345,7 +345,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.2.5-debian-12-r0"` |  |
+| sentinel.image.tag | string | `"7.2.5-debian-12-r2"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -484,7 +484,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.61.0"` |  |
+| metrics.image.tag | string | `"v1.62.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -580,7 +580,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
-| volumePermissions.image.tag | string | `"12-debian-12-r22"` |  |
+| volumePermissions.image.tag | string | `"12-debian-12-r24"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -595,7 +595,7 @@ helm install redis chart/
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.30.2-debian-12-r0"` |  |
+| kubectl.image.tag | string | `"1.30.3-debian-12-r0"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |
@@ -616,7 +616,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
-| sysctl.image.tag | string | `"12-debian-12-r22"` |  |
+| sysctl.image.tag | string | `"12-debian-12-r24"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
