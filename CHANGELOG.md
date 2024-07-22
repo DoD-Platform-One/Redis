@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [19.6.2-bb.0] - 2024-07-22
+
+### Changed
+
+- Updated redis-exporter image to 1.62.0
+- Updated chart version to redis/19.6.2
+
 ## [19.5.5-bb.2] - 2024-07-17
 
 ### Changed
