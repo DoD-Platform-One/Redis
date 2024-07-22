@@ -10,6 +10,10 @@ Redis(R) is an open source, advanced key-value store. It is often referred to as
 
 * <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
+### Upstream Release Notes
+
+The [upstream bitnami/redis chart CHANGELOG](https://github.com/bitnami/charts/blob/main/bitnami/redis/CHANGELOG.md) may help when reviewing this package.
+
 ## Learn More
 
 * [Application Overview](docs/overview.md)
