@@ -1,6 +1,7 @@
+<!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 19.6.2-bb.0](https://img.shields.io/badge/Version-19.6.2--bb.0-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
+![Version: 19.6.2-bb.1](https://img.shields.io/badge/Version-19.6.2--bb.1-informational?style=flat-square) ![AppVersion: 7.2.5](https://img.shields.io/badge/AppVersion-7.2.5-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -12,7 +13,15 @@ Redis(R) is an open source, advanced key-value store. It is often referred to as
 
 ### Upstream Release Notes
 
-The [upstream bitnami/redis chart CHANGELOG](https://github.com/bitnami/charts/blob/main/bitnami/redis/CHANGELOG.md) may help when reviewing this package.
+This package has no upstream release note links on file. Please add some to [chart/Chart.yaml](chart/Chart.yaml) under `annotations.bigbang.dev/upstreamReleaseNotesMarkdown`.
+Example:
+
+```yaml
+annotations:
+  bigbang.dev/upstreamReleaseNotesMarkdown: |
+    - [Find our upstream chart's CHANGELOG here](https://link-goes-here/CHANGELOG.md)
+    - [and our upstream application release notes here](https://another-link-here/RELEASE_NOTES.md)
+```
 
 ## Learn More
 
@@ -25,7 +34,9 @@ The [upstream bitnami/redis chart CHANGELOG](https://github.com/bitnami/charts/b
 * Kubernetes config installed in `~/.kube/config`
 * Helm installed
 
-[Install Helm](https://helm.sh/docs/intro/install/)
+Install Helm
+
+* <https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
@@ -639,3 +650,7 @@ helm install redis chart/
 ## Contributing
 
 Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
+
+---
+
+_This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._

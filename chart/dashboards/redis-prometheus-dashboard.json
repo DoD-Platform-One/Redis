@@ -34,7 +34,7 @@
     {
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -113,7 +113,7 @@
     {
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -193,7 +193,7 @@
     {
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -280,7 +280,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -378,7 +378,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "decimals": 2,
       "editable": true,
@@ -494,7 +494,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -603,7 +603,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -707,7 +707,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -806,7 +806,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -917,7 +917,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -1030,7 +1030,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "editable": true,
       "error": false,
@@ -1127,7 +1127,7 @@
       "dashes": false,
        "datasource": {
         "type": "prometheus",
-        "uid": "${datasource}"
+        "uid": "$DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
