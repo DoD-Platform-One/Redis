@@ -18,6 +18,15 @@
     }
   ],
   "regexManagers": [
+      {
+      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "matchStrings": [
+          "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)",
+          "- Redis:[^\\S\\r\\n]+(?<currentValue>.+)"
+      ],
+      "depNameTemplate": "registry1.dso.mil/ironbank/bitnami/redis",
+      "datasourceTemplate": "docker"
+    },
     {
       "fileMatch": ["^chart/values\\.yaml$"],
       "matchStrings": [
