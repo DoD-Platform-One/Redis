@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.0.1-bb.1](https://img.shields.io/badge/Version-20.0.1--bb.1-informational?style=flat-square) ![AppVersion: 7.4.0](https://img.shields.io/badge/AppVersion-7.4.0-informational?style=flat-square)
+![Version: 20.1.7-bb.0](https://img.shields.io/badge/Version-20.1.7--bb.0-informational?style=flat-square) ![AppVersion: 7.4.1](https://img.shields.io/badge/AppVersion-7.4.1-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -89,7 +89,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.4.0"` |  |
+| image.tag | string | `"7.4.1"` |  |
 | image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
@@ -356,7 +356,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.4.0-debian-12-r0"` |  |
+| sentinel.image.tag | string | `"7.4.1-debian-12-r0"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -591,7 +591,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
-| volumePermissions.image.tag | string | `"12-debian-12-r27"` |  |
+| volumePermissions.image.tag | string | `"12-debian-12-r30"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -603,10 +603,11 @@ helm install redis chart/
 | volumePermissions.containerSecurityContext.seLinuxOptions | object | `{}` |  |
 | volumePermissions.containerSecurityContext.runAsUser | int | `0` |  |
 | volumePermissions.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| volumePermissions.extraEnvVars | list | `[]` |  |
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.30.3-debian-12-r5"` |  |
+| kubectl.image.tag | string | `"1.31.1-debian-12-r3"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |
@@ -627,7 +628,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
-| sysctl.image.tag | string | `"12-debian-12-r27"` |  |
+| sysctl.image.tag | string | `"12-debian-12-r30"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
