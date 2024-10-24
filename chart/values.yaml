@@ -1785,7 +1785,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.64.1
+    tag: v1.65.0
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
