@@ -1,16 +1,16 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.2.1-bb.1](https://img.shields.io/badge/Version-20.2.1--bb.1-informational?style=flat-square) ![AppVersion: 7.4.1](https://img.shields.io/badge/AppVersion-7.4.1-informational?style=flat-square)
+![Version: 20.2.1-bb.2](https://img.shields.io/badge/Version-20.2.1--bb.2-informational?style=flat-square) ![AppVersion: 7.4.1](https://img.shields.io/badge/AppVersion-7.4.1-informational?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
-* <https://bitnami.com>
 
-* <https://github.com/bitnami/charts/tree/main/bitnami/redis>
+- <https://bitnami.com>
+- <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
-### Upstream Release Notes
+## Upstream Release Notes
 
 This package has no upstream release note links on file. Please add some to [chart/Chart.yaml](chart/Chart.yaml) under `annotations.bigbang.dev/upstreamReleaseNotesMarkdown`.
 Example:
@@ -22,14 +22,15 @@ annotations:
 ```
 
 ## Learn More
-* [Application Overview](docs/overview.md)
-* [Other Documentation](docs/)
+
+- [Application Overview](docs/overview.md)
+- [Other Documentation](docs/)
 
 ## Pre-Requisites
 
-* Kubernetes Cluster deployed
-* Kubernetes config installed in `~/.kube/config`
-* Helm installed
+- Kubernetes Cluster deployed
+- Kubernetes config installed in `~/.kube/config`
+- Helm installed
 
 Install Helm
 
@@ -37,8 +38,9 @@ https://helm.sh/docs/intro/install/
 
 ## Deployment
 
-* Clone down the repository
-* cd into directory
+- Clone down the repository
+- cd into directory
+
 ```bash
 helm install redis chart/
 ```
@@ -225,6 +227,7 @@ helm install redis chart/
 | master.pdb.create | bool | `true` |  |
 | master.pdb.minAvailable | string | `""` |  |
 | master.pdb.maxUnavailable | string | `""` |  |
+| master.extraPodSpec | object | `{}` |  |
 | replica.kind | string | `"StatefulSet"` |  |
 | replica.replicaCount | int | `3` |  |
 | replica.revisionHistoryLimit | int | `10` |  |
@@ -353,6 +356,7 @@ helm install redis chart/
 | replica.pdb.create | bool | `true` |  |
 | replica.pdb.minAvailable | string | `""` |  |
 | replica.pdb.maxUnavailable | string | `""` |  |
+| replica.extraPodSpec | object | `{}` |  |
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
@@ -463,6 +467,7 @@ helm install redis chart/
 | sentinel.masterService.sessionAffinity | string | `"None"` |  |
 | sentinel.masterService.sessionAffinityConfig | object | `{}` |  |
 | sentinel.terminationGracePeriodSeconds | int | `30` |  |
+| sentinel.extraPodSpec | object | `{}` |  |
 | serviceBindings.enabled | bool | `false` |  |
 | networkPolicy.enabled | bool | `true` |  |
 | networkPolicy.allowExternal | bool | `true` |  |
@@ -495,7 +500,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.63.0"` |  |
+| metrics.image.tag | string | `"v1.65.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -607,7 +612,7 @@ helm install redis chart/
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.31.1-debian-12-r3"` |  |
+| kubectl.image.tag | string | `"1.31.2-debian-12-r3"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |

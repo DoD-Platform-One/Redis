@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [20.2.1-bb.2] - 2024-10-22
+
+### Changed
+
+- Updated  ironbank/bitnami/kubectl: 1.31.1-debian-12-r3 -> 1.31.2-debian-12-r3
+
 ## [20.2.1-bb.1] - 2024-10-22
 
 ### Changed
