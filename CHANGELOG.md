@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Changed
 
 - Updated  ironbank/bitnami/analytics/redis-exporter: v1.65.0 -> v1.66.0
+- Added the maintenance track annotation and badge
 
 ## [20.2.1-bb.3] - 2024-10-29
 

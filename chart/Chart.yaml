@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: APACHE-2.0
 
 annotations:
+  bigbang.dev/maintenanceTrack: bb_maintained
   category: Database
   licenses: Apache-2.0
   bigbang.dev/applicationVersions: |
