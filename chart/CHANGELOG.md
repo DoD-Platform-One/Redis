@@ -1,8 +1,36 @@
 # Changelog
 
-## 20.2.1 (2024-10-15)
+## 20.6.0 (2024-12-16)
 
-* [bitnami/redis] Fix preExecCmds parameter ([#29898](https://github.com/bitnami/charts/pull/29898))
+* [bitname/redis] Add support for master and replicas resources to be annotated ([#31034](https://github.com/bitnami/charts/pull/31034))
+
+## 20.5.0 (2024-12-10)
+
+* [bitnami/*] Add Bitnami Premium to NOTES.txt (#30854) ([3dfc003](https://github.com/bitnami/charts/commit/3dfc00376df6631f0ce54b8d440d477f6caa6186)), closes [#30854](https://github.com/bitnami/charts/issues/30854)
+* [bitnami/redis] Detect non-standard images (#30942) ([f06f8db](https://github.com/bitnami/charts/commit/f06f8dbafe5eb3b22f689168d7ac9fb2fb0f707d)), closes [#30942](https://github.com/bitnami/charts/issues/30942)
+
+## <small>20.4.1 (2024-12-10)</small>
+
+* [bitnami/redis] CA shouldn't be mandatory when TLS is enabled (#30520) ([85219eb](https://github.com/bitnami/charts/commit/85219eb721efa640075325a1812d9ca8316a0a1a)), closes [#30520](https://github.com/bitnami/charts/issues/30520)
+
+## 20.4.0 (2024-12-02)
+
+* [bitnami/*] docs: :memo: Add "Prometheus metrics" (batch 5) (#30674) ([ed2a546](https://github.com/bitnami/charts/commit/ed2a54617faf763169e6b01a89100b9db32e1000)), closes [#30674](https://github.com/bitnami/charts/issues/30674)
+* [bitnami/redis] add extraPortsEnabled (#30607) ([77a98fa](https://github.com/bitnami/charts/commit/77a98fa631f21a49b0c013d856cfb21ba090a0a6)), closes [#30607](https://github.com/bitnami/charts/issues/30607)
+
+## 20.3.0 (2024-11-14)
+
+* [bitnami/redis] feat: :sparkles: Allow updating credentials via values.yaml (#30452) ([d6a3118](https://github.com/bitnami/charts/commit/d6a3118e42a9a481d4429defbd628015a3b8f755)), closes [#30452](https://github.com/bitnami/charts/issues/30452)
+
+## <small>20.2.2 (2024-11-11)</small>
+
+* [bitnami/*] Remove wrong comment about imagePullPolicy (#30107) ([a51f9e4](https://github.com/bitnami/charts/commit/a51f9e4bb0fbf77199512d35de7ac8abe055d026)), closes [#30107](https://github.com/bitnami/charts/issues/30107)
+* [bitnami/redis] Release 20.2.2 (#30407) ([ae54e98](https://github.com/bitnami/charts/commit/ae54e980494b5431d98d72a672532fc36b7a21c4)), closes [#30407](https://github.com/bitnami/charts/issues/30407)
+* Update documentation links to techdocs.broadcom.com (#29931) ([f0d9ad7](https://github.com/bitnami/charts/commit/f0d9ad78f39f633d275fc576d32eae78ded4d0b8)), closes [#29931](https://github.com/bitnami/charts/issues/29931)
+
+## <small>20.2.1 (2024-10-15)</small>
+
+* [bitnami/redis] Fix preExecCmds parameter (#29898) ([6db8a2e](https://github.com/bitnami/charts/commit/6db8a2e736e2a60be2d3848d85f49d236a43136c)), closes [#29898](https://github.com/bitnami/charts/issues/29898)
 
 ## 20.2.0 (2024-10-09)
 
