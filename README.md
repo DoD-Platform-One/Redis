@@ -1,21 +1,19 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.6.2-bb.1](https://img.shields.io/badge/Version-20.6.2--bb.1-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 20.6.2-bb.2](https://img.shields.io/badge/Version-20.6.2--bb.2-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
 ## Upstream References
 
 - <https://bitnami.com>
-
 - <https://github.com/bitnami/charts/tree/main/bitnami/redis>
 
 ## Upstream Release Notes
 
 This package has no upstream release note links on file. Please add some to [chart/Chart.yaml](chart/Chart.yaml) under `annotations.bigbang.dev/upstreamReleaseNotesMarkdown`.
 Example:
-
 ```yaml
 annotations:
   bigbang.dev/upstreamReleaseNotesMarkdown: |
@@ -36,7 +34,7 @@ annotations:
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
@@ -69,8 +67,6 @@ helm install redis chart/
 | cleanUpgrade.resources.requests.cpu | string | `"100m"` |  |
 | cleanUpgrade.resources.limits.memory | string | `"256Mi"` |  |
 | cleanUpgrade.resources.limits.cpu | string | `"100m"` |  |
-| networkPolicies.enabled | bool | `true` |  |
-| networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | global.imageRegistry | string | `""` |  |
 | global.imagePullSecrets[0] | string | `"private-registry"` |  |
 | global.storageClass | string | `""` |  |
@@ -474,6 +470,7 @@ helm install redis chart/
 | sentinel.extraPodSpec | object | `{}` |  |
 | serviceBindings.enabled | bool | `false` |  |
 | networkPolicy.enabled | bool | `true` |  |
+| networkPolicy.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | networkPolicy.allowExternal | bool | `true` |  |
 | networkPolicy.allowExternalEgress | bool | `true` |  |
 | networkPolicy.extraIngress | list | `[]` |  |
@@ -616,7 +613,7 @@ helm install redis chart/
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.31.2-debian-12-r3"` |  |
+| kubectl.image.tag | string | `"1.32.1-debian-12-r3"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |
@@ -660,3 +657,4 @@ Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in 
 ---
 
 _This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
+
