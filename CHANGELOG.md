@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [20.9.0-bb.0] - 2025-02-24
+
+### Changed
+
+- Updated Chart version 20.9.0
+- Updated docker.io/bitnami/kubectl (source) 1.32.1-debian-12-r3 -> 1.32.2-debian-12-r3
+
 ## [20.6.2-bb.2] - 2025-02-03
 
 ### Changed
