@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.9.0-bb.0](https://img.shields.io/badge/Version-20.9.0--bb.0-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 20.11.3-bb.0](https://img.shields.io/badge/Version-20.11.3--bb.0-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -79,6 +79,8 @@ helm install redis chart/
 | namespaceOverride | string | `""` |  |
 | commonLabels | object | `{}` |  |
 | commonAnnotations | object | `{}` |  |
+| configmapChecksumAnnotations | bool | `true` |  |
+| secretChecksumAnnotations | bool | `true` |  |
 | secretAnnotations | object | `{}` |  |
 | clusterDomain | string | `"cluster.local"` |  |
 | extraDeploy | list | `[]` |  |
@@ -101,8 +103,11 @@ helm install redis chart/
 | auth.password | string | `""` |  |
 | auth.existingSecret | string | `""` |  |
 | auth.existingSecretPasswordKey | string | `""` |  |
-| auth.usePasswordFiles | bool | `false` |  |
+| auth.usePasswordFiles | bool | `true` |  |
 | auth.usePasswordFileFromSecret | bool | `true` |  |
+| auth.acl.enabled | bool | `false` |  |
+| auth.acl.sentinel | bool | `false` |  |
+| auth.acl.users | list | `[]` |  |
 | commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly yes\n# Disable RDB persistence, AOF persistence already enabled.\nsave \"\""` |  |
 | existingConfigmap | string | `""` |  |
 | master.count | int | `1` |  |
@@ -359,7 +364,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.4.2-debian-12-r0"` |  |
+| sentinel.image.tag | string | `"7.4.2-debian-12-r4"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -468,6 +473,15 @@ helm install redis chart/
 | sentinel.masterService.sessionAffinityConfig | object | `{}` |  |
 | sentinel.terminationGracePeriodSeconds | int | `30` |  |
 | sentinel.extraPodSpec | object | `{}` |  |
+| sentinel.externalAccess.enabled | bool | `false` |  |
+| sentinel.externalAccess.service.loadBalancerIPAnnotaion | string | `""` |  |
+| sentinel.externalAccess.service.type | string | `"LoadBalancer"` |  |
+| sentinel.externalAccess.service.redisPort | int | `6379` |  |
+| sentinel.externalAccess.service.sentinelPort | int | `26379` |  |
+| sentinel.externalAccess.service.loadBalancerIP | list | `[]` |  |
+| sentinel.externalAccess.service.loadBalancerClass | string | `""` |  |
+| sentinel.externalAccess.service.loadBalancerSourceRanges | list | `[]` |  |
+| sentinel.externalAccess.service.annotations | object | `{}` |  |
 | serviceBindings.enabled | bool | `false` |  |
 | networkPolicy.enabled | bool | `true` |  |
 | networkPolicy.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
@@ -501,7 +515,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.67.0"` |  |
+| metrics.image.tag | string | `"1.68.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
@@ -597,7 +611,7 @@ helm install redis chart/
 | volumePermissions.enabled | bool | `false` |  |
 | volumePermissions.image.registry | string | `"docker.io"` |  |
 | volumePermissions.image.repository | string | `"bitnami/os-shell"` |  |
-| volumePermissions.image.tag | string | `"12-debian-12-r34"` |  |
+| volumePermissions.image.tag | string | `"12-debian-12-r38"` |  |
 | volumePermissions.image.digest | string | `""` |  |
 | volumePermissions.image.pullPolicy | string | `"IfNotPresent"` |  |
 | volumePermissions.image.pullSecrets | list | `[]` |  |
@@ -613,7 +627,7 @@ helm install redis chart/
 | kubectl.enabled | bool | `false` |  |
 | kubectl.image.registry | string | `"docker.io"` |  |
 | kubectl.image.repository | string | `"bitnami/kubectl"` |  |
-| kubectl.image.tag | string | `"1.32.1-debian-12-r3"` |  |
+| kubectl.image.tag | string | `"1.32.2-debian-12-r2"` |  |
 | kubectl.image.digest | string | `""` |  |
 | kubectl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | kubectl.image.pullSecrets | list | `[]` |  |
@@ -634,7 +648,7 @@ helm install redis chart/
 | sysctl.enabled | bool | `false` |  |
 | sysctl.image.registry | string | `"docker.io"` |  |
 | sysctl.image.repository | string | `"bitnami/os-shell"` |  |
-| sysctl.image.tag | string | `"12-debian-12-r34"` |  |
+| sysctl.image.tag | string | `"12-debian-12-r38"` |  |
 | sysctl.image.digest | string | `""` |  |
 | sysctl.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sysctl.image.pullSecrets | list | `[]` |  |
