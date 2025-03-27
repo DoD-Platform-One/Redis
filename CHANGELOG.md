@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [20.11.4-bb.0] - 2025-03-26
+
+### Changed
+- Updated Chart version to 20.11.4
+- Updated ironbank/bitnami/analytics/redis-exporter: v1.68.0 -> v.1.69.0
+
 ## [20.11.3-bb.0] - 2025-03-10
 
 ### Changed
