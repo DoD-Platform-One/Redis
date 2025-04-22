@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.11.4-bb.1](https://img.shields.io/badge/Version-20.11.4--bb.1-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 20.13.0-bb.0](https://img.shields.io/badge/Version-20.13.0--bb.0-informational?style=flat-square) ![AppVersion: 7.4.2](https://img.shields.io/badge/AppVersion-7.4.2-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -108,6 +108,7 @@ helm install redis chart/
 | auth.acl.enabled | bool | `false` |  |
 | auth.acl.sentinel | bool | `false` |  |
 | auth.acl.users | list | `[]` |  |
+| auth.acl.userSecret | string | `""` |  |
 | commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly yes\n# Disable RDB persistence, AOF persistence already enabled.\nsave \"\""` |  |
 | existingConfigmap | string | `""` |  |
 | master.count | int | `1` |  |
@@ -364,7 +365,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.4.2-debian-12-r6"` |  |
+| sentinel.image.tag | string | `"7.4.2-debian-12-r11"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -515,7 +516,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.69.0"` |  |
+| metrics.image.tag | string | `"v1.70.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |
