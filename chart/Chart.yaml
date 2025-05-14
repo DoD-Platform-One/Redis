@@ -6,22 +6,24 @@ annotations:
   category: Database
   licenses: Apache-2.0
   bigbang.dev/applicationVersions: |
-    - Redis: 7.4.3
+    - Redis: 8.0.0
   helm.sh/images: |
     - name: redis
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.4.3
+      image: registry1.dso.mil/ironbank/bitnami/redis:8.0.0
     - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.70.0
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.71.0
   tanzuCategory: service
 apiVersion: v2
-appVersion: 7.4.3
+appVersion: 8.0.0
 dependencies:
 - name: common
   repository: oci://registry-1.docker.io/bitnamicharts
   tags:
   - bitnami-common
   version: 2.x.x
-description: Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
+description: Redis(R) is an open source, advanced key-value store. It is often referred
+  to as a data structure server since keys can contain strings, hashes, lists, sets
+  and sorted sets.
 home: https://bitnami.com
 icon: https://dyltqmyl993wv.cloudfront.net/assets/stacks/redis/img/redis-stack-220x234.png
 keywords:
@@ -34,4 +36,4 @@ maintainers:
 name: redis
 sources:
 - https://github.com/bitnami/charts/tree/main/bitnami/redis
-version: 20.13.2-bb.0
+version: 21.0.2-bb.0
