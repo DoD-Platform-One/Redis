@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 20.13.2-bb.0](https://img.shields.io/badge/Version-20.13.2--bb.0-informational?style=flat-square) ![AppVersion: 7.4.3](https://img.shields.io/badge/AppVersion-7.4.3-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 21.0.2-bb.0](https://img.shields.io/badge/Version-21.0.2--bb.0-informational?style=flat-square) ![AppVersion: 8.0.0](https://img.shields.io/badge/AppVersion-8.0.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -92,7 +92,7 @@ helm install redis chart/
 | diagnosticMode.args[0] | string | `"infinity"` |  |
 | image.registry | string | `"registry1.dso.mil"` |  |
 | image.repository | string | `"ironbank/bitnami/redis"` |  |
-| image.tag | string | `"7.4.3"` |  |
+| image.tag | string | `"8.0.0"` |  |
 | image.digest | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.pullSecrets | list | `[]` |  |
@@ -365,7 +365,7 @@ helm install redis chart/
 | sentinel.enabled | bool | `false` |  |
 | sentinel.image.registry | string | `"docker.io"` |  |
 | sentinel.image.repository | string | `"bitnami/redis-sentinel"` |  |
-| sentinel.image.tag | string | `"7.4.3-debian-12-r0"` |  |
+| sentinel.image.tag | string | `"8.0.0-debian-12-r0"` |  |
 | sentinel.image.digest | string | `""` |  |
 | sentinel.image.pullPolicy | string | `"IfNotPresent"` |  |
 | sentinel.image.pullSecrets | list | `[]` |  |
@@ -516,7 +516,7 @@ helm install redis chart/
 | metrics.enabled | bool | `false` |  |
 | metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| metrics.image.tag | string | `"v1.70.0"` |  |
+| metrics.image.tag | string | `"v1.71.0"` |  |
 | metrics.image.digest | string | `""` |  |
 | metrics.image.pullPolicy | string | `"IfNotPresent"` |  |
 | metrics.image.pullSecrets | list | `[]` |  |

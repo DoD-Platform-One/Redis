@@ -4,6 +4,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [21.0.2-bb.0] (2025-05-08)
+
+### Changed
+- Updated chart to 21.0.2
+- docker.io/bitnami/kubectl 1.32.4 -> 1.33.0
+- registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter v1.70.0 -> v1.71.0
+- registry1.dso.mil/ironbank/bitnami/redis 7.4.3 -> 8.0.0
+
 ## [20.13.2-bb.0] - 2025-05-05
 
 ### Changed
