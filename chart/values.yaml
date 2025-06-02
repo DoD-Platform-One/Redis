@@ -171,7 +171,7 @@ diagnosticMode:
 image:
   registry: registry1.dso.mil
   repository: ironbank/bitnami/redis
-  tag: 8.0.0
+  tag: 8.0.1
   digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -1261,7 +1261,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 8.0.0-debian-12-r0
+    tag: 8.0.1-debian-12-r0
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -1868,7 +1868,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.71.0
+    tag: v1.72.1
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2251,7 +2251,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 12-debian-12-r43
+    tag: 12-debian-12-r44
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2326,7 +2326,7 @@ kubectl:
   image:
     registry: docker.io
     repository: bitnami/kubectl
-    tag: 1.33.0-debian-12-r0
+    tag: 1.33.1-debian-12-r0
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -2400,7 +2400,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 12-debian-12-r43
+    tag: 12-debian-12-r44
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
