@@ -1,8 +1,41 @@
 # Changelog
 
-## 21.1.3 (2025-05-16)
+## 21.1.11 (2025-05-30)
 
-* [bitnami/redis] :zap: :arrow_up: Update dependency references ([#33749](https://github.com/bitnami/charts/pull/33749))
+* [bitnami/redis] :zap: :arrow_up: Update dependency references ([#34013](https://github.com/bitnami/charts/pull/34013))
+
+## <small>21.1.10 (2025-05-29)</small>
+
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33970) ([4b2bfc5](https://github.com/bitnami/charts/commit/4b2bfc5a63e86f8f7b18e7831ceb6af67d0578f7)), closes [#33970](https://github.com/bitnami/charts/issues/33970)
+
+## <small>21.1.9 (2025-05-29)</small>
+
+* [bitnami/redis] Fix newlines in sentinel.conf (#33704) ([1bcd9af](https://github.com/bitnami/charts/commit/1bcd9af1ae3c2597a94273b5fa1c21ad2d66df4f)), closes [#33704](https://github.com/bitnami/charts/issues/33704)
+
+## <small>21.1.8 (2025-05-27)</small>
+
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33914) ([ee96950](https://github.com/bitnami/charts/commit/ee969504a78c20e8bb6cd9ca5876d6c97f583c4f)), closes [#33914](https://github.com/bitnami/charts/issues/33914)
+
+## <small>21.1.7 (2025-05-26)</small>
+
+* [bitnami/redis] bugfix: issue on ACL when no existing users secret is passed (#33876) ([193fd9f](https://github.com/bitnami/charts/commit/193fd9fba5a8234fcdd7a5001e28fac00214ec74)), closes [#33876](https://github.com/bitnami/charts/issues/33876)
+
+## <small>21.1.6 (2025-05-22)</small>
+
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33825) ([9b34897](https://github.com/bitnami/charts/commit/9b34897bab192ea829865d4a8ddfde9beab48199)), closes [#33825](https://github.com/bitnami/charts/issues/33825)
+
+## <small>21.1.5 (2025-05-20)</small>
+
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33790) ([2f87f3a](https://github.com/bitnami/charts/commit/2f87f3a604a31ee82cc5adbada56e351a87ace05)), closes [#33790](https://github.com/bitnami/charts/issues/33790)
+
+## <small>21.1.4 (2025-05-20)</small>
+
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33767) ([79cda7f](https://github.com/bitnami/charts/commit/79cda7f9eab704b4122b52d409d7eb36a991915c)), closes [#33767](https://github.com/bitnami/charts/issues/33767)
+
+## <small>21.1.3 (2025-05-16)</small>
+
+* [bitnami/*] Update CNAB tip (#33741) ([2bc74f3](https://github.com/bitnami/charts/commit/2bc74f3f539481ceaa12833c114047583912b748)), closes [#33741](https://github.com/bitnami/charts/issues/33741)
+* [bitnami/redis] :zap: :arrow_up: Update dependency references (#33749) ([efd3a00](https://github.com/bitnami/charts/commit/efd3a002cafbd0177e7493cd050a65e152f813fe)), closes [#33749](https://github.com/bitnami/charts/issues/33749)
 
 ## <small>21.1.2 (2025-05-15)</small>
 
