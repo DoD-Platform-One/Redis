@@ -1261,7 +1261,7 @@ sentinel:
   image:
     registry: docker.io
     repository: bitnami/redis-sentinel
-    tag: 8.0.2-debian-12-r1
+    tag: 8.0.2-debian-12-r2
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -1658,7 +1658,7 @@ sentinel:
   ## @param sentinel.extraPodSpec Optionally specify extra PodSpec for the Redis(R) Sentinel pod(s)
   ##
   extraPodSpec: {}
-  
+
   externalAccess:
     ## @param sentinel.externalAccess.enabled Enable external access to the Redis
     ##
@@ -1674,10 +1674,10 @@ sentinel:
       ## @param sentinel.externalAccess.service.redisPort Port for the services used to expose redis-server
         ##
       redisPort: 6379
-    
+
       ## @param sentinel.externalAccess.service.sentinelPort Port for the services used to expose redis-sentinel
-        ##   
-      sentinelPort: 26379 
+        ##
+      sentinelPort: 26379
         ## @param sentinel.externalAccess.service.loadBalancerIP Array of load balancer IPs for each Redis(R) node. Length must be the same as sentinel.replicaCount
         ##
       loadBalancerIP: []
@@ -1868,7 +1868,7 @@ metrics:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/analytics/redis-exporter
-    tag: v1.73.0
+    tag: v1.74.0
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2075,6 +2075,9 @@ metrics:
     ## @param metrics.serviceMonitor.namespace The namespace in which the ServiceMonitor will be created
     ##
     namespace: ""
+    ## @param metrics.serviceMonitor.tlsConfig [object] TLS configuration used for scrape endpoints used by Prometheus
+    ##
+    tlsConfig: {}
     ## @param metrics.serviceMonitor.interval The interval at which metrics should be scraped
     ##
     interval: 30s
@@ -2136,6 +2139,9 @@ metrics:
     ## @param metrics.podMonitor.namespace The namespace in which the PodMonitor will be created
     ##
     namespace: ""
+    ## @param metrics.podMonitor.tlsConfig [object] TLS configuration used for scrape endpoints used by Prometheus
+    ##
+    tlsConfig: {}
     ## @param metrics.podMonitor.interval The interval at which metrics should be scraped
     ##
     interval: 30s
@@ -2251,7 +2257,7 @@ volumePermissions:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 12-debian-12-r45
+    tag: 12-debian-12-r46
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
@@ -2326,7 +2332,7 @@ kubectl:
   image:
     registry: docker.io
     repository: bitnami/kubectl
-    tag: 1.33.1-debian-12-r2
+    tag: 1.33.1-debian-12-r5
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -2400,7 +2406,7 @@ sysctl:
   image:
     registry: docker.io
     repository: bitnami/os-shell
-    tag: 12-debian-12-r45
+    tag: 12-debian-12-r46
     digest: ""
     pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.

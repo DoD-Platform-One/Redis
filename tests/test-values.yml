@@ -4,3 +4,6 @@ istio:
 networkPolicy:
   enabled: true
   controlPlaneCidr: 172.16.0.0/12
+global:
+  redis:
+    password: "JugYjGgdkW"

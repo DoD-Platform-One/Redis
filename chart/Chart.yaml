@@ -11,7 +11,7 @@ annotations:
     - name: redis
       image: registry1.dso.mil/ironbank/bitnami/redis:8.0.2
     - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.73.0
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.74.0
   tanzuCategory: service
 apiVersion: v2
 appVersion: 8.0.2
@@ -36,4 +36,4 @@ maintainers:
 name: redis
 sources:
 - https://github.com/bitnami/charts/tree/main/bitnami/redis
-version: 21.1.11-bb.0
+version: 21.2.3-bb.0
