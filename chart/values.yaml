@@ -171,7 +171,7 @@ diagnosticMode:
 image:
   registry: registry1.dso.mil
   repository: ironbank/bitnami/redis
-  tag: 8.0.2
+  tag: 8.0.3
   digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
