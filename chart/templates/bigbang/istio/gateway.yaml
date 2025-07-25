@@ -1,6 +1,7 @@
-{{- if and .Values.istio.enabled .Values.istio.redis.enabled -}}
+{{- if and .Values.istio.enabled .Values.istio.redis.enabled }}
 {{- $uncleanChartName := printf "%s-%s" .Chart.Name .Chart.Version -}}
 {{- $chartName := regexReplaceAll "\\+" $uncleanChartName "_" -}}
+
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -13,21 +14,21 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/part-of: redis
     app.kubernetes.io/component: networking
-  {{- if .Values.istio.redis.labels }}
+    {{- if .Values.istio.redis.labels }}
     {{- toYaml .Values.istio.redis.labels | indent 4 }}
-  {{- end }}
-  {{- if .Values.istio.redis.annotations }}
+    {{- end }}
   annotations:
-  {{ toYaml .Values.istio.redis.annotations | indent 4 }}
-  {{- end }}
+    {{- if .Values.istio.redis.annotations }}
+    {{- toYaml .Values.istio.redis.annotations | indent 4 }}
+    {{- end }}
 spec:
   selector:
     istio: ingressgateway
   servers:
-  - port:
-      number: {{ .Values.istio.redis.gateway.port  }}
-      name: redis-port
-      protocol: TCP
-    hosts:
-    - "*"
+    - port:
+        number: {{ .Values.istio.redis.gateway.port }}
+        name: redis-port
+        protocol: TCP
+      hosts:
+        - "*"
 {{- end }}

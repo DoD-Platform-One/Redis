@@ -21,6 +21,10 @@ dependencies:
   tags:
   - bitnami-common
   version: 2.x.x
+- name: redis
+  version: 21.2.9
+  repository: https://charts.bitnami.com/bitnami
+  alias: "upstream"
 description: Redis(R) is an open source, advanced key-value store. It is often referred
   to as a data structure server since keys can contain strings, hashes, lists, sets
   and sorted sets.
@@ -36,4 +40,4 @@ maintainers:
 name: redis
 sources:
 - https://github.com/bitnami/charts/tree/main/bitnami/redis
-version: 21.2.9-bb.0
+version: 21.2.9-bb.1
