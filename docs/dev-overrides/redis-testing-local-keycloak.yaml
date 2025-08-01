@@ -46,14 +46,15 @@ addons:
     #   branch: "renovate/ironbank"
     values:
       monitoring:
-       enabled: true
+        enabled: true
       redis:
         enabled: true
       redis-bb:
-        monitoring:
-          enabled: true
-        metrics:
-          enabled: true # To test redis-exporter image
+        upstream:
+          monitoring:
+            enabled: true
+          metrics:
+            enabled: true # To test redis-exporter image
 
   keycloak:
     enabled: true

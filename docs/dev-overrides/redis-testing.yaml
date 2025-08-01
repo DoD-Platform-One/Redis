@@ -53,11 +53,12 @@ addons:
     #   branch: "renovate/ironbank"
     values:
       monitoring:
-       enabled: true
+        enabled: true
       redis:
         enabled: true
       redis-bb:
-        monitoring:
-          enabled: true
-        metrics:
-          enabled: true
+        upstream:
+          monitoring:
+            enabled: true
+          metrics:
+            enabled: true

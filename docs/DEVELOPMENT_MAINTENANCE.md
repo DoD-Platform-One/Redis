@@ -30,6 +30,12 @@ Bigbang umbrella does not deploy Redis as a package.  Instead redis should be te
       - name: redis
         version: x.x.x-bb.x
     ```
+1. Check that in `values.yaml` that the values under `redis-bb` are nested under the `upstream` key.
+    ```
+    redis-bb:
+      upstream:
+        # values
+    ```
 1. Push AuthService branch to repo1
 
 ## Branch/Tag Config
