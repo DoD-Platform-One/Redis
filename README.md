@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 21.2.13-bb.0](https://img.shields.io/badge/Version-21.2.13--bb.0-informational?style=flat-square) ![AppVersion: 8.0.3](https://img.shields.io/badge/AppVersion-8.0.3-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 22.0.3-bb.0](https://img.shields.io/badge/Version-22.0.3--bb.0-informational?style=flat-square) ![AppVersion: 8.2.0](https://img.shields.io/badge/AppVersion-8.2.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -72,7 +72,7 @@ helm install redis chart/
 | upstream.global.security.allowInsecureImages | bool | `true` |  |
 | upstream.image.registry | string | `"registry1.dso.mil"` |  |
 | upstream.image.repository | string | `"ironbank/bitnami/redis"` |  |
-| upstream.image.tag | string | `"8.0.3"` |  |
+| upstream.image.tag | string | `"8.2.0"` |  |
 | upstream.master.resources.requests.memory | string | `"256Mi"` |  |
 | upstream.master.resources.requests.cpu | string | `"100m"` |  |
 | upstream.master.resources.limits.memory | string | `"256Mi"` |  |
@@ -87,10 +87,11 @@ helm install redis chart/
 | upstream.sentinel.resources.requests.cpu | string | `"100m"` |  |
 | upstream.sentinel.resources.limits.memory | string | `"256Mi"` |  |
 | upstream.sentinel.resources.limits.cpu | string | `"100m"` |  |
+| upstream.networkPolicy.enabled | bool | `false` |  |
 | upstream.networkPolicy.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | upstream.metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | upstream.metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| upstream.metrics.image.tag | string | `"v1.74.0"` |  |
+| upstream.metrics.image.tag | string | `"v1.75.0"` |  |
 | upstream.metrics.resources.requests.memory | string | `"256Mi"` |  |
 | upstream.metrics.resources.requests.cpu | string | `"100m"` |  |
 | upstream.metrics.resources.limits.memory | string | `"256Mi"` |  |
