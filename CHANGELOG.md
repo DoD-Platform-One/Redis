@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [22.0.3-bb.0] (2025-08-14)
+### Updated
+
+- Updated redis chart 21.2.13 -> 22.0.3
+- registry1.dso.mil/ironbank/bitnami/redis 8.0.3 -> 8.2.0
+- Updated registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter (source) v1.74.0 -> v1.75.0
+
 ## [21.2.13-bb.0] (2025-07-28)
 ### Updated
 
