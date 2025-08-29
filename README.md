@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 22.0.4-bb.0](https://img.shields.io/badge/Version-22.0.4--bb.0-informational?style=flat-square) ![AppVersion: 8.2.0](https://img.shields.io/badge/AppVersion-8.2.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 22.0.4-bb.1](https://img.shields.io/badge/Version-22.0.4--bb.1-informational?style=flat-square) ![AppVersion: 8.2.0](https://img.shields.io/badge/AppVersion-8.2.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -67,6 +67,8 @@ helm install redis chart/
 | cleanUpgrade.resources.requests.cpu | string | `"100m"` |  |
 | cleanUpgrade.resources.limits.memory | string | `"256Mi"` |  |
 | cleanUpgrade.resources.limits.cpu | string | `"100m"` |  |
+| networkPolicies.enabled | bool | `true` |  |
+| networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | upstream.nameOverride | string | `"redis-bb"` |  |
 | upstream.global.imagePullSecrets[0] | string | `"private-registry"` |  |
 | upstream.global.security.allowInsecureImages | bool | `true` |  |
