@@ -52,9 +52,15 @@ cleanUpgrade:
       memory: 256Mi
       cpu: 100m
 
+# NOTE: We default this to true in case packages consuming Redis forget to turn it on and have API traffic blocked
+# This has been corrected as networkPolicy and moved the controlPlaneCidr section to the networkPolicy block.
+networkPolicies:
+  enabled: true
+  controlPlaneCidr: 0.0.0.0/0
 
 upstream:
   nameOverride: "redis-bb"
+  fullnameOverride: "redis-bb"
   global:
     imagePullSecrets:
       - private-registry
