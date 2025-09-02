@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # redis
 
-![Version: 22.0.4-bb.1](https://img.shields.io/badge/Version-22.0.4--bb.1-informational?style=flat-square) ![AppVersion: 8.2.0](https://img.shields.io/badge/AppVersion-8.2.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
+![Version: 22.0.7-bb.0](https://img.shields.io/badge/Version-22.0.7--bb.0-informational?style=flat-square) ![AppVersion: 8.2.0](https://img.shields.io/badge/AppVersion-8.2.0-informational?style=flat-square) ![Maintenance Track: bb_maintained](https://img.shields.io/badge/Maintenance_Track-bb_maintained-yellow?style=flat-square)
 
 Redis(R) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
 
@@ -93,7 +93,7 @@ helm install redis chart/
 | upstream.networkPolicy.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | upstream.metrics.image.registry | string | `"registry1.dso.mil"` |  |
 | upstream.metrics.image.repository | string | `"ironbank/bitnami/analytics/redis-exporter"` |  |
-| upstream.metrics.image.tag | string | `"v1.75.0"` |  |
+| upstream.metrics.image.tag | string | `"v1.76.0"` |  |
 | upstream.metrics.resources.requests.memory | string | `"256Mi"` |  |
 | upstream.metrics.resources.requests.cpu | string | `"100m"` |  |
 | upstream.metrics.resources.limits.memory | string | `"256Mi"` |  |
@@ -123,5 +123,5 @@ Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in 
 
 ---
 
-_This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
+This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md).
 
