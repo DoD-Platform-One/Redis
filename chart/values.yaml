@@ -106,7 +106,7 @@ upstream:
     image:
       registry: registry1.dso.mil
       repository: ironbank/bitnami/analytics/redis-exporter
-      tag: v1.75.0
+      tag: v1.76.0
     resources:
       requests:
         memory: 256Mi

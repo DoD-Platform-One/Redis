@@ -11,7 +11,7 @@ annotations:
     - name: redis
       image: registry1.dso.mil/ironbank/bitnami/redis:8.2.0
     - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.75.0
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.76.0
   tanzuCategory: service
 apiVersion: v2
 appVersion: 8.2.0
@@ -22,7 +22,7 @@ dependencies:
   - bitnami-common
   version: 2.x.x
 - name: redis
-  version: 22.0.4
+  version: 22.0.7
   repository: https://charts.bitnami.com/bitnami
   alias: "upstream"
 description: Redis(R) is an open source, advanced key-value store. It is often referred
@@ -40,4 +40,4 @@ maintainers:
 name: redis
 sources:
 - https://github.com/bitnami/charts/tree/main/bitnami/redis
-version: 22.0.4-bb.1
+version: 22.0.7-bb.0
