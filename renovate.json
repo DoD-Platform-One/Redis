@@ -1,41 +1,64 @@
 {
-  "baseBranches": ["main"],
-  "dependencyDashboard": "true",
+  "baseBranches": [
+    "main"
+  ],
+  "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate: Upgrade Redis Package Dependencies",
-  "draftPR": "true",
-  "labels": ["redis","Package Sustainment","kind::maintenance"],
+  "draftPR": true,
+  "labels": [
+    "redis",
+    "Package Sustainment",
+    "kind::maintenance"
+  ],
   "commitMessagePrefix": "SKIP UPDATE CHECK",
-  "ignoreDeps": ["docker.io/bitnami/redis-sentinel"],
+  "ignoreDeps": [
+    "docker.io/bitnami/redis-sentinel"
+  ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
+      "matchDatasources": [
+        "docker"
+      ],
       "groupName": "Ironbank",
-      "registryUrls": ["https://registry1.dso.mil"]
+      "registryUrls": [
+        "https://registry1.dso.mil"
+      ]
     },
     {
-      "matchPackageNames": ["registry1.dso.mil/ironbank/big-bang/base"],
+      "matchPackageNames": [
+        "registry1.dso.mil/ironbank/big-bang/base"
+      ],
       "allowedVersions": "!/8.4/"
     }
   ],
-  "regexManagers": [
-      {
-      "fileMatch": ["^chart/Chart\\.yaml$"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/Chart\\.yaml$"
+      ],
       "matchStrings": [
-          "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)",
-          "- Redis:[^\\S\\r\\n]+(?<currentValue>.+)"
+        "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)",
+        "- Redis:[^\\S\\r\\n]+(?<currentValue>.+)"
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/bitnami/redis",
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^chart/values\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/values\\.yaml$"
+      ],
       "matchStrings": [
         "image: \"(?<depName>\\S+):(?<currentValue>.+)\""
       ],
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/Chart\\.yaml$"
+      ],
       "matchStrings": [
         "image:[^\\S\\r\\n]+(?<depName>.+):(?<currentValue>.+)"
       ],
@@ -43,5 +66,7 @@
     }
   ],
   "separateMajorMinor": false,
-  "postUpdateOptions": ["helmUpdateSubChartArchives"]
+  "postUpdateOptions": [
+    "helmUpdateSubChartArchives"
+  ]
 }
