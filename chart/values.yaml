@@ -69,7 +69,7 @@ upstream:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/redis
-    tag: 8.2.0
+    tag: 8.2.1
   master:
     resources:
       requests:
@@ -106,7 +106,7 @@ upstream:
     image:
       registry: registry1.dso.mil
       repository: ironbank/bitnami/analytics/redis-exporter
-      tag: v1.76.0
+      tag: v1.77.0
     resources:
       requests:
         memory: 256Mi
