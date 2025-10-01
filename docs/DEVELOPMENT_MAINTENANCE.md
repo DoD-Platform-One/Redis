@@ -2,11 +2,8 @@
 
 Redis is a modified/customized version of an upstream chart. The below details the steps required to update to a new version of the Redis package.
 
-1. Checkout the branch that renovate created. This branch will have the image tag updates and typically some other necessary version changes that you will want. You can either work off of this branch or branch off of it.
-1. Navigate to the [upstream chart repo and folder](https://github.com/bitnami/charts/tree/main/bitnami/redis) and find the tag that corresponds to the version of this chart. Start with the newest chart version to make sure we get the latest patches. For changes to redis-exporter, the changelog is located [here](https://github.com/oliver006/redis_exporter/releases/).
-1. For changes to bitnami container images, locating the changelog is not straightforward. Tags and releases are not used. Containers are stored in [the upstream repo](https://github.com/bitnami/containers/) in a hierarchical directory structure under `./bitnami/<CHART_NAME>/<MAJOR_VERSION>/<OS_ARCH>/`. The material differences can be determined by examining the differences between the directories containing the two versions in question, but the changelog has to be determined from the git history. This can be done by grepping the version from the git history (`git log --all --grep="VERSION_NUMBER"`) for the previous version and the new version, and then asking git for the history between the two revisions. You can exclude the bitnami bot merge messages for a cleaner output (`git log --perl-regexp --author='^((?!Bitnami Bot).*)$' OLD_REV..NEW_REV -- bitnami/kubectl/` for example).
-1. From the root of the repo run `kpt pkg update chart@<tag> --strategy alpha-git-patch` replacing `<tag>` with the version tag from step 1 (ex. redis/20.11.4). You may be prompted to resolve some conflicts - choose what makes sense (if there are BB additions/changes keep them, if there are upstream additions/changes keep them).
-1. Modify the `version` in `Chart.yaml` - you will want to append `-bb.0` to the chart version from upstream.
+1. To update the redis helm chart, navigate to the [upstream chart repo and folder](https://github.com/bitnami/charts/tree/main/bitnami/redis) and find the tag that corresponds to the version of this chart. Locate the dependencies in `chart/Chart.yaml` and update. Whenever a dependency is updated you need to run `helm dependencies update ./chart` to pull in the new chart. Make sure the old helm chart has been removed and the new one has been added within chart/charts.
+1. Modify the `version` in `Chart.yaml` - you will want to append `-bb.x` to the chart version from upstream.
 1. Update `CHANGELOG.md` adding an entry for the new version and noting all changes (at minimum should include `Updated Redis chart to x.x.x` and `Updated image versions to latest in IB (redis: x.x.x, redis-exporter: x.x.x)`.
 1. Generate the `README.md` updates by following the [guide in gluon](https://repo1.dso.mil/platform-one/big-bang/apps/library-charts/gluon/-/blob/master/docs/bb-package-readme.md).
 1. Push up your changes, validate that CI passes in the renovate MR (or create an MR if necessary). If there are any failures follow the information in the pipeline to make the necessary updates and reach out to the team if needed.
@@ -147,13 +144,9 @@ For local `keycloak.dev.bigbang.mil` Keycloak:
 
 If you modify any of these things, you should perform an integration test with your branch against the rest of bigbang. Some of these files have automatic tests already defined, but those automatic tests may not model corner cases found in full integration scenarios.
 
-* `./chart/templates/bigbang/networkpolicies`
 * `./chart/templates/bigbang/authorization-policies`
 * `./chart/templates/bigbang/dashboards/redis-dashboards.yaml`
 * `./chart/templates/bigbang/istio/redis-upgrade.yaml`
-* `./chart/templates/master`
-* `./chart/templates/replica`
-* `./chart/templates/sentinel`
 * `./chart/values.yaml` if it involves any of:
   * monitoring changes
   * network policy changes
@@ -186,10 +179,11 @@ As part of your MR that modifies bigbang packages, you should modify the bigbang
           redis:
             enabled: true
           redis-bb:
-            monitoring:
-              enabled: true
-            metrics:
-              enabled: true # To test redis-exporter image
+            upstream:
+              monitoring:
+                enabled: true
+              metrics:
+                enabled: true # To test redis-exporter image
       ### Additional compononents of Redis should be changed to reflect testing changes introduced in the package MR
     ```
 ### automountServiceAccountToken

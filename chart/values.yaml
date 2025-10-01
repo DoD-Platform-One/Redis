@@ -58,6 +58,9 @@ networkPolicies:
   enabled: true
   controlPlaneCidr: 0.0.0.0/0
 
+
+# -- Values to pass to [the upstream redis chart](https://github.com/bitnami/charts/blob/main/bitnami/redis/values.yaml)
+# @default -- Upstream chart values
 upstream:
   nameOverride: "redis-bb"
   fullnameOverride: "redis-bb"
