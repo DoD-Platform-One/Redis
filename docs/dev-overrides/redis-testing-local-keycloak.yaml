@@ -18,17 +18,8 @@ grafana:
       client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_bb8-grafana
       scopes: "openid Grafana"
 
-istio:
+istioGateway:
   enabled: true
-
-istioOperator:
-  enabled: true
-
-# Enable jaeger and prometheus (within monitoring) for testing
-jaeger:
-  enabled: true
-  sso:
-    enabled: true
 
 monitoring:
   enabled: true
