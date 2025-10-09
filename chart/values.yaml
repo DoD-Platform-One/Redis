@@ -72,7 +72,7 @@ upstream:
   image:
     registry: registry1.dso.mil
     repository: ironbank/bitnami/redis
-    tag: 8.2.1
+    tag: 8.2.2
   master:
     resources:
       requests:
