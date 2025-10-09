@@ -1,0 +1,29 @@
+# ########################
+# # Required for package #
+# ########################
+kyvernoPolicies:
+  values:
+    bbtests:
+      enabled: false  
+kyverno:
+  values:
+    bbtests:
+      enabled: false
+
+packages:
+  redis:
+    enabled: true
+    namespace:
+      name: redis
+    git:
+      repo: "https://repo1.dso.mil/big-bang/product/maintained/redis.git"
+    values:
+      istio:
+        enabled: true
+      networkPolicies:
+        enabled: true
+        controlPlaneCidr: 172.16.0.0/12
+      upstream:
+        global:
+          redis:
+            password: "JugYjGgdkW"
