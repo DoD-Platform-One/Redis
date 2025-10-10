@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [22.0.7-bb.3] (2025-10-10)
+### Updated
+
+- Updated registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter (source) v1.77.0 -> v1.78.0
+
 ## [22.0.7-bb.2] (2025-10-09)
 ### Updated
 

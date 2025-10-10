@@ -4,7 +4,7 @@
 kyvernoPolicies:
   values:
     bbtests:
-      enabled: false  
+      enabled: false
 kyverno:
   values:
     bbtests:
