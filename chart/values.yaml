@@ -71,7 +71,7 @@ upstream:
       allowInsecureImages: true
   image:
     registry: registry1.dso.mil
-    repository: ironbank/bitnami/redis
+    repository: ironbank/opensource/redis/redis8-slim
     tag: 8.2.2
   master:
     resources:
