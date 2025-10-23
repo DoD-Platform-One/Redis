@@ -88,6 +88,7 @@ spec:
         app.kubernetes.io/name: bigbang-redis-upgrade-job
     spec:
       serviceAccountName: redis-upgrade-sa
+      automountServiceAccountToken: true
       imagePullSecrets:
       {{- if .Values.global.imagePullSecrets }}
         {{- range .Values.global.imagePullSecrets }}
@@ -108,19 +109,33 @@ spec:
             - -c
             - |
               set -e
-              if [[ $(kubectl get statefulset -l app={{ include "common.names.name" . }} -n {{ .Release.Namespace }} 2> /dev/null | wc -l) -gt 0 ]]; then
-                kubectl delete statefulset -n {{ .Release.Namespace }} -l app={{ include "common.names.name" . }}
-                echo "Statefulsets cleaned up."
+
+              # Step 1: Determine the redis label selector (raw)
+              REDIS_LABEL_RAW="{{- if .Values.cleanUpgrade.redisLabel | trim | eq "" -}}app.kubernetes.io/name={{ default "redis-bb" (dig "nameOverride" nil .Values.upstream) }}{{- else -}}{{ .Values.cleanUpgrade.redisLabel }}{{- end -}}"
+
+              # Step 2: Normalize - convert ":" to "=" and remove all whitespace
+              REDIS_LABEL=$(echo "${REDIS_LABEL_RAW}" | sed 's/:/=/g' | sed 's/ //g')
+
+              echo "Using label selector: ${REDIS_LABEL}"
+
+              # Delete StatefulSets
+              if [[ $(kubectl get statefulset -l ${REDIS_LABEL} -n {{ .Release.Namespace }} 2>/dev/null | wc -l) -gt 0 ]]; then
+                echo "Deleting StatefulSets with label ${REDIS_LABEL}..."
+                kubectl delete statefulset -n {{ .Release.Namespace }} -l ${REDIS_LABEL}
+                echo "StatefulSets cleaned up."
               else
-                echo "No statefulsets to clean up."
+                echo "No StatefulSets to clean up."
               fi
 
-              if [[ $(kubectl get pvc -l app={{ include "common.names.name" . }} -n {{ .Release.Namespace }} 2> /dev/null | wc -l) -gt 0 ]]; then
-                kubectl delete pvc -n {{ .Release.Namespace }} -l app={{ include "common.names.name" . }}
+              # Delete PVCs
+              if [[ $(kubectl get pvc -l ${REDIS_LABEL} -n {{ .Release.Namespace }} 2>/dev/null | wc -l) -gt 0 ]]; then
+                echo "Deleting PVCs with label ${REDIS_LABEL}..."
+                kubectl delete pvc -n {{ .Release.Namespace }} -l ${REDIS_LABEL}
                 echo "PVCs cleaned up."
               else
                 echo "No PVCs to clean up."
               fi
+
               echo "Done with upgrade steps."
 
               {{- if .Values.istio.enabled }}

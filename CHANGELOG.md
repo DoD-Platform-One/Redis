@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [23.1.1-bb.1] (2025-10-22)
+### Removed
+
+- Removed the common dependency
+- Updated references to common.names.name to the nameOverrides in values.yaml
+
 ## [23.1.1-bb.0] (2025-10-16)
 ### Updated
 
