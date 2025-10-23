@@ -7,7 +7,7 @@ metadata:
   name: redis
   namespace: {{ .Release.Namespace }}
   labels:
-    app.kubernetes.io/name: {{ include "common.names.name" . }}
+    app.kubernetes.io/name: {{ default "redis-bb" (dig "nameOverride" nil .Values.upstream) }}
     helm.sh/chart: {{ $chartName }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
@@ -29,10 +29,10 @@ spec:
   {{- end }}
   tcp:
   - match:
-    - port: {{ .Values.istio.redis.gateway.port   }}
+    - port: {{ .Values.istio.redis.gateway.port }}
     route:
     - destination:
         port:
-          number: {{ .Values.master.containerPorts.redis }}
-        host: {{ printf "%s-master" (include "common.names.fullname" .) }}
+          number: {{ .Values.upstream.master.containerPorts.redis }}
+        host: {{ printf "%s-master" (default "redis-bb" (dig "fullnameOverride" nil .Values.upstream)) }}
 {{- end }}

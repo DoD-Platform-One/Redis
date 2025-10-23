@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ printf "%s-grafana-dashboards" (include "common.names.fullname" .) }} 
+  name: {{ printf "%s-grafana-dashboards" (default "redis-bb" (dig "fullnameOverride" nil .Values.upstream)) }} 
   namespace: monitoring
   labels:
     grafana_dashboard: "1"  

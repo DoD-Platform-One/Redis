@@ -44,6 +44,8 @@ monitoring:
 cleanUpgrade:
   enabled: false
   image: "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
+  # Label selector for the cleanUpgrade job to restart the Redis StatefulSet and PVC cleanup. Supports ":" or "=" and strips spaces automatically.
+  redisLabel: "" # Leave empty to use default: app.kubernetes.io/name=<nameOverride or "redis-bb">
   resources:
     requests:
       memory: 256Mi
