@@ -29,7 +29,6 @@ istioGateway:
     gateways:
       passthrough: {}
 
-
 monitoring:
   enabled: true
 
