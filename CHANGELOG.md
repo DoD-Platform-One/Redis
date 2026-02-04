@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ---
 
 
+## [24.1.2-bb.1] (2026-02-01)
+
+### Updated
+
+- Updated registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter v1.80.1 -> v1.80.2
+
 ## [24.1.2-bb.0] (2026-01-29)
 
 ### Updated
