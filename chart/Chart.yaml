@@ -1,39 +1,38 @@
 # Copyright Broadcom, Inc. All Rights Reserved.
 # SPDX-License-Identifier: APACHE-2.0
-
-annotations:
-  bigbang.dev/maintenanceTrack: bb_maintained
-  category: Database
-  licenses: Apache-2.0
-  bigbang.dev/applicationVersions: |
-    - Redis: 8.4.0
-  helm.sh/images: |
-    - name: redis
-      image: registry1.dso.mil/ironbank/opensource/redis/redis8-slim:8.4.0
-    - name: exporter
-      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.80.2
-  tanzuCategory: service
 apiVersion: v2
-appVersion: 8.4.0
-dependencies:
-- name: redis
-  version: 24.1.2
-  repository: https://charts.bitnami.com/bitnami
-  alias: "upstream"
+name: redis
+version: 25.3.0-bb.0
+appVersion: 8.6.0
 description:
   Redis(R) is an open source, advanced key-value store. It is often referred
   to as a data structure server since keys can contain strings, hashes, lists, sets
   and sorted sets.
+dependencies:
+- name: redis
+  version: 25.3.0
+  repository: https://charts.bitnami.com/bitnami
+  alias: "upstream"
 home: https://bitnami.com
 icon: https://dyltqmyl993wv.cloudfront.net/assets/stacks/redis/img/redis-stack-220x234.png
 keywords:
 - redis
 - keyvalue
 - database
+sources:
+- https://github.com/bitnami/charts/tree/main/bitnami/redis
 maintainers:
 - name: Broadcom, Inc. All Rights Reserved.
   url: https://github.com/bitnami/charts
-name: redis
-sources:
-- https://github.com/bitnami/charts/tree/main/bitnami/redis
-version: 24.1.2-bb.1
+annotations:
+  bigbang.dev/maintenanceTrack: bb_maintained
+  category: Database
+  licenses: Apache-2.0
+  bigbang.dev/applicationVersions: |
+    - Redis: 8.6.0
+  helm.sh/images: |
+    - name: redis
+      image: registry1.dso.mil/ironbank/opensource/redis/redis8-slim:8.6.0
+    - name: exporter
+      image: registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter:v1.81.0
+  tanzuCategory: service
