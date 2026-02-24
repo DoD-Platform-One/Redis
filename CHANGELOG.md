@@ -4,6 +4,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [25.3.0-bb.0] (2026-02-23)
+
+### Updated
+
+- Updated redis helm chart 24.1.2 -> 25.3.0
+- Updated registry1.dso.mil/ironbank/bitnami/analytics/redis-exporter v1.80.2 -> v1.81.0
+- Updated registry1.dso.mil/ironbank/opensource/redis/redis8-slim 8.4.0 -> 8.6.0
+- Updated Istio authorization policy selectors to use `app.kubernetes.io/instance`
+- Updated dev override files and DEVELOPMENT_MAINTENANCE.md testing instructions
+- Fixed `renovate.json` depNameTemplate to correct IB image path
 
 ## [24.1.2-bb.1] (2026-02-01)
 

@@ -29,23 +29,60 @@ monitoring:
 addons:
   authservice:
     enabled: true
-    # Add git branch or tag information to test against a specific branch or tag instead of using `main`
-    # Must set the unused label to null
-    # sourceType: "git"
-    # git:
-    #   tag: null
-    #   branch: "renovate/ironbank"
     values:
       monitoring:
         enabled: true
+      # Disable the embedded Redis subchart and point authservice at
+      # the standalone Redis package below instead. This lets authservice
+      # exercise the branch under test rather than its own bundled Redis.
       redis:
-        enabled: true
-      redis-bb:
-        upstream:
-          monitoring:
-            enabled: true
-          metrics:
-            enabled: true # To test redis-exporter image
+        enabled: false
+      global:
+        redis_server_uri: "tcp://redis-bb-master.redis.svc.cluster.local:6379"
 
+packages:
+  redis:
+    enabled: true
+    # -------------------------------------------------------
+    # Set the Redis branch under test here.
+    # -------------------------------------------------------
+    git:
+      tag: null
+      repo: "https://repo1.dso.mil/big-bang/product/maintained/redis.git"
+      branch: "your-branch-name"
+    values:
+      monitoring:
+        enabled: true
+      upstream:
+        auth:
+          enabled: false
+        metrics:
+          enabled: true
+          serviceMonitor:
+            enabled: true
+            tlsConfig:
+              caFile: /etc/prom-certs/root-cert.pem
+              certFile: /etc/prom-certs/cert-chain.pem
+              keyFile: /etc/prom-certs/key.pem
+              insecureSkipVerify: true
+      istio:
+        enabled: true
+        redis:
+          enabled: true
+        hardened:
+          enabled: true
+          # Allow authservice (cross-namespace) to reach the Redis master.
+          # Required because the intra-namespace policy only permits traffic
+          # sourced from within the redis namespace.
+          customAuthorizationPolicies:
+            - name: allow-authservice-to-redis
+              enabled: true
+              spec:
+                action: ALLOW
+                rules:
+                  - from:
+                    - source:
+                        namespaces:
+                          - authservice
   keycloak:
     enabled: true

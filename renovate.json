@@ -41,7 +41,7 @@
         "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)",
         "- Redis:[^\\S\\r\\n]+(?<currentValue>.+)"
       ],
-      "depNameTemplate": "registry1.dso.mil/ironbank/bitnami/redis",
+      "depNameTemplate": "registry1.dso.mil/ironbank/opensource/redis/redis8-slim",
       "datasourceTemplate": "docker"
     },
     {
