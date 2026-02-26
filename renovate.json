@@ -2,6 +2,7 @@
   "baseBranches": [
     "main"
   ],
+    "branchName": "renovate/ironbank",
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate: Upgrade Redis Package Dependencies",
   "draftPR": true,
