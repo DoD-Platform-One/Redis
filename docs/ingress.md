@@ -1,7 +1,6 @@
 # Ingress
 
-In order to expose Redis from outside the cluster, istio needs to be configured with an additional TCP ingress port.  See the istio-controlplane repo for more information on how to configure istio with a dedicated port [Here](https://repo1.dso.mil/platform-one/big-bang/apps/core/istio-controlplane/-/blob/main/chart/values.yaml#L83)
-
+In order to expose Redis from outside the cluster, istio needs to be configured with an additional TCP ingress port.  See the istio-controlplane repo for more information on how to configure istio with a dedicated port in [values.yaml](https://repo1.dso.mil/platform-one/big-bang/apps/core/istio-controlplane/-/blob/main/chart/values.yaml#L83)
 
 Here is a sample overlay for deploying BigBang that supports a dedicated redis TCP port at 13337:
 
@@ -37,7 +36,6 @@ istio:
           protocol: TCP
 ```
 
-
 Redis now needs a gateway dedicated to the redis port and creates one as part of the chart.  If testing locally, it may not be feasible to setup and deploy a load balancer in front of the new port, so using a terminal for port forwarding can suffice:
 
 ```bash
@@ -45,7 +43,6 @@ kubectl port-forward svc/istio-ingressgateway -n istio-system 13337:13337
 Forwarding from 127.0.0.1:13337 -> 13337
 Forwarding from [::1]:13337 -> 13337
 ```
-
 
 While leaving that open, we can now use another terminal to test the connection:
 
@@ -56,9 +53,8 @@ Warning: Using a password with '-a' or '-u' option on the command line interface
 PONG
 ```
 
-
 If no other TCP Virtual Services are needed, the default one created at port 15443 can be used
 
-## More Reading:
+## More Reading
 
-* https://stackoverflow.com/questions/59780850/how-to-expose-redis-to-outside-with-istio-sidecar
+* [How to expose Redis with Istio sidecar](https://stackoverflow.com/questions/59780850/how-to-expose-redis-to-outside-with-istio-sidecar)
