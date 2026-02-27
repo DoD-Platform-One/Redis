@@ -4,6 +4,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [25.3.2-bb.0] (2026-02-27)
+
+### Updated
+
+- Updated redis helm chart 25.3.0 -> 25.3.2
+- Updated registry1.dso.mil/ironbank/opensource/redis/redis8-slim 8.6.0 -> 8.6.1
+- Linted documentation
+
 ## [25.3.0-bb.0] (2026-02-23)
 
 ### Updated
